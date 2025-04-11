@@ -1,0 +1,25 @@
+:root {
+    --primary-color: #294c2e;
+    --secondary-color: #698a70;
+    --background-color: #f8f9fa;
+    --light-green: #b1ff08;
+    --text-color: #171923;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Roboto';
+}
+
+
+

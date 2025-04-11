@@ -1,0 +1,226 @@
+.main__container {
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 40px;
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav__logo img {
+    height: 75px;
+    width: auto;
+}
+
+.nav__menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav__menu-list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__menu-item {
+    position: relative;
+    padding: 20px 0;
+}
+
+.nav__menu-item:hover .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav__menu-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav__menu-item a:hover {
+    color: var(--secondary-color);
+}
+
+/* Grid utility class */
+.grid {
+    display: flex;
+    align-items: center;
+}
+
+.nav__menu-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.consultation a {
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.consultation a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: white;
+    min-width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+    list-style: none;
+    padding: 8px 0;
+    margin-top: -10px;
+}
+
+.nav__dropdown-item {
+    padding: 12px 20px;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.nav__dropdown-item:hover {
+    background-color: var(--background-color);
+    transform: translateX(5px);
+}
+
+.nav__dropdown a {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.main__text {
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 2.0rem;
+    line-height: 1.4;
+    animation: fadeIn 1s ease-out;
+}
+
+.what__we__offer {
+    text-align: center;
+    color: var(--light-green);
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 4.5rem;
+    font-weight: 500;
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .nav__menu-list {
+        display: none;
+    }
+    
+    .nav {
+        padding: 0 20px;
+    }
+}
+
+.hero-text {
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Add styles for the typewriter cursor */
+.hero-text span {
+    color: white !important;
+}
+
+/* Make it responsive */
+@media screen and (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .what__we__offer {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .what__we__offer {
+        font-size: 2.8rem;
+    }
+}
