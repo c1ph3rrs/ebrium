@@ -4,6 +4,8 @@ import aboutImage from '../../assets/about_us.jpeg';
 import avatar from '../../assets/avatar.jpg';
 import { Typewriter } from 'react-simple-typewriter'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+
 
 const Home = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,7 +42,7 @@ const Home = () => {
             <section className="home main__container">
                 {/* Navbar */}
                 <nav className={`nav ${isScrolled ? 'nav-scrolled' : ''}`}>
-                    <a href="#" className="nav__logo">
+                    <a href="/" className="nav__logo">
                         <img src={mainLogo} alt="Ebrium Logo" />
                     </a>
                     
@@ -60,13 +62,13 @@ const Home = () => {
                                 </div>
                                 <ul className="nav__dropdown">
                                     <li className="nav__dropdown-item">
-                                        <a href="#mobile-app">Mobile App Development</a>
+                                        <Link to="/mob">Mobile App Development</Link>
                                     </li>
                                     <li className="nav__dropdown-item">
-                                        <a href="#web-dev">Web Development</a>
+                                        <Link to="/web">Web Development</Link>
                                     </li>
                                     <li className="nav__dropdown-item">
-                                        <a href="#ai-ml">AI & Machine Learning</a>
+                                        <Link to="/ai">AI & Machine Learning</Link>
                                     </li>
                                     <li className="nav__dropdown-item">
                                         <a href="#cloud">Cloud Solutions</a>
@@ -153,7 +155,7 @@ const Home = () => {
                             </div>
                             <h3>Mobile App Development</h3>
                             <p>Native and cross-platform solutions that provide seamless experiences across devices.</p>
-                            <a href="#mobile-app" className="service-link">Learn More <span>→</span></a>
+                            <Link to="/mob" className='service-link'>Learn More <span>→</span></Link>
                         </div>
                         
                         <div className="service-card">
@@ -341,7 +343,7 @@ const Home = () => {
                             <div className="stat-icon">
                                 <i className='bx bx-smile'></i>
                             </div>
-                            <div className="stat-number">200+</div>
+                            <div className="stat-number">30+</div>
                             <div className="stat-title">Happy Clients</div>
                         </div>
                         
@@ -349,7 +351,7 @@ const Home = () => {
                             <div className="stat-icon">
                                 <i className='bx bx-briefcase-alt'></i>
                             </div>
-                            <div className="stat-number">350+</div>
+                            <div className="stat-number">50+</div>
                             <div className="stat-title">Projects Completed</div>
                         </div>
                         
@@ -357,7 +359,7 @@ const Home = () => {
                             <div className="stat-icon">
                                 <i className='bx bx-coffee'></i>
                             </div>
-                            <div className="stat-number">5000+</div>
+                            <div className="stat-number">2000+</div>
                             <div className="stat-title">Cups of Coffee</div>
                         </div>
                         
@@ -445,7 +447,7 @@ const Home = () => {
                         <div className="footer-column">
                             <h3>Services</h3>
                             <ul className="footer-links">
-                                <li><a href="#">Mobile App Development</a></li>
+                                <li><Link to="/mob">Mobile App Development</Link></li>
                                 <li><a href="#">Web Development</a></li>
                                 <li><a href="#">AI & Machine Learning</a></li>
                                 <li><a href="#">Cloud Solutions</a></li>
@@ -486,7 +488,7 @@ const Home = () => {
                     </div>
                     
                     <div className="footer-bottom">
-                        <p>&copy; 2023 Ebrium. All rights reserved.</p>
+                        <p>&copy; 2025 Ebrium. All rights reserved.</p>
                     </div>
                 </div>
             </footer>
