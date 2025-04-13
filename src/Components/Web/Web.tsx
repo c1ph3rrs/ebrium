@@ -89,22 +89,24 @@ const Web = () => {
             </nav>
 
             {/* Hero Section */}
-            <section className="web-hero">
+            <section className="web-hero main__container">
                 <div className="web-hero-content">
-                    <h1 className="hero-title">Modern & Scalable Web Development</h1>
-                    <p className="hero-subtitle">
+                    <h1 className="animated-text">Modern & Scalable Web Development</h1>
+                    <p className="subtitle">
                         Building high-performance websites and web applications that grow with your business
                     </p>
-                    <div className="typing-container">
-                        <span className="typing-prefix">Specialized in: </span>
-                        <span className="typing-text">
+                </div>
+                <div className="what__we__offer">
+                    <span>Our Expertise</span>
+                    <div className="hero-text">
+                        <h1>
                             <Typewriter
                                 words={[
-                                    'Custom Websites',
-                                    'E-commerce Platforms',
-                                    'Content Management Systems',
-                                    'Progressive Web Apps',
-                                    'Admin Dashboards'
+                                    'Custom Websites ✨',
+                                    'E-commerce Platforms 🛒',
+                                    'Content Management Systems 📝',
+                                    'Progressive Web Apps 📱',
+                                    'Admin Dashboards 📊'
                                 ]}
                                 loop={true}
                                 cursor
@@ -113,16 +115,21 @@ const Web = () => {
                                 deleteSpeed={40}
                                 delaySpeed={2000}
                             />
-                        </span>
-                    </div>
-                    <div className="hero-cta">
-                        <a href="#quote" className="btn primary-btn">Get a Quote</a>
-                        <a href="#solutions" className="btn secondary-btn">Our Solutions</a>
+                        </h1>
+                        <p className="hero-description">
+                            Partner with us to build cutting-edge web solutions that elevate your online presence
+                        </p>
+                        <div className="cta-buttons">
+                            <a href="#quote" className="btn btn-primary">Request a Quote</a>
+                            <a href="#solutions" className="btn btn-secondary">Our Solutions</a>
+                        </div>
                     </div>
                 </div>
-                <div className="hero-shape shape1"></div>
-                <div className="hero-shape shape2"></div>
-                <div className="hero-shape shape3"></div>
+                
+                {/* Animated background shapes */}
+                <div className="shape shape1"></div>
+                <div className="shape shape2"></div>
+                <div className="shape shape3"></div>
             </section>
 
             {/* Trusted Partners Section */}
@@ -133,7 +140,7 @@ const Web = () => {
                         <p className="section-subtitle">Businesses That Rely on Our Web Expertise</p>
                     </div>
                     
-                    <div className="partners-marquee">
+                    <div className="marquee-container">
                         <div className="marquee-content">
                             {/* Partners logos */}
                             <div className="partner-logo">
@@ -233,7 +240,7 @@ const Web = () => {
                                             <li>Performance optimization</li>
                                             <li>Brand-aligned user experience</li>
                                         </ul>
-                                        <a href="#quote" className="btn primary-btn">Get Started</a>
+                                        <a href="#quote" className="btn btn-primary">Get Started</a>
                                     </div>
                                 </div>
                             </div>
@@ -253,7 +260,7 @@ const Web = () => {
                                             <li>Multi-user access controls</li>
                                             <li>Scalable content architecture</li>
                                         </ul>
-                                        <a href="#quote" className="btn primary-btn">Get Started</a>
+                                        <a href="#quote" className="btn btn-primary">Get Started</a>
                                     </div>
                                 </div>
                             </div>
@@ -273,7 +280,7 @@ const Web = () => {
                                             <li>Order tracking and fulfillment</li>
                                             <li>Marketing and promotion tools</li>
                                         </ul>
-                                        <a href="#quote" className="btn primary-btn">Get Started</a>
+                                        <a href="#quote" className="btn btn-primary">Get Started</a>
                                     </div>
                                 </div>
                             </div>
@@ -293,7 +300,7 @@ const Web = () => {
                                             <li>Push notifications</li>
                                             <li>Native-like interactions</li>
                                         </ul>
-                                        <a href="#quote" className="btn primary-btn">Get Started</a>
+                                        <a href="#quote" className="btn btn-primary">Get Started</a>
                                     </div>
                                 </div>
                             </div>
@@ -313,7 +320,7 @@ const Web = () => {
                                             <li>Business process automation</li>
                                             <li>Role-based access control</li>
                                         </ul>
-                                        <a href="#quote" className="btn primary-btn">Get Started</a>
+                                        <a href="#quote" className="btn btn-primary">Get Started</a>
                                     </div>
                                 </div>
                             </div>
@@ -406,34 +413,34 @@ const Web = () => {
                         <p className="section-subtitle">From Consultation to Launch</p>
                     </div>
                     
-                    <div className="process-steps">
+                    <div className="process-timeline">
                         <div className="process-step">
-                            <div className="step-number">1</div>
-                            <div className="step-content">
+                            <div className="process-number">1</div>
+                            <div className="process-content">
                                 <h3>Consultation</h3>
                                 <p>We start by understanding your business goals, target audience, and specific requirements to create a tailored web solution strategy.</p>
                             </div>
                         </div>
                         
                         <div className="process-step">
-                            <div className="step-number">2</div>
-                            <div className="step-content">
+                            <div className="process-number">2</div>
+                            <div className="process-content">
                                 <h3>Design</h3>
                                 <p>Our designers create wireframes and visual designs that align with your brand and provide optimal user experience across all devices.</p>
                             </div>
                         </div>
                         
                         <div className="process-step">
-                            <div className="step-number">3</div>
-                            <div className="step-content">
+                            <div className="process-number">3</div>
+                            <div className="process-content">
                                 <h3>Build</h3>
                                 <p>Our development team brings the designs to life, writing clean, efficient code and implementing all required functionality.</p>
                             </div>
                         </div>
                         
                         <div className="process-step">
-                            <div className="step-number">4</div>
-                            <div className="step-content">
+                            <div className="process-number">4</div>
+                            <div className="process-content">
                                 <h3>Launch</h3>
                                 <p>After thorough testing and quality assurance, we deploy your web solution and provide training and documentation for smooth operation.</p>
                             </div>
@@ -443,59 +450,59 @@ const Web = () => {
             </section>
 
             {/* Why Choose Us Section */}
-            <section className="why-choose-section">
+            <section className="stats-section">
                 <div className="container">
                     <div className="section-header">
                         <h2 className="section-title">Why Choose Us</h2>
                         <p className="section-subtitle">Benefits of Our Web Development Services</p>
                     </div>
                     
-                    <div className="benefits-grid">
-                        <div className="benefit-card">
-                            <div className="benefit-icon">
+                    <div className="stats-container">
+                        <div className="stat-card">
+                            <div className="stat-icon">
                                 <i className='bx bx-expand'></i>
                             </div>
-                            <h3>Scalability</h3>
+                            <div className="stat-title">Scalability</div>
                             <p>Solutions that grow with your business, handling increased traffic and expanding functionality without performance issues.</p>
                         </div>
                         
-                        <div className="benefit-card">
-                            <div className="benefit-icon">
+                        <div className="stat-card">
+                            <div className="stat-icon">
                                 <i className='bx bx-shield-quarter'></i>
                             </div>
-                            <h3>Security</h3>
+                            <div className="stat-title">Security</div>
                             <p>Robust security measures to protect your data and your users, with regular updates and best practices implementation.</p>
                         </div>
                         
-                        <div className="benefit-card">
-                            <div className="benefit-icon">
+                        <div className="stat-card">
+                            <div className="stat-icon">
                                 <i className='bx bx-timer'></i>
                             </div>
-                            <h3>Speed</h3>
+                            <div className="stat-title">Speed</div>
                             <p>Lightning-fast loading times and optimized performance for improved user experience and better search engine rankings.</p>
                         </div>
                         
-                        <div className="benefit-card">
-                            <div className="benefit-icon">
+                        <div className="stat-card">
+                            <div className="stat-icon">
                                 <i className='bx bx-customize'></i>
                             </div>
-                            <h3>Customization</h3>
+                            <div className="stat-title">Customization</div>
                             <p>Tailor-made solutions designed specifically for your business needs, not generic templates that limit your potential.</p>
                         </div>
                         
-                        <div className="benefit-card">
-                            <div className="benefit-icon">
+                        <div className="stat-card">
+                            <div className="stat-icon">
                                 <i className='bx bx-bulb'></i>
                             </div>
-                            <h3>Innovation</h3>
+                            <div className="stat-title">Innovation</div>
                             <p>Stay ahead with the latest web technologies and trends, ensuring your digital presence remains competitive and effective.</p>
                         </div>
                         
-                        <div className="benefit-card">
-                            <div className="benefit-icon">
+                        <div className="stat-card">
+                            <div className="stat-icon">
                                 <i className='bx bx-support'></i>
                             </div>
-                            <h3>Support</h3>
+                            <div className="stat-title">Support</div>
                             <p>Ongoing maintenance and support to ensure your web solution continues to perform optimally and evolve with your business.</p>
                         </div>
                     </div>
@@ -533,7 +540,7 @@ const Web = () => {
                                 </ul>
                             </div>
                             <div className="pricing-footer">
-                                <a href="#quote" className="btn primary-btn">Get Started</a>
+                                <a href="#quote" className="btn btn-primary">Get Started</a>
                             </div>
                         </div>
                         
@@ -560,7 +567,7 @@ const Web = () => {
                                 </ul>
                             </div>
                             <div className="pricing-footer">
-                                <a href="#quote" className="btn primary-btn">Get Started</a>
+                                <a href="#quote" className="btn btn-primary">Get Started</a>
                             </div>
                         </div>
                         
@@ -587,7 +594,7 @@ const Web = () => {
                                 </ul>
                             </div>
                             <div className="pricing-footer">
-                                <a href="#quote" className="btn primary-btn">Get Started</a>
+                                <a href="#quote" className="btn btn-primary">Get Started</a>
                             </div>
                         </div>
                     </div>
@@ -682,7 +689,7 @@ const Web = () => {
                                         <textarea id="message" name="message" placeholder="Tell us about your project requirements" rows={5}></textarea>
                                     </div>
                                     
-                                    <button type="submit" className="btn primary-btn submit-btn">Send Request</button>
+                                    <button type="submit" className="btn btn-primary submit-btn">Send Request</button>
                                 </form>
                             </div>
                         </div>
