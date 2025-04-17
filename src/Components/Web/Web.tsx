@@ -722,7 +722,7 @@ const Web = () => {
                         <div className="footer-column">
                             <h3>Contact Us</h3>
                             <address className="footer-address">
-                                <p><i className='bx bx-map' ></i> Gujrat, Pubjab, Pakistan</p>
+                                <p><i className='bx bx-map' ></i> Gujrat, Punjab, Pakistan</p>
                                 <p><i className='bx bx-phone' ></i> +971 56 327 1660</p>
                                 <p><i className='bx bx-envelope' ></i> hello@ebrium.code</p>
                             </address>

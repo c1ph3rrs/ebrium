@@ -71,10 +71,10 @@ const Home = () => {
                                         <Link to="/ai">AI & Machine Learning</Link>
                                     </li>
                                     <li className="nav__dropdown-item">
-                                        <a href="#cloud">Cloud Solutions</a>
+                                        <Link to="/cloud">Cloud Solutions</Link>
                                     </li>
                                     <li className="nav__dropdown-item">
-                                        <a href="#bi">Business Intelligence</a>
+                                        <Link to="/bi">Business Intelligence</Link>
                                     </li>
                                 </ul>
                             </li>
