@@ -1,14 +1,17 @@
-import './web.css';
 import mainLogo from '../../assets/main_logo.png';
-import webHeroImage from '../../assets/web_hero.jpg';
-import { Typewriter } from 'react-simple-typewriter';
-import { useState, useEffect } from 'react';
+import aboutImage from '../../assets/about_us.jpeg';
+import avatar from '../../assets/avatar.jpg';
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import androidEmulator from '../../assets/app1.jpg';
+import iosEmulator from '../../assets/app2.jpg';
+// import './web.css';
+
 
 const Web = () => {
+
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [activeTab, setActiveTab] = useState('custom');
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
     useEffect(() => {
@@ -28,13 +31,21 @@ const Web = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     }
 
+    const handleType = (count: number) => {
+        // access word count number
+        console.log(count)
+    }
+    
+    const handleDone = () => {
+        console.log(`Done after 5 loops!`)
+    }
+    
     const toggleFaq = (index: number) => {
         setActiveFaq(activeFaq === index ? null : index);
     }
 
     return (
         <div className="page-wrapper">
-            {/* Navbar */}
             <nav className={`nav ${isScrolled ? 'nav-scrolled' : ''}`}>
                 <a href="/" className="nav__logo">
                     <img src={mainLogo} alt="Ebrium Logo" />
@@ -52,97 +63,215 @@ const Web = () => {
                     <ul className="nav__menu-list grid">
                         <li className="nav__menu-item">
                             <div className="nav__menu-link">
-                                <a href="#services">Services</a>
+                                <a href="/#services">Services</a>
                             </div>
                             <ul className="nav__dropdown">
                                 <li className="nav__dropdown-item">
-                                    <Link to="/mob">Mobile App Development</Link>
+                                    <Link to="/mobile-app-development">Mobile App Development</Link>
                                 </li>
                                 <li className="nav__dropdown-item">
-                                    <Link to="/web">Web Development</Link>
+                                    <a href="/#web-dev">Web Development</a>
                                 </li>
                                 <li className="nav__dropdown-item">
-                                    <a href="#ai-ml">AI & Machine Learning</a>
+                                    <a href="/#ai-ml">AI & Machine Learning</a>
                                 </li>
                                 <li className="nav__dropdown-item">
-                                    <a href="#cloud">Cloud Solutions</a>
+                                    <a href="/#cloud">Cloud Solutions</a>
                                 </li>
                                 <li className="nav__dropdown-item">
-                                    <a href="#bi">Business Intelligence</a>
+                                    <a href="/#bi">Business Intelligence</a>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav__menu-item">
-                            <a href="#solutions">Solutions</a>
+                            <a href="/#solutions">Solutions</a>
                         </li>
                         <li className="nav__menu-item">
-                            <a href="#about">About Us</a>
+                            <a href="/#about">About Us</a>
                         </li>
                         <li className="nav__menu-item">
-                            <a href="#contact">Contact</a>
+                            <a href="/#contact">Contact</a>
                         </li>
                         <li className="nav__menu-item consultation">
-                            <a href="#consultation">Get Free Consultation</a>
+                            <a href="#get-quote">Get Free Consultation</a>
                         </li>
                     </ul>
                 </div>
             </nav>
 
-            {/* Hero Section */}
-            <section className="web-hero main__container">
-                <div className="web-hero-content">
-                    <h1 className="animated-text">Modern & Scalable Web Development</h1>
-                    <p className="subtitle">
-                        Building high-performance websites and web applications that grow with your business
-                    </p>
-                </div>
-                <div className="what__we__offer">
-                    <span>Our Expertise</span>
-                    <div className="hero-text">
-                        <h1>
-                            <Typewriter
-                                words={[
-                                    'Custom Websites ✨',
-                                    'E-commerce Platforms 🛒',
-                                    'Content Management Systems 📝',
-                                    'Progressive Web Apps 📱',
-                                    'Admin Dashboards 📊'
-                                ]}
-                                loop={true}
-                                cursor
-                                cursorStyle='|'
-                                typeSpeed={70}
-                                deleteSpeed={40}
-                                delaySpeed={2000}
-                            />
-                        </h1>
-                        <p className="hero-description">
-                            Partner with us to build cutting-edge web solutions that elevate your online presence
-                        </p>
-                        <div className="cta-buttons">
-                            <a href="#quote" className="btn btn-primary">Request a Quote</a>
-                            <a href="#solutions" className="btn btn-secondary">Our Solutions</a>
+                {/* Hero Section */}
+            <section className="mob-hero">
+                <div className="container">
+                    <div className="mob-hero-content">
+                        <div className="mob-hero-text">
+                            <h1 className="animated-title">Web App Development Services</h1>
+                            <p className="hero-subtitle">Transform Your Ideas Into Powerful, User-Friendly Web Applications</p>
+                            <div className="cta-buttons">
+                                <a href="#get-quote" className="btn btn-primary">Get a Quote</a>
+                                <a href="#services" className="btn btn-secondary">Explore Services</a>
+                            </div>
+                        </div>
+                        <div className="mob-hero-image">
+                            <div className="emulator android-emulator">
+                                <img src={androidEmulator} alt="Android App" />
+                            </div>
+                            <div className="emulator ios-emulator">
+                                <img src={iosEmulator} alt="iOS App" />
+                            </div>
                         </div>
                     </div>
                 </div>
-                
                 {/* Animated background shapes */}
                 <div className="shape shape1"></div>
                 <div className="shape shape2"></div>
                 <div className="shape shape3"></div>
             </section>
 
-            {/* Trusted Partners Section */}
+
+            <section id="services" className="services-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2 className="section-title">Our Web Solutions</h2>
+                        <p className="section-subtitle">Modern, Scalable Websites & Admin Panels</p>
+                    </div>
+                    
+                    <div className="services-grid">
+                        <div className="service-card">
+                            <div className="service-icon">
+                                <i className='bx bx-code-block'></i>
+                            </div>
+                            <h3>Custom Websites</h3>
+                            <p>Tailor-made websites designed to meet your specific business needs and objectives.</p>
+                            <a href="#custom-web" className="service-link">Learn More <span>→</span></a>
+                        </div>
+                        
+                        <div className="service-card">
+                            <div className="service-icon">
+                                <i className='bx bx-edit'></i>
+                            </div>
+                            <h3>CMS Development</h3>
+                            <p>Content management systems that make updating your website simple and efficient.</p>
+                            <a href="#cms-dev" className="service-link">Learn More <span>→</span></a>
+                        </div>
+                        
+                        <div className="service-card">
+                            <div className="service-icon">
+                                <i className='bx bx-cart'></i>
+                            </div>
+                            <h3>E-commerce Solutions</h3>
+                            <p>Powerful online stores with seamless payment processing and inventory management.</p>
+                            <a href="#ecommerce" className="service-link">Learn More <span>→</span></a>
+                        </div>
+                        
+                        <div className="service-card">
+                            <div className="service-icon">
+                                <i className='bx bx-mobile-alt'></i>
+                            </div>
+                            <h3>Progressive Web Apps</h3>
+                            <p>Fast, reliable, and engaging web applications that work offline and feel like native apps.</p>
+                            <a href="#pwa" className="service-link">Learn More <span>→</span></a>
+                        </div>
+                        
+                        <div className="service-card">
+                            <div className="service-icon">
+                                <i className='bx bx-server'></i>
+                            </div>
+                            <h3>Admin Panels</h3>
+                            <p>Intuitive dashboards and control panels to manage your business operations efficiently.</p>
+                            <a href="#admin-panels" className="service-link">Learn More <span>→</span></a>
+                        </div>
+                        
+                        <div className="service-card">
+                            <div className="service-icon">
+                                <i className='bx bx-analyse'></i>
+                            </div>
+                            <h3>Web Optimization</h3>
+                            <p>Performance tuning and SEO enhancements to improve your website's visibility and speed.</p>
+                            <a href="#optimization" className="service-link">Learn More <span>→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="tech-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2 className="section-title">Technologies We Use</h2>
+                        <p className="section-subtitle">Cutting-Edge Tools for Modern Web Development</p>
+                    </div>
+                    
+                    <div className="technologies-grid">
+                        <div className="tech-card">
+                            <div className="tech-icon">
+                                <i className='bx bxl-html5'></i>
+                            </div>
+                            <h3>HTML5</h3>
+                            <p>Modern markup language for structuring web content</p>
+                        </div>
+                        
+                        <div className="tech-card">
+                            <div className="tech-icon">
+                                <i className='bx bxl-css3'></i>
+                            </div>
+                            <h3>CSS</h3>
+                            <p>Styling language for creating beautiful interfaces</p>
+                        </div>
+                        
+                        <div className="tech-card">
+                            <div className="tech-icon">
+                                <i className='bx bxl-react'></i>
+                            </div>
+                            <h3>React.js</h3>
+                            <p>JavaScript library for building interactive UIs</p>
+                        </div>
+                        
+                        <div className="tech-card">
+                            <div className="tech-icon">
+                                <i className='bx bxl-nodejs'></i>
+                            </div>
+                            <h3>Node.js</h3>
+                            <p>JavaScript runtime for server-side applications</p>
+                        </div>
+                        
+                        <div className="tech-card">
+                            <div className="tech-icon">
+                                <i className='bx bxl-typescript'></i>
+                            </div>
+                            <h3>TypeScript</h3>
+                            <p>Typed superset of JavaScript for robust applications</p>
+                        </div>
+                        
+                        <div className="tech-card">
+                            <div className="tech-icon">
+                                <i className='bx bxl-angular'></i>
+                            </div>
+                            <h3>Angular</h3>
+                            <p>Platform for building web applications</p>
+                        </div>
+                        
+                        <div className="tech-card">
+                            <div className="tech-icon">
+                                <i className='bx bxl-vuejs'></i>
+                            </div>
+                            <h3>Vue.js</h3>
+                            <p>Progressive framework for building user interfaces</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+
             <section className="partners-section">
                 <div className="container">
                     <div className="section-header">
                         <h2 className="section-title">Trusted Partners</h2>
-                        <p className="section-subtitle">Businesses That Rely on Our Web Expertise</p>
+                        <p className="section-subtitle">Companies That Rely On Our Expertise</p>
                     </div>
                     
                     <div className="marquee-container">
                         <div className="marquee-content">
-                            {/* Partners logos */}
+                            {/* Repeat these for continuous animation */}
                             <div className="partner-logo">
                                 <img src="https://static.tildacdn.one/tild3030-3264-4364-b039-313263313133/aquastation-logo-hea.svg" alt="Aqua Station" />
                                 <p>Aqua Station</p>
@@ -159,6 +288,7 @@ const Web = () => {
                                 <img src="https://static.tildacdn.one/tild3030-3264-4364-b039-313263313133/aquastation-logo-hea.svg" alt="Aqua Station" />
                                 <p>Aqua Station</p>
                             </div>
+                            
                             
                             {/* Duplicate for seamless scrolling */}
                             <div className="partner-logo">
@@ -182,235 +312,41 @@ const Web = () => {
                 </div>
             </section>
 
-            {/* Web Solutions Section */}
-            <section id="solutions" className="solutions-section">
+            {/* About Us Section */}
+            <section id="about" className="about-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title">Our Web Solutions</h2>
-                        <p className="section-subtitle">Comprehensive Web Development Services for Every Need</p>
+                        <h2 className="section-title">Who We Are</h2>
+                        <p className="section-subtitle">Innovation-Driven Digital Solutions Provider</p>
                     </div>
                     
-                    <div className="solutions-tabs">
-                        <div className="tabs-nav">
-                            <button 
-                                className={`tab-btn ${activeTab === 'custom' ? 'active' : ''}`} 
-                                onClick={() => setActiveTab('custom')}
-                            >
-                                Custom Websites
-                            </button>
-                            <button 
-                                className={`tab-btn ${activeTab === 'cms' ? 'active' : ''}`} 
-                                onClick={() => setActiveTab('cms')}
-                            >
-                                CMS Solutions
-                            </button>
-                            <button 
-                                className={`tab-btn ${activeTab === 'ecommerce' ? 'active' : ''}`} 
-                                onClick={() => setActiveTab('ecommerce')}
-                            >
-                                E-commerce
-                            </button>
-                            <button 
-                                className={`tab-btn ${activeTab === 'pwa' ? 'active' : ''}`} 
-                                onClick={() => setActiveTab('pwa')}
-                            >
-                                PWAs
-                            </button>
-                            <button 
-                                className={`tab-btn ${activeTab === 'admin' ? 'active' : ''}`} 
-                                onClick={() => setActiveTab('admin')}
-                            >
-                                Admin Panels
-                            </button>
+                    <div className="about-content">
+                        <div className="about-image">
+                            <img src={aboutImage} alt="About Us" />
                         </div>
-                        
-                        <div className="tabs-content">
-                            <div className={`tab-pane ${activeTab === 'custom' ? 'active' : ''}`}>
-                                <div className="solution-content">
-                                    <div className="solution-image">
-                                        <img src="https://placehold.co/600x400" alt="Custom Websites" />
-                                    </div>
-                                    <div className="solution-details">
-                                        <h3>Custom Website Development</h3>
-                                        <p>Tailored web solutions designed specifically for your business needs. We create unique, branded experiences that set you apart from the competition.</p>
-                                        <ul className="solution-features">
-                                            <li>Responsive design for all devices</li>
-                                            <li>SEO-optimized structure</li>
-                                            <li>Custom functionality</li>
-                                            <li>Performance optimization</li>
-                                            <li>Brand-aligned user experience</li>
-                                        </ul>
-                                        <a href="#quote" className="btn btn-primary">Get Started</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div className={`tab-pane ${activeTab === 'cms' ? 'active' : ''}`}>
-                                <div className="solution-content">
-                                    <div className="solution-image">
-                                        <img src="https://placehold.co/600x400" alt="CMS Solutions" />
-                                    </div>
-                                    <div className="solution-details">
-                                        <h3>Content Management Systems</h3>
-                                        <p>Powerful CMS solutions that give you complete control over your website content. Easy to use interfaces that allow non-technical users to update and manage content.</p>
-                                        <ul className="solution-features">
-                                            <li>WordPress, Drupal, or custom CMS</li>
-                                            <li>User-friendly admin interface</li>
-                                            <li>Content workflow management</li>
-                                            <li>Multi-user access controls</li>
-                                            <li>Scalable content architecture</li>
-                                        </ul>
-                                        <a href="#quote" className="btn btn-primary">Get Started</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div className={`tab-pane ${activeTab === 'ecommerce' ? 'active' : ''}`}>
-                                <div className="solution-content">
-                                    <div className="solution-image">
-                                        <img src="https://placehold.co/600x400" alt="E-commerce Solutions" />
-                                    </div>
-                                    <div className="solution-details">
-                                        <h3>E-commerce Solutions</h3>
-                                        <p>Comprehensive online store solutions that drive sales and provide exceptional shopping experiences. From small boutiques to large enterprises, we build scalable e-commerce platforms.</p>
-                                        <ul className="solution-features">
-                                            <li>Secure payment processing</li>
-                                            <li>Inventory management</li>
-                                            <li>Customer account portals</li>
-                                            <li>Order tracking and fulfillment</li>
-                                            <li>Marketing and promotion tools</li>
-                                        </ul>
-                                        <a href="#quote" className="btn btn-primary">Get Started</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div className={`tab-pane ${activeTab === 'pwa' ? 'active' : ''}`}>
-                                <div className="solution-content">
-                                    <div className="solution-image">
-                                        <img src="https://placehold.co/600x400" alt="Progressive Web Apps" />
-                                    </div>
-                                    <div className="solution-details">
-                                        <h3>Progressive Web Apps</h3>
-                                        <p>The best of both worlds – web and mobile. PWAs offer app-like experiences with the reach of the web, working across all devices with reliable performance even in poor network conditions.</p>
-                                        <ul className="solution-features">
-                                            <li>Offline functionality</li>
-                                            <li>Fast loading times</li>
-                                            <li>Home screen installation</li>
-                                            <li>Push notifications</li>
-                                            <li>Native-like interactions</li>
-                                        </ul>
-                                        <a href="#quote" className="btn btn-primary">Get Started</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div className={`tab-pane ${activeTab === 'admin' ? 'active' : ''}`}>
-                                <div className="solution-content">
-                                    <div className="solution-image">
-                                        <img src="https://placehold.co/600x400" alt="Admin Panels" />
-                                    </div>
-                                    <div className="solution-details">
-                                        <h3>Admin Dashboards & Panels</h3>
-                                        <p>Powerful backend systems that give you complete control over your business operations. Custom dashboards with intuitive interfaces that streamline workflows and provide valuable insights.</p>
-                                        <ul className="solution-features">
-                                            <li>User management systems</li>
-                                            <li>Data visualization</li>
-                                            <li>Reporting tools</li>
-                                            <li>Business process automation</li>
-                                            <li>Role-based access control</li>
-                                        </ul>
-                                        <a href="#quote" className="btn btn-primary">Get Started</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="about-text">
+                            <h3>Driving Digital Transformation</h3>
+                            <p>
+                                At Ebrium, we combine technical expertise with creative problem-solving to deliver digital solutions that help businesses thrive in today's competitive landscape.
+                            </p>
+                            <p>
+                                Our team of experienced developers, designers, and strategists work together to create customized solutions that address your unique challenges and help you achieve your business goals.
+                            </p>
+                            <p>
+                                With a focus on innovation, quality, and client satisfaction, we've helped businesses of all sizes across various industries transform their digital presence and operations.
+                            </p>
+                            <a href="#contact" className="btn btn-primary">Get to know us</a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Technologies Section */}
-            <section className="tech-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title">Technologies We Use</h2>
-                        <p className="section-subtitle">Modern Stack for Modern Web Solutions</p>
-                    </div>
-                    
-                    <div className="tech-grid">
-                        <div className="tech-card">
-                            <div className="tech-icon">
-                                <i className='bx bxl-html5'></i>
-                            </div>
-                            <h3>HTML5</h3>
-                            <p>Modern, semantic markup for structured content</p>
-                        </div>
-                        
-                        <div className="tech-card">
-                            <div className="tech-icon">
-                                <i className='bx bxl-css3'></i>
-                            </div>
-                            <h3>CSS</h3>
-                            <p>Responsive styling with CSS3, Sass, and CSS-in-JS</p>
-                        </div>
-                        
-                        <div className="tech-card">
-                            <div className="tech-icon">
-                                <i className='bx bxl-react'></i>
-                            </div>
-                            <h3>React JS</h3>
-                            <p>Component-based UI development for interactive web apps</p>
-                        </div>
-                        
-                        <div className="tech-card">
-                            <div className="tech-icon">
-                                <i className='bx bxl-nodejs'></i>
-                            </div>
-                            <h3>Node JS</h3>
-                            <p>Server-side JavaScript for scalable backend solutions</p>
-                        </div>
-                        
-                        <div className="tech-card">
-                            <div className="tech-icon">
-                                <i className='bx bxl-typescript'></i>
-                            </div>
-                            <h3>TypeScript</h3>
-                            <p>Type-safe JavaScript for robust application development</p>
-                        </div>
-                        
-                        <div className="tech-card">
-                            <div className="tech-icon">
-                                <i className='bx bxl-angular'></i>
-                            </div>
-                            <h3>Angular</h3>
-                            <p>Comprehensive framework for enterprise applications</p>
-                        </div>
-                        
-                        <div className="tech-card">
-                            <div className="tech-icon">
-                                <i className='bx bxl-vuejs'></i>
-                            </div>
-                            <h3>Vue.js</h3>
-                            <p>Progressive framework for building user interfaces</p>
-                        </div>
-                        
-                        <div className="tech-card">
-                            <div className="tech-icon">
-                                <i className='bx bxl-mongodb'></i>
-                            </div>
-                            <h3>MongoDB</h3>
-                            <p>NoSQL database for flexible data storage</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Development Process */}
+            {/* How We Deliver Section */}
             <section className="process-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title">Our Development Process</h2>
-                        <p className="section-subtitle">From Consultation to Launch</p>
+                        <h2 className="section-title">How We Deliver Results</h2>
+                        <p className="section-subtitle">Our Proven Development Process</p>
                     </div>
                     
                     <div className="process-timeline">
@@ -418,7 +354,7 @@ const Web = () => {
                             <div className="process-number">1</div>
                             <div className="process-content">
                                 <h3>Consultation</h3>
-                                <p>We start by understanding your business goals, target audience, and specific requirements to create a tailored web solution strategy.</p>
+                                <p>We start by understanding your business needs, goals, and challenges to develop a tailored approach.</p>
                             </div>
                         </div>
                         
@@ -426,7 +362,7 @@ const Web = () => {
                             <div className="process-number">2</div>
                             <div className="process-content">
                                 <h3>Design</h3>
-                                <p>Our designers create wireframes and visual designs that align with your brand and provide optimal user experience across all devices.</p>
+                                <p>Our designers create intuitive, engaging interfaces that align with your brand and user expectations.</p>
                             </div>
                         </div>
                         
@@ -434,7 +370,7 @@ const Web = () => {
                             <div className="process-number">3</div>
                             <div className="process-content">
                                 <h3>Build</h3>
-                                <p>Our development team brings the designs to life, writing clean, efficient code and implementing all required functionality.</p>
+                                <p>Our development team brings designs to life using modern technologies and best practices.</p>
                             </div>
                         </div>
                         
@@ -442,7 +378,7 @@ const Web = () => {
                             <div className="process-number">4</div>
                             <div className="process-content">
                                 <h3>Launch</h3>
-                                <p>After thorough testing and quality assurance, we deploy your web solution and provide training and documentation for smooth operation.</p>
+                                <p>We deploy your solution and provide ongoing support to ensure continuous performance.</p>
                             </div>
                         </div>
                     </div>
@@ -450,247 +386,281 @@ const Web = () => {
             </section>
 
             {/* Why Choose Us Section */}
-            <section className="stats-section">
+            <section className="why-choose-us">
                 <div className="container">
                     <div className="section-header">
                         <h2 className="section-title">Why Choose Us</h2>
-                        <p className="section-subtitle">Benefits of Our Web Development Services</p>
+                        <p className="section-subtitle">Benefits of Working With Our Web App Development Team</p>
                     </div>
                     
-                    <div className="stats-container">
-                        <div className="stat-card">
-                            <div className="stat-icon">
-                                <i className='bx bx-expand'></i>
+                    <div className="why-choose-grid">
+                        <div className="why-choose-card">
+                            <div className="why-choose-icon">
+                                <i className='bx bx-badge-check'></i>
                             </div>
-                            <div className="stat-title">Scalability</div>
-                            <p>Solutions that grow with your business, handling increased traffic and expanding functionality without performance issues.</p>
+                            <h3>Expertise</h3>
+                            <p>Our team consists of experienced developers with deep knowledge in web technologies and frameworks.</p>
                         </div>
                         
-                        <div className="stat-card">
-                            <div className="stat-icon">
-                                <i className='bx bx-shield-quarter'></i>
-                            </div>
-                            <div className="stat-title">Security</div>
-                            <p>Robust security measures to protect your data and your users, with regular updates and best practices implementation.</p>
-                        </div>
-                        
-                        <div className="stat-card">
-                            <div className="stat-icon">
-                                <i className='bx bx-timer'></i>
-                            </div>
-                            <div className="stat-title">Speed</div>
-                            <p>Lightning-fast loading times and optimized performance for improved user experience and better search engine rankings.</p>
-                        </div>
-                        
-                        <div className="stat-card">
-                            <div className="stat-icon">
-                                <i className='bx bx-customize'></i>
-                            </div>
-                            <div className="stat-title">Customization</div>
-                            <p>Tailor-made solutions designed specifically for your business needs, not generic templates that limit your potential.</p>
-                        </div>
-                        
-                        <div className="stat-card">
-                            <div className="stat-icon">
+                        <div className="why-choose-card">
+                            <div className="why-choose-icon">
                                 <i className='bx bx-bulb'></i>
                             </div>
-                            <div className="stat-title">Innovation</div>
-                            <p>Stay ahead with the latest web technologies and trends, ensuring your digital presence remains competitive and effective.</p>
+                            <h3>Innovation</h3>
+                            <p>We leverage the latest technologies and trends to create forward-thinking, future-proof applications.</p>
                         </div>
                         
-                        <div className="stat-card">
-                            <div className="stat-icon">
+                        <div className="why-choose-card">
+                            <div className="why-choose-icon">
+                                <i className='bx bx-user-check'></i>
+                            </div>
+                            <h3>Usability</h3>
+                            <p>We focus on creating intuitive, user-friendly interfaces that enhance the overall user experience.</p>
+                        </div>
+                        
+                        <div className="why-choose-card">
+                            <div className="why-choose-icon">
+                                <i className='bx bx-run'></i>
+                            </div>
+                            <h3>Agility</h3>
+                            <p>Our agile development approach ensures flexibility, faster delivery, and continuous improvement.</p>
+                        </div>
+                        
+                        <div className="why-choose-card">
+                            <div className="why-choose-icon">
+                                <i className='bx bx-dollar-circle'></i>
+                            </div>
+                            <h3>Affordability</h3>
+                            <p>We offer competitive pricing without compromising on quality, providing excellent value for your investment.</p>
+                        </div>
+                        
+                        <div className="why-choose-card">
+                            <div className="why-choose-icon">
                                 <i className='bx bx-support'></i>
                             </div>
-                            <div className="stat-title">Support</div>
-                            <p>Ongoing maintenance and support to ensure your web solution continues to perform optimally and evolve with your business.</p>
+                            <h3>Support</h3>
+                            <p>We provide comprehensive post-launch support and maintenance to ensure your app continues to perform at its best.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Pricing Plans */}
-            <section id="pricing" className="pricing-section">
+            {/* Pricing Section */}
+
+
+            <section className="pricing-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2 className="section-title">Affordable Pricing Plans</h2>
-                        <p className="section-subtitle">Solutions for Every Budget</p>
+                        <h2 className="section-title">Our Pricing Plans</h2>
+                        <p className="section-subtitle">Flexible Options to Fit Your Budget and Requirements</p>
                     </div>
                     
                     <div className="pricing-grid">
                         <div className="pricing-card">
                             <div className="pricing-header">
                                 <h3>Basic</h3>
-                                <div className="price">
-                                    <span className="currency">$</span>
-                                    <span className="amount">999</span>
-                                </div>
-                                <p className="pricing-description">Perfect for small businesses just getting started</p>
+                                <div className="price">$1,499</div>
+                                <p>Perfect for startups and MVPs</p>
                             </div>
                             <div className="pricing-features">
                                 <ul>
-                                    <li>Responsive website (up to 5 pages)</li>
-                                    <li>Basic SEO setup</li>
-                                    <li>Contact form</li>
-                                    <li>Mobile-friendly design</li>
-                                    <li>Social media integration</li>
-                                    <li className="not-included">Content management system</li>
-                                    <li className="not-included">E-commerce functionality</li>
-                                    <li className="not-included">Custom animations</li>
+                                <li><i className='bx bx-check'></i> Responsive Website Design</li>
+                                <li><i className='bx bx-check'></i> Up to 5 Pages</li>
+                                <li><i className='bx bx-check'></i> Contact Form</li>
+                                <li><i className='bx bx-check'></i> Web Optimization</li>
+                                <li><i className='bx bx-check'></i> Basic SEO Setup</li>
+                                <li><i className='bx bx-x'></i> Content Management System</li>
+                                <li><i className='bx bx-x'></i> E-commerce Functionality</li>
                                 </ul>
                             </div>
-                            <div className="pricing-footer">
-                                <a href="#quote" className="btn btn-primary">Get Started</a>
-                            </div>
+                            <a href="#get-quote" className="btn btn-outline">Get Started</a>
                         </div>
                         
                         <div className="pricing-card featured">
-                            <div className="pricing-badge">Most Popular</div>
+                            <div className="popular-tag">Most Popular</div>
                             <div className="pricing-header">
                                 <h3>Professional</h3>
-                                <div className="price">
-                                    <span className="currency">$</span>
-                                    <span className="amount">2,499</span>
-                                </div>
-                                <p className="pricing-description">Ideal for growing businesses with specific needs</p>
+                                <div className="price">$3,999</div>
+                                <p>For growing businesses</p>
                             </div>
                             <div className="pricing-features">
                                 <ul>
-                                    <li>Responsive website (up to 10 pages)</li>
-                                    <li>Advanced SEO optimization</li>
-                                    <li>Content management system</li>
-                                    <li>Custom contact forms</li>
-                                    <li>Blog functionality</li>
-                                    <li>Performance optimization</li>
-                                    <li>Basic analytics setup</li>
-                                    <li className="not-included">E-commerce functionality</li>
+                                <li><i className='bx bx-check'></i> Responsive Website Design</li>
+                                <li><i className='bx bx-check'></i> Up to 10 Pages</li>
+                                <li><i className='bx bx-check'></i> Advanced Contact Forms</li>
+                                <li><i className='bx bx-check'></i> Web Optimization</li>
+                                <li><i className='bx bx-check'></i> Comprehensive SEO Setup</li>
+                                <li><i className='bx bx-check'></i> Content Management System</li>
+                                <li><i className='bx bx-check'></i> Basic Analytics Integration</li>
                                 </ul>
                             </div>
-                            <div className="pricing-footer">
-                                <a href="#quote" className="btn btn-primary">Get Started</a>
-                            </div>
+                            <a href="#get-quote" className="btn btn-primary">Get Started</a>
                         </div>
                         
                         <div className="pricing-card">
                             <div className="pricing-header">
                                 <h3>Enterprise</h3>
-                                <div className="price">
-                                    <span className="currency">$</span>
-                                    <span className="amount">4,999</span>
-                                    <span className="period">+</span>
-                                </div>
-                                <p className="pricing-description">Full-featured solution for established businesses</p>
+                                <div className="price">Custom</div>
+                                <p>For large-scale applications</p>
                             </div>
                             <div className="pricing-features">
                                 <ul>
-                                    <li>Custom website development</li>
-                                    <li>Advanced CMS integration</li>
-                                    <li>E-commerce functionality</li>
-                                    <li>Custom database integration</li>
-                                    <li>User authentication system</li>
-                                    <li>Advanced security measures</li>
-                                    <li>Performance optimization</li>
-                                    <li>Comprehensive analytics</li>
+                                <li><i className='bx bx-check'></i> Custom Website Design</li>
+                                <li><i className='bx bx-check'></i> Unlimited Pages</li>
+                                <li><i className='bx bx-check'></i> Advanced Functionality</li>
+                                <li><i className='bx bx-check'></i> E-commerce Integration</li>
+                                <li><i className='bx bx-check'></i> Advanced SEO Strategy</li>
+                                <li><i className='bx bx-check'></i> Custom Admin Dashboard</li>
+                                <li><i className='bx bx-check'></i> Advanced Analytics & Reporting</li>
                                 </ul>
                             </div>
-                            <div className="pricing-footer">
-                                <a href="#quote" className="btn btn-primary">Get Started</a>
-                            </div>
+                            <a href="#get-quote" className="btn btn-outline">Contact Us</a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* FAQ & Contact Section */}
-            <section id="quote" className="faq-contact-section">
+
+            {/* FAQ Section */}
+
+            <section className="faq-contact-section">
                 <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title">Web Development FAQs</h2>
-                        <p className="section-subtitle">Get Answers & Request a Quote</p>
-                    </div>
-                    
                     <div className="faq-contact-container">
-                        <div className="faq-column">
+                        <div className="faq-section">
+                            <h2>Web Development FAQs</h2>
                             <div className="accordion">
-                                <div className={`accordion-item ${activeFaq === 0 ? 'active' : ''}`}>
-                                    <div className="accordion-header" onClick={() => toggleFaq(0)}>
+                                <div className="accordion-item">
+                                    <div 
+                                        className={`accordion-header ${activeFaq === 0 ? 'active' : ''}`}
+                                        onClick={() => toggleFaq(0)}
+                                    >
                                         <h3>How long does it take to build a website?</h3>
-                                        <span className="accordion-icon"></span>
+                                        <i className={`bx ${activeFaq === 0 ? 'bx-minus' : 'bx-plus'}`}></i>
                                     </div>
-                                    <div className="accordion-content">
-                                        <p>The timeline for website development varies based on complexity. A basic website might take 2-4 weeks, while more complex projects with custom functionality can take 2-3 months. During our initial consultation, we'll provide a more specific timeline based on your requirements.</p>
+                                    <div className={`accordion-content ${activeFaq === 0 ? 'active' : ''}`}>
+                                        <p>The timeline varies depending on the complexity of your project. A simple website might take 2-4 weeks, while more complex projects with custom functionality can take 2-3 months. We'll provide a detailed timeline during our initial consultation.</p>
                                     </div>
                                 </div>
                                 
-                                <div className={`accordion-item ${activeFaq === 1 ? 'active' : ''}`}>
-                                    <div className="accordion-header" onClick={() => toggleFaq(1)}>
+                                <div className="accordion-item">
+                                    <div 
+                                        className={`accordion-header ${activeFaq === 1 ? 'active' : ''}`}
+                                        onClick={() => toggleFaq(1)}
+                                    >
                                         <h3>Do you offer maintenance after the website is live?</h3>
-                                        <span className="accordion-icon"></span>
+                                        <i className={`bx ${activeFaq === 1 ? 'bx-minus' : 'bx-plus'}`}></i>
                                     </div>
-                                    <div className="accordion-content">
-                                        <p>Yes, we offer ongoing maintenance packages to ensure your website remains secure, up-to-date, and performs optimally. Our maintenance services include regular updates, security monitoring, performance optimization, and content updates as needed.</p>
+                                    <div className={`accordion-content ${activeFaq === 1 ? 'active' : ''}`}>
+                                        <p>Yes, we offer various maintenance packages to keep your website secure, up-to-date, and performing optimally. Our maintenance services include regular updates, security monitoring, performance optimization, and technical support.</p>
                                     </div>
                                 </div>
                                 
-                                <div className={`accordion-item ${activeFaq === 2 ? 'active' : ''}`}>
-                                    <div className="accordion-header" onClick={() => toggleFaq(2)}>
+                                <div className="accordion-item">
+                                    <div 
+                                        className={`accordion-header ${activeFaq === 2 ? 'active' : ''}`}
+                                        onClick={() => toggleFaq(2)}
+                                    >
                                         <h3>What industries do you serve?</h3>
-                                        <span className="accordion-icon"></span>
+                                        <i className={`bx ${activeFaq === 2 ? 'bx-minus' : 'bx-plus'}`}></i>
                                     </div>
-                                    <div className="accordion-content">
-                                        <p>We work with clients across various industries including e-commerce, healthcare, education, finance, hospitality, real estate, manufacturing, and professional services. Our diverse experience allows us to understand the unique needs and challenges of different sectors.</p>
+                                    <div className={`accordion-content ${activeFaq === 2 ? 'active' : ''}`}>
+                                        <p>We work with clients across various industries including healthcare, education, e-commerce, finance, real estate, hospitality, and technology. Our diverse experience allows us to understand the unique requirements of different sectors.</p>
                                     </div>
                                 </div>
                                 
-                                <div className={`accordion-item ${activeFaq === 3 ? 'active' : ''}`}>
-                                    <div className="accordion-header" onClick={() => toggleFaq(3)}>
+                                <div className="accordion-item">
+                                    <div 
+                                        className={`accordion-header ${activeFaq === 3 ? 'active' : ''}`}
+                                        onClick={() => toggleFaq(3)}
+                                    >
                                         <h3>Can you improve my existing website?</h3>
-                                        <span className="accordion-icon"></span>
+                                        <i className={`bx ${activeFaq === 3 ? 'bx-minus' : 'bx-plus'}`}></i>
                                     </div>
-                                    <div className="accordion-content">
-                                        <p>Absolutely! We offer website redesign and optimization services to improve your existing website's design, functionality, and performance. We can enhance user experience, optimize for better search engine rankings, improve loading speeds, and add new features to your current site.</p>
+                                    <div className={`accordion-content ${activeFaq === 3 ? 'active' : ''}`}>
+                                        <p>Absolutely! We offer website redesign and optimization services to enhance the performance, appearance, and functionality of your existing website. We can work with your current platform or migrate to a more suitable solution if needed.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div className="contact-column">
-                            <div className="contact-form">
-                                <h3>Request a Quote</h3>
-                                <form>
-                                    <div className="form-group">
-                                        <label htmlFor="name">Full Name</label>
-                                        <input type="text" id="name" name="name" placeholder="Your full name" required />
-                                    </div>
-                                    
-                                    <div className="form-group">
-                                        <label htmlFor="email">Email Address</label>
-                                        <input type="email" id="email" name="email" placeholder="Your email address" required />
-                                    </div>
-                                    
-                                    <div className="form-group">
-                                        <label htmlFor="phone">Phone Number</label>
-                                        <input type="tel" id="phone" name="phone" placeholder="Your phone number" />
-                                    </div>
-                                    
-                                    <div className="form-group">
-                                        <label htmlFor="plan">Interested Plan</label>
-                                        <select id="plan" name="plan">
-                                            <option value="">Select a plan</option>
-                                            <option value="basic">Basic</option>
-                                            <option value="professional">Professional</option>
-                                            <option value="enterprise">Enterprise</option>
-                                            <option value="custom">Custom Solution</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div className="form-group">
-                                        <label htmlFor="message">Project Details</label>
-                                        <textarea id="message" name="message" placeholder="Tell us about your project requirements" rows={5}></textarea>
-                                    </div>
-                                    
-                                    <button type="submit" className="btn btn-primary submit-btn">Send Request</button>
-                                </form>
+                        <div className="quick-contact-section">
+                            <h2>Instant Access to Expert Service</h2>
+                            <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                            <form className="quick-contact-form">
+                                <div className="form-group">
+                                    <input type="text" id="quick-name" placeholder="Full Name" required />
+                                </div>
+                                <div className="form-group">
+                                    <input type="email" id="quick-email" placeholder="Email Address" required />
+                                </div>
+                                <div className="form-group">
+                                    <input type="tel" id="quick-phone" placeholder="Phone Number" required />
+                                </div>
+                                <div className="form-group">
+                                    <select id="quick-plan" required>
+                                        <option value="">Select a Plan</option>
+                                        <option value="basic">Basic Plan</option>
+                                        <option value="professional">Professional Plan</option>
+                                        <option value="enterprise">Enterprise Plan</option>
+                                        <option value="custom">Custom Solution</option>
+                                    </select>
+                                </div>
+                                <div className="form-group">
+                                    <textarea id="quick-message" placeholder="Tell us about your project" rows={3} required></textarea>
+                                </div>
+                                <button type="submit" className="btn btn-primary">Place Order</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            {/* Testimonials Section */}
+            <section className="testimonials-section">
+                <div className="container">
+                    <div className="section-header">
+                        <h2 className="section-title">Testimonials</h2>
+                        <p className="section-subtitle">What Our Clients Say About Us</p>
+                    </div>
+                    
+                    <div className="testimonials-grid">
+                        <div className="testimonial-card">
+                            <div className="testimonial-content">
+                                <p>"Ebrium Coders has truly EXCELLED in the cloud computing sphere, showing exemplary attention to details in his delivery. Working with him was a pleasure, marked by remarkable responsiveness and politeness, ensuring everything was completed on time. 😊"</p>
+                            </div>
+                            <div className="testimonial-author">
+                                <img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/e10ef734fc09e853740b3e7b880f3e45-1627975564724/00662766-0750-4f3d-9e98-bc68c2657fb5.jpg" alt="Client 1" />
+                                <div className="author-details">
+                                    <h4>Bakhtiyar Linove</h4>
+                                    <p>CEO, Aqua Station.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="testimonial-card">
+                            <div className="testimonial-content">
+                                <p>"The Web app developed by Ebrium has received overwhelmingly positive feedback from our users. It's intuitive, fast, and exactly what we needed."</p>
+                            </div>
+                            <div className="testimonial-author">
+                                <img src={avatar} alt="Client 2" />
+                                <div className="author-details">
+                                    <h4>Muhsn</h4>
+                                    <p>Austria </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="testimonial-card">
+                            <div className="testimonial-content">
+                                <p>"Ebrium Coders has demonstrated exceptional expertise in AI and machine learning, delivering a sophisticated recommendation engine with remarkable attention to detail. Their responsiveness and professionalism made the entire process smooth and efficient."</p>
+                            </div>
+                            <div className="testimonial-author">
+                                <img src={avatar} alt="Client 3" />
+                                <div className="author-details">
+                                    <h4>Daniel Amirit</h4>
+                                    <p>PMO Timeer Work Orders</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -706,7 +676,7 @@ const Web = () => {
                                 <img src={mainLogo} alt="Ebrium Logo" />
                             </div>
                             <p className="footer-description">
-                                Delivering innovative web solutions that help businesses thrive in the digital era.
+                                Delivering innovative digital solutions that help businesses thrive in the digital era.
                             </p>
                             <div className="social-links">
                                 <a href="https://www.linkedin.com/in/engr-ibrahim-akram-6819081a2/" target="_blank" rel="noopener noreferrer" className="social-link"><i className='bx bxl-linkedin' ></i></a>
@@ -719,29 +689,40 @@ const Web = () => {
                         <div className="footer-column">
                             <h3>Services</h3>
                             <ul className="footer-links">
-                                <li><Link to="/mob">Mobile App Development</Link></li>
-                                <li><Link to="/web">Web Development</Link></li>
-                                <li><a href="#ai-ml">AI & Machine Learning</a></li>
-                                <li><a href="#cloud">Cloud Solutions</a></li>
-                                <li><a href="#bi">Business Intelligence</a></li>
+                                <li><Link to="/mob">Web App Development</Link></li>
+                                <li><a href="#">Web Development</a></li>
+                                <li><a href="#">AI & Machine Learning</a></li>
+                                <li><a href="#">Cloud Solutions</a></li>
+                                <li><a href="#">Business Intelligence</a></li>
                             </ul>
                         </div>
                         
                         <div className="footer-column">
                             <h3>Quick Links</h3>
                             <ul className="footer-links">
-                                <li><a href="#solutions">Our Solutions</a></li>
-                                <li><a href="#pricing">Pricing</a></li>
-                                <li><a href="#quote">Get a Quote</a></li>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="#contact">Contact Us</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Our Process</a></li>
+                                <li><a href="#">Testimonials</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div className="footer-column">
+                            <h3>Resources</h3>
+                            <ul className="footer-links">
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Case Studies</a></li>
+                                <li><a href="#">White Papers</a></li>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
                             </ul>
                         </div>
                         
                         <div className="footer-column">
                             <h3>Contact Us</h3>
                             <address className="footer-address">
-                                <p><i className='bx bx-map' ></i> Gujrat, Punjab, Pakistan</p>
+                                <p><i className='bx bx-map' ></i> Gujrat, Pubjab, Pakistan</p>
                                 <p><i className='bx bx-phone' ></i> +971 56 327 1660</p>
                                 <p><i className='bx bx-envelope' ></i> hello@ebrium.code</p>
                             </address>
@@ -754,7 +735,7 @@ const Web = () => {
                 </div>
             </footer>
         </div>
-    )
-}
+    );
+};
 
 export default Web;

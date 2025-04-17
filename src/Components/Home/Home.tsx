@@ -52,7 +52,7 @@ const Home = () => {
                             <span></span>
                             <span></span>
                         </div>
-                    </div>
+            </div>
                     
                     <div className={`nav__menu ${mobileMenuOpen ? 'mobile-active' : ''}`}>
                         <ul className="nav__menu-list grid">
@@ -492,7 +492,7 @@ const Home = () => {
                     </div>
                 </div>
             </footer>
-        </div>
+            </div>
     )
 }
 

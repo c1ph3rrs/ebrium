@@ -5,7 +5,7 @@ import MOB from './Components/MOB/MOB';
 import BI from './Components/BI/BI';
 import AIML from './Components/AIML/AIML';
 import Contact from './Components/Contact/Contact';
-import Web from './Components/WEB/Web';
+import Web from './Components/Web/Web';
 import Cloud from './Components/CS/Cloud';
 
 function App() {
