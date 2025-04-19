@@ -27,9 +27,8 @@ const Footer = () => {
                         <ul className="footer-links">
                             <li><Link to="/mob">Mobile App Development</Link></li>
                             <li><Link to="/web">Web Development</Link></li>
-                            <li><a href="#">AI & Machine Learning</a></li>
+                            <li><Link to="/AIML">AI & Machine Learning</Link></li>
                             <li><Link to="/cloud">Cloud Solutions</Link></li>
-                            <li><a href="#">Business Intelligence</a></li>
                         </ul>
                     </div>
                     

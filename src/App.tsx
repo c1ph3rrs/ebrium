@@ -17,9 +17,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/mob" element={<MOB />} />
         <Route path="/web" element={<Web />} />
-        <Route path="/ai" element={<AIML />} />
+        <Route path="/AIML" element={<AIML />} />
         <Route path="/cloud" element={<Cloud />} />
-        <Route path="/bi" element={<BI />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>  
     </Router>

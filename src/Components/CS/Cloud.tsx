@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './cloud-services.css';
+// import './cloud-services.css';
 import mainLogo from '../../assets/main_logo.png';
 import CloudServices from '../../assets/cloud-services.png';
 import { Link } from 'react-router-dom';
@@ -26,6 +26,7 @@ const Cloud: React.FC = () => {
       setActiveFaq(index);
     }
   }
+
 
   return (
     <div className="page-wrapper">

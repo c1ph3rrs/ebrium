@@ -1,5 +1,107 @@
 .cloud-services-hero-img{
-    height: 300px;
+    height: 350px;
     width: 500px;
     border-radius: 30px;
+    margin-top: 100px;
+}
+
+/* Partners Section */
+.partners-section {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+}
+
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.marquee-content {
+    display: flex;
+    animation: marquee 30s linear infinite;
+}
+
+.partner-logo {
+    min-width: 200px;
+    margin: 0 30px;
+    text-align: center;
+}
+
+.partner-logo img {
+    max-width: 150px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.partner-logo p {
+    margin-top: 10px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Cloud Process Section */
+
+/* Animated background shapes */
+.shape {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+.shape1 {
+    top: 20%;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.shape2 {
+    bottom: 10%;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    background-color: var(--light-green);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+.shape3 {
+    top: 50%;
+    right: 30%;
+    width: 150px;
+    height: 150px;
+    background-color: var(--primary-color);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(15px, 15px) rotate(5deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 }

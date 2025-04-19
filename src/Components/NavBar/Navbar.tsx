@@ -56,13 +56,10 @@ const Navbar = () => {
                                         <Link to="/web">Web Development</Link>
                                     </li>
                                     <li className="nav__dropdown-item">
-                                        <Link to="/ai">AI & Machine Learning</Link>
+                                        <Link to="/AIML">AI & Machine Learning</Link>
                                     </li>
                                     <li className="nav__dropdown-item">
                                         <Link to="/cloud">Cloud Solutions</Link>
-                                    </li>
-                                    <li className="nav__dropdown-item">
-                                        <Link to="/bi">Business Intelligence</Link>
                                     </li>
                                 </ul>
                             </li>
