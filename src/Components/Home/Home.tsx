@@ -1,28 +1,14 @@
 import './home.css'
-import mainLogo from '../../assets/main_logo.png';
 import aboutImage from '../../assets/about_us.jpeg';
 import avatar from '../../assets/avatar.jpg';
 import { Typewriter } from 'react-simple-typewriter'
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import Navbar from '../NavBar/Navbar';
+import Footer from '../Footer/Footer';
 
 
 const Home = () => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
-        
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    
 
     const handleType = (count: number) => {
         // access word count number
@@ -33,66 +19,14 @@ const Home = () => {
         console.log(`Done after 5 loops!`)
     }
 
-    const toggleMobileMenu = () => {
-        setMobileMenuOpen(!mobileMenuOpen);
-    }
+    
 
     return (
         <div className="page-wrapper">
             <section className="home main__container">
                 {/* Navbar */}
-                <nav className={`nav ${isScrolled ? 'nav-scrolled' : ''}`}>
-                    <a href="/" className="nav__logo">
-                        <img src={mainLogo} alt="Ebrium Logo" />
-                    </a>
-                    
-                    <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-                        <div className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-            </div>
-                    
-                    <div className={`nav__menu ${mobileMenuOpen ? 'mobile-active' : ''}`}>
-                        <ul className="nav__menu-list grid">
-                            <li className="nav__menu-item">
-                                <div className="nav__menu-link">
-                                    <a href="#services">Services</a>
-                                </div>
-                                <ul className="nav__dropdown">
-                                    <li className="nav__dropdown-item">
-                                        <Link to="/mob">Mobile App Development</Link>
-                                    </li>
-                                    <li className="nav__dropdown-item">
-                                        <Link to="/web">Web Development</Link>
-                                    </li>
-                                    <li className="nav__dropdown-item">
-                                        <Link to="/ai">AI & Machine Learning</Link>
-                                    </li>
-                                    <li className="nav__dropdown-item">
-                                        <Link to="/cloud">Cloud Solutions</Link>
-                                    </li>
-                                    <li className="nav__dropdown-item">
-                                        <Link to="/bi">Business Intelligence</Link>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className="nav__menu-item">
-                                <a href="#solutions">Solutions</a>
-                            </li>
-                            <li className="nav__menu-item">
-                                <a href="#about">About Us</a>
-                            </li>
-                            <li className="nav__menu-item">
-                                <a href="#contact">Contact</a>
-                            </li>
-                            <li className="nav__menu-item consultation">
-                                <a href="#consultation">Get Free Consultation</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                
+                <Navbar />
 
                 {/* Hero Section */}
                 <div className="main__text">
@@ -426,72 +360,7 @@ const Home = () => {
             </section>
 
             {/* Footer */}
-            <footer className="footer">
-                <div className="container">
-                    <div className="footer-content">
-                        <div className="footer-column">
-                            <div className="footer-logo">
-                                <img src={mainLogo} alt="Ebrium Logo" />
-                            </div>
-                            <p className="footer-description">
-                                Delivering innovative digital solutions that help businesses thrive in the digital era.
-                            </p>
-                            <div className="social-links">
-                                <a href="https://www.linkedin.com/in/engr-ibrahim-akram-6819081a2/" target="_blank" rel="noopener noreferrer" className="social-link"><i className='bx bxl-linkedin' ></i></a>
-                                <a href="https://x.com/ib__mughal" target="_blank" rel="noopener noreferrer" className="social-link"><i className='bx bxl-twitter' ></i></a>
-                                <a href="https://www.facebook.com/profile.php?id=61571213197093" target="_blank" rel="noopener noreferrer" className="social-link"><i className='bx bxl-facebook' ></i></a>
-                                <a href="https://www.instagram.com/ebriumcoders/" target="_blank" rel="noopener noreferrer" className="social-link"><i className='bx bxl-instagram' ></i></a>
-                            </div>
-                        </div>
-                        
-                        <div className="footer-column">
-                            <h3>Services</h3>
-                            <ul className="footer-links">
-                                <li><Link to="/mob">Mobile App Development</Link></li>
-                                <li><a href="#">Web Development</a></li>
-                                <li><a href="#">AI & Machine Learning</a></li>
-                                <li><a href="#">Cloud Solutions</a></li>
-                                <li><a href="#">Business Intelligence</a></li>
-                            </ul>
-                        </div>
-                        
-                        <div className="footer-column">
-                            <h3>Quick Links</h3>
-                            <ul className="footer-links">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Our Process</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-                        </div>
-                        
-                        <div className="footer-column">
-                            <h3>Resources</h3>
-                            <ul className="footer-links">
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Case Studies</a></li>
-                                <li><a href="#">White Papers</a></li>
-                                <li><a href="#">FAQs</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                        
-                        <div className="footer-column">
-                            <h3>Contact Us</h3>
-                            <address className="footer-address">
-                                <p><i className='bx bx-map' ></i> Gujrat, Pubjab, Pakistan</p>
-                                <p><i className='bx bx-phone' ></i> +971 56 327 1660</p>
-                                <p><i className='bx bx-envelope' ></i> hello@ebrium.code</p>
-                            </address>
-                        </div>
-                    </div>
-                    
-                    <div className="footer-bottom">
-                        <p>&copy; 2025 Ebrium. All rights reserved.</p>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
             </div>
     )
 }

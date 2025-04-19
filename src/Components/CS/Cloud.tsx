@@ -1,602 +1,591 @@
-import './cloud.css';
+import React, { useState, useEffect } from 'react';
+import './cloud-services.css';
 import mainLogo from '../../assets/main_logo.png';
-import { useState, useEffect } from 'react';
+import CloudServices from '../../assets/cloud-services.png';
 import { Link } from 'react-router-dom';
 
-const Cloud = () => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [activeTab, setActiveTab] = useState('aws');
-    const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
-        
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+import cloudImage1 from '../../assets/main_logo.png'; // Add these images to your assets
+import cloudImage2 from '../../assets/main_logo.png'; // Add these images to your assets
 
-    const toggleMobileMenu = () => {
-        setMobileMenuOpen(!mobileMenuOpen);
+
+import Navbar from '../NavBar/Navbar';
+import Footer from '../Footer/Footer';
+
+const Cloud: React.FC = () => {
+  
+  const [activeTab, setActiveTab] = useState('aws');
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+  
+
+  const toggleFaq = (index: number) => {
+    if (activeFaq === index) {
+      setActiveFaq(null);
+    } else {
+      setActiveFaq(index);
     }
+  }
 
-    const toggleFaq = (index: number) => {
-        if (activeFaq === index) {
-            setActiveFaq(null);
-        } else {
-            setActiveFaq(index);
-        }
-    }
+  return (
+    <div className="page-wrapper">
+      {/* Navbar */}
+      <Navbar />
 
-    return (
-        <div className="page-wrapper">
-            {/* Navbar */}
-            <nav className={`nav ${isScrolled ? 'nav-scrolled' : ''}`}>
-                <a href="/" className="nav__logo">
-                    <img src={mainLogo} alt="Ebrium Logo" />
-                </a>
-                
-                <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-                    <div className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                
-                <div className={`nav__menu ${mobileMenuOpen ? 'mobile-active' : ''}`}>
-                    <ul className="nav__menu-list grid">
-                        <li className="nav__menu-item">
-                            <div className="nav__menu-link">
-                                <a href="/#services">Services</a>
-                            </div>
-                            <ul className="nav__dropdown">
-                                <li className="nav__dropdown-item">
-                                    <Link to="/mobile-app-development">Mobile App Development</Link>
-                                </li>
-                                <li className="nav__dropdown-item">
-                                    <Link to="/web">Web Development</Link>
-                                </li>
-                                <li className="nav__dropdown-item">
-                                    <a href="/#ai-ml">AI & Machine Learning</a>
-                                </li>
-                                <li className="nav__dropdown-item">
-                                    <a href="/#cloud">Cloud Solutions</a>
-                                </li>
-                                <li className="nav__dropdown-item">
-                                    <a href="/#bi">Business Intelligence</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li className="nav__menu-item">
-                            <a href="/#solutions">Solutions</a>
-                        </li>
-                        <li className="nav__menu-item">
-                            <a href="/#about">About Us</a>
-                        </li>
-                        <li className="nav__menu-item">
-                            <a href="/#contact">Contact</a>
-                        </li>
-                        <li className="nav__menu-item consultation">
-                            <a href="#get-quote">Get Free Consultation</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            {/* Hero Section */}
-            <section className="cloud-hero">
+      {/* Hero Section */}
+      <section className="mob-hero">
                 <div className="container">
-                    <div className="cloud-hero-content">
-                        <h1>Cloud Computing Services</h1>
-                        <p>Transform your business with scalable, secure, and cost-effective cloud solutions</p>
-                        <div className="cta-buttons">
-                            <a href="#get-quote" className="btn btn-primary">Get a Quote</a>
-                            <a href="#services" className="btn btn-secondary">Explore Services</a>
+                    <div className="mob-hero-content">
+                        <div className="mob-hero-text">
+                            <h1 className="animated-title">Cloud Services</h1>
+                            <p className="cloud-hero-subtitle">Unlock the potential of cloud computing with our expert solutions. From seamless migrations to robust cloud management, we empower your business with cutting-edge solutions from top platforms like Amazon Web Services (AWS) and Microsoft Azure. Enhance scalability, improve security, and drive innovation—all while reducing costs.</p>
+                            <div className="cta-buttons">
+                                <a href="#get-quote" className="btn btn-primary">Get a Quote</a>
+                                <a href="#services" className="btn btn-secondary">Explore Services</a>
+                            </div>
+                        </div>
+                        <div className="cloud-hero-image">
+                            <img src={CloudServices} className='cloud-services-hero-img' />
+                            {/* <i className='bx bx-cloud cloud-img'></i> */}
                         </div>
                     </div>
                 </div>
-                <div className="cloud-particles">
-                    <div className="particle particle1"></div>
-                    <div className="particle particle2"></div>
-                    <div className="particle particle3"></div>
-                    <div className="particle particle4"></div>
-                </div>
+                {/* Animated background shapes */}
+                <div className="shape shape1"></div>
+                <div className="shape shape2"></div>
+                <div className="shape shape3"></div>
             </section>
 
-            {/* Our Cloud Solutions Section */}
-            <section id="services" className="cloud-solutions">
-                <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title">Our Cloud Solutions</h2>
-                        <p className="section-subtitle">Comprehensive services for every stage of your cloud journey</p>
-                    </div>
-
-                    <div className="solutions-grid">
-                        <div className="solution-card">
-                            <div className="solution-icon">
-                                <i className='bx bx-cloud-upload'></i>
-                            </div>
-                            <h3>Cloud Migration</h3>
-                            <p>Seamlessly transition your infrastructure, applications, and data to the cloud with minimal disruption to your operations.</p>
-                            <ul className="solution-features">
-                                <li>Assessment and planning</li>
-                                <li>Data migration strategies</li>
-                                <li>Application modernization</li>
-                                <li>Post-migration optimization</li>
-                            </ul>
-                        </div>
-
-                        <div className="solution-card">
-                            <div className="solution-icon">
-                                <i className='bx bx-network-chart'></i>
-                            </div>
-                            <h3>Hybrid & Multi-Cloud Solutions</h3>
-                            <p>Build flexible environments that leverage the best of on-premises, private cloud, and public cloud infrastructures.</p>
-                            <ul className="solution-features">
-                                <li>Cross-platform integration</li>
-                                <li>Workload distribution</li>
-                                <li>Unified management</li>
-                                <li>Cost optimization</li>
-                            </ul>
-                        </div>
-
-                        <div className="solution-card">
-                            <div className="solution-icon">
-                                <i className='bx bx-cog'></i>
-                            </div>
-                            <h3>Cloud Management</h3>
-                            <p>Proactively monitor, maintain, and optimize your cloud resources to ensure peak performance and cost efficiency.</p>
-                            <ul className="solution-features">
-                                <li>Performance monitoring</li>
-                                <li>Security management</li>
-                                <li>Cost control and analysis</li>
-                                <li>Continuous optimization</li>
-                            </ul>
-                        </div>
-
-                        <div className="solution-card">
-                            <div className="solution-icon">
-                                <i className='bx bx-code-block'></i>
-                            </div>
-                            <h3>DevOps Solutions</h3>
-                            <p>Implement CI/CD pipelines and automation to streamline development, testing, and deployment processes.</p>
-                            <ul className="solution-features">
-                                <li>CI/CD implementation</li>
-                                <li>Infrastructure as Code</li>
-                                <li>Containerization</li>
-                                <li>Automation frameworks</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Key Platforms Section */}
-            <section className="platforms-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title">Key Platforms</h2>
-                        <p className="section-subtitle">We specialize in leading cloud platforms to deliver optimal solutions</p>
-                    </div>
-
-                    <div className="platforms-tabs">
-                        <div className="tabs-nav">
-                            <button 
-                                className={`tab-btn ${activeTab === 'aws' ? 'active' : ''}`}
-                                onClick={() => setActiveTab('aws')}
-                            >
-                                <i className='bx bxl-aws'></i> Amazon Web Services
-                            </button>
-                            <button 
-                                className={`tab-btn ${activeTab === 'azure' ? 'active' : ''}`}
-                                onClick={() => setActiveTab('azure')}
-                            >
-                                <i className='bx bxl-microsoft'></i> Microsoft Azure
-                            </button>
-                        </div>
-
-                        <div className="tabs-content">
-                            <div className={`tab-pane ${activeTab === 'aws' ? 'active' : ''}`}>
-                                <div className="platform-services">
-                                    <div className="platform-service">
-                                        <div className="service-icon">
-                                            <i className='bx bx-server'></i>
-                                        </div>
-                                        <h3>Amazon EC2</h3>
-                                        <p>Elastic compute resources to scale applications on demand.</p>
-                                    </div>
-                                    <div className="platform-service">
-                                        <div className="service-icon">
-                                            <i className='bx bx-data'></i>
-                                        </div>
-                                        <h3>Amazon S3</h3>
-                                        <p>Secure and durable storage for any type of data.</p>
-                                    </div>
-                                    <div className="platform-service">
-                                        <div className="service-icon">
-                                            <i className='bx bx-database'></i>
-                                        </div>
-                                        <h3>Amazon RDS</h3>
-                                        <p>Managed relational database service for high-performance applications.</p>
-                                    </div>
-                                    <div className="platform-service">
-                                        <div className="service-icon">
-                                            <i className='bx bx-globe'></i>
-                                        </div>
-                                        <h3>CloudFront</h3>
-                                        <p>Global content delivery network for faster data access.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className={`tab-pane ${activeTab === 'azure' ? 'active' : ''}`}>
-                                <div className="platform-services">
-                                    <div className="platform-service">
-                                        <div className="service-icon">
-                                            <i className='bx bx-cloud'></i>
-                                        </div>
-                                        <h3>Microsoft Azure</h3>
-                                        <p>Scalable infrastructure, AI solutions, and analytics tools.</p>
-                                    </div>
-                                    <div className="platform-service">
-                                        <div className="service-icon">
-                                            <i className='bx bx-group'></i>
-                                        </div>
-                                        <h3>Microsoft Teams</h3>
-                                        <p>Cloud-based communication and collaboration for modern businesses.</p>
-                                    </div>
-                                    <div className="platform-service">
-                                        <div className="service-icon">
-                                            <i className='bx bx-cloud-upload'></i>
-                                        </div>
-                                        <h3>OneDrive</h3>
-                                        <p>Secure cloud storage for seamless file sharing and backups.</p>
-                                    </div>
-                                    <div className="platform-service">
-                                        <div className="service-icon">
-                                            <i className='bx bx-pie-chart-alt-2'></i>
-                                        </div>
-                                        <h3>Power BI</h3>
-                                        <p>Cloud-powered business intelligence for actionable insights.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Benefits Section */}
-            <section className="benefits-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title">Benefits of Cloud Solutions</h2>
-                        <p className="section-subtitle">Powerful advantages that drive business growth and innovation</p>
-                    </div>
-
-                    <div className="benefits-grid">
-                        <div className="benefit-card">
-                            <div className="benefit-icon">
-                                <i className='bx bx-dollar-circle'></i>
-                            </div>
-                            <h3>Cost Savings</h3>
-                            <p>Reduce IT expenses significantly with flexible pay-as-you-go models, eliminating the need for costly hardware and maintenance.</p>
-                        </div>
-
-                        <div className="benefit-card">
-                            <div className="benefit-icon">
-                                <i className='bx bx-expand-horizontal'></i>
-                            </div>
-                            <h3>Flexibility</h3>
-                            <p>Scale resources up or down based on demand, ensuring optimal performance without over-provisioning.</p>
-                        </div>
-
-                        <div className="benefit-card">
-                            <div className="benefit-icon">
-                                <i className='bx bx-group'></i>
-                            </div>
-                            <h3>Collaboration</h3>
-                            <p>Enable seamless teamwork with cloud-based tools that allow real-time document sharing and editing from anywhere.</p>
-                        </div>
-
-                        <div className="benefit-card">
-                            <div className="benefit-icon">
-                                <i className='bx bx-shield-quarter'></i>
-                            </div>
-                            <h3>Data Security</h3>
-                            <p>Implement advanced security measures and compliance controls to protect your sensitive information.</p>
-                        </div>
-
-                        <div className="benefit-card">
-                            <div className="benefit-icon">
-                                <i className='bx bx-revision'></i>
-                            </div>
-                            <h3>Disaster Recovery</h3>
-                            <p>Ensure business continuity with automated backup solutions and rapid recovery capabilities.</p>
-                        </div>
-
-                        <div className="benefit-card">
-                            <div className="benefit-icon">
-                                <i className='bx bx-globe'></i>
-                            </div>
-                            <h3>Global Access</h3>
-                            <p>Access your data and applications from anywhere in the world with an internet connection.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* How We Deliver Results */}
-            <section className="process-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title">How We Deliver Results</h2>
-                        <p className="section-subtitle">Our proven process for successful cloud transformation</p>
-                    </div>
-                    
-                    <div className="process-timeline">
-                        <div className="process-step">
-                            <div className="process-number">1</div>
-                            <div className="process-content">
-                                <h3>Assessment</h3>
-                                <p>Evaluate current systems and identify cloud opportunities.</p>
-                            </div>
-                        </div>
-                        
-                        <div className="process-step">
-                            <div className="process-number">2</div>
-                            <div className="process-content">
-                                <h3>Planning</h3>
-                                <p>Design tailored solutions for optimal cloud adoption.</p>
-                            </div>
-                        </div>
-                        
-                        <div className="process-step">
-                            <div className="process-number">3</div>
-                            <div className="process-content">
-                                <h3>Migration</h3>
-                                <p>Move data and applications with minimal disruption.</p>
-                            </div>
-                        </div>
-                        
-                        <div className="process-step">
-                            <div className="process-number">4</div>
-                            <div className="process-content">
-                                <h3>Optimization</h3>
-                                <p>Ensure peak performance with continuous monitoring.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Why Choose Us */}
-            <section className="why-choose-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title">Why Choose Us</h2>
-                        <p className="section-subtitle">What sets our cloud services apart</p>
-                    </div>
-                    
-                    <div className="features-grid">
-                        <div className="feature-card">
-                            <div className="feature-icon">
-                                <i className='bx bx-badge-check'></i>
-                            </div>
-                            <h3>Certified Expertise</h3>
-                            <p>AWS and Microsoft-certified cloud specialists.</p>
-                        </div>
-                        
-                        <div className="feature-card">
-                            <div className="feature-icon">
-                                <i className='bx bx-package'></i>
-                            </div>
-                            <h3>End-to-End</h3>
-                            <p>We handle every aspect of cloud adoption.</p>
-                        </div>
-                        
-                        <div className="feature-card">
-                            <div className="feature-icon">
-                                <i className='bx bx-chip'></i>
-                            </div>
-                            <h3>Cutting-Edge Tech</h3>
-                            <p>Expertise with Amazon & Microsoft products.</p>
-                        </div>
-                        
-                        <div className="feature-card">
-                            <div className="feature-icon">
-                                <i className='bx bx-expand-alt'></i>
-                            </div>
-                            <h3>Scalable Solutions</h3>
-                            <p>Tailored solutions for startups, & enterprises.</p>
-                        </div>
-                        
-                        <div className="feature-card">
-                            <div className="feature-icon">
-                                <i className='bx bx-lock-alt'></i>
-                            </div>
-                            <h3>Security First</h3>
-                            <p>Cloud security and disaster recovery solutions.</p>
-                        </div>
-                        
-                        <div className="feature-card">
-                            <div className="feature-icon">
-                                <i className='bx bx-line-chart'></i>
-                            </div>
-                            <h3>Cost Efficiency</h3>
-                            <p>Transparent pricing with measurable ROI.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* FAQ Section */}
-            <section className="faq-section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title">Cloud Solutions FAQs</h2>
-                        <p className="section-subtitle">Answers to commonly asked questions</p>
-                    </div>
-                    
-                    <div className="faq-container">
-                        <div className="faq-list">
-                            <div className={`faq-item ${activeFaq === 0 ? 'active' : ''}`} onClick={() => toggleFaq(0)}>
-                                <div className="faq-question">
-                                    <h3>What is the difference between AWS and Microsoft Azure?</h3>
-                                    <div className="faq-icon">
-                                        <i className={`bx ${activeFaq === 0 ? 'bx-minus' : 'bx-plus'}`}></i>
-                                    </div>
-                                </div>
-                                <div className={`faq-answer ${activeFaq === 0 ? 'active' : ''}`}>
-                                    <p>AWS and Microsoft Azure are leading cloud platforms with distinct features. AWS offers a broader range of services and is known for scalability, while Azure integrates seamlessly with Microsoft products and is ideal for businesses already using Windows-based tools.</p>
-                                </div>
-                            </div>
-                            
-                            <div className={`faq-item ${activeFaq === 1 ? 'active' : ''}`} onClick={() => toggleFaq(1)}>
-                                <div className="faq-question">
-                                    <h3>How secure is cloud storage for sensitive data?</h3>
-                                    <div className="faq-icon">
-                                        <i className={`bx ${activeFaq === 1 ? 'bx-minus' : 'bx-plus'}`}></i>
-                                    </div>
-                                </div>
-                                <div className={`faq-answer ${activeFaq === 1 ? 'active' : ''}`}>
-                                    <p>Cloud platforms offer robust security features including encryption, access controls, and compliance certifications. When properly configured, cloud storage is often more secure than on-premises solutions as providers invest heavily in security infrastructure and regular updates.</p>
-                                </div>
-                            </div>
-                            
-                            <div className={`faq-item ${activeFaq === 2 ? 'active' : ''}`} onClick={() => toggleFaq(2)}>
-                                <div className="faq-question">
-                                    <h3>Can you integrate cloud solutions with our existing IT setup?</h3>
-                                    <div className="faq-icon">
-                                        <i className={`bx ${activeFaq === 2 ? 'bx-minus' : 'bx-plus'}`}></i>
-                                    </div>
-                                </div>
-                                <div className={`faq-answer ${activeFaq === 2 ? 'active' : ''}`}>
-                                    <p>Yes, we specialize in hybrid solutions that integrate cloud services with your existing infrastructure. We'll assess your current environment and create a seamless integration plan that allows you to leverage cloud benefits while maintaining your current investments.</p>
-                                </div>
-                            </div>
-                            
-                            <div className={`faq-item ${activeFaq === 3 ? 'active' : ''}`} onClick={() => toggleFaq(3)}>
-                                <div className="faq-question">
-                                    <h3>How long does a typical cloud migration take?</h3>
-                                    <div className="faq-icon">
-                                        <i className={`bx ${activeFaq === 3 ? 'bx-minus' : 'bx-plus'}`}></i>
-                                    </div>
-                                </div>
-                                <div className={`faq-answer ${activeFaq === 3 ? 'active' : ''}`}>
-                                    <p>The timeline varies based on your infrastructure's complexity, data volume, and specific requirements. Small to medium migrations typically take 1-3 months, while enterprise-level migrations might take 6-12 months. We provide detailed timeline estimates after our initial assessment.</p>
-                                </div>
-                            </div>
-                            
-                            <div className={`faq-item ${activeFaq === 4 ? 'active' : ''}`} onClick={() => toggleFaq(4)}>
-                                <div className="faq-question">
-                                    <h3>What support do you offer post-migration?</h3>
-                                    <div className="faq-icon">
-                                        <i className={`bx ${activeFaq === 4 ? 'bx-minus' : 'bx-plus'}`}></i>
-                                    </div>
-                                </div>
-                                <div className={`faq-answer ${activeFaq === 4 ? 'active' : ''}`}>
-                                    <p>We provide comprehensive post-migration support including monitoring, optimization, troubleshooting, and regular maintenance. Our managed cloud services ensure your environment remains secure, performant, and cost-efficient long after the initial migration.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className="contact-form-wrapper">
-                            <h3>Have more questions?</h3>
-                            <p>Contact our cloud experts for personalized assistance</p>
-                            <form className="contact-form">
-                                <div className="form-group">
-                                    <input type="text" placeholder="Your Name" required />
-                                </div>
-                                <div className="form-group">
-                                    <input type="email" placeholder="Your Email" required />
-                                </div>
-                                <div className="form-group">
-                                    <textarea placeholder="Your Question" rows={4} required></textarea>
-                                </div>
-                                <button type="submit" className="btn btn-primary">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Footer */}
-            <footer className="footer">
-                <div className="container">
-                    <div className="footer-content">
-                        <div className="footer-column">
-                            <div className="footer-logo">
-                                <img src={mainLogo} alt="Ebrium Logo" />
-                            </div>
-                            <p className="footer-description">
-                                Delivering innovative cloud solutions that help businesses thrive in the digital era.
-                            </p>
-                            <div className="social-links">
-                                <a href="https://www.linkedin.com/in/engr-ibrahim-akram-6819081a2/" className="social-link"><i className='bx bxl-linkedin'></i></a>
-                                <a href="https://x.com/ib__mughal" className="social-link"><i className='bx bxl-twitter'></i></a>
-                                <a href="https://www.facebook.com/profile.php?id=61571213197093" className="social-link"><i className='bx bxl-facebook'></i></a>
-                                <a href="https://www.instagram.com/ebriumcoders/" className="social-link"><i className='bx bxl-instagram'></i></a>
-                            </div>
-                        </div>
-                        
-                        <div className="footer-column">
-                            <h3>Services</h3>
-                            <ul className="footer-links">
-                                <li><Link to="/mobile-app-development">Mobile App Development</Link></li>
-                                <li><Link to="/web">Web Development</Link></li>
-                                <li><a href="/#ai-ml">AI & Machine Learning</a></li>
-                                <li><a href="/#cloud">Cloud Solutions</a></li>
-                                <li><a href="/#bi">Business Intelligence</a></li>
-                            </ul>
-                        </div>
-                        
-                        <div className="footer-column">
-                            <h3>Quick Links</h3>
-                            <ul className="footer-links">
-                                <li><a href="/#about">About Us</a></li>
-                                <li><a href="/#services">Services</a></li>
-                                <li><a href="/#process">Our Process</a></li>
-                                <li><a href="/#testimonials">Testimonials</a></li>
-                                <li><a href="/#contact">Contact Us</a></li>
-                            </ul>
-                        </div>
-                        
-                        <div className="footer-column">
-                            <h3>Resources</h3>
-                            <ul className="footer-links">
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Case Studies</a></li>
-                                <li><a href="#">White Papers</a></li>
-                                <li><a href="#">FAQs</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                        
-                        <div className="footer-column">
-                            <h3>Contact Us</h3>
-                            <address className="footer-address">
-                                <p><i className='bx bx-map'></i> Gujrat, Punjab, Pakistan</p>
-                                <p><i className='bx bx-phone'></i> +971 56 327 1660</p>
-                                <p><i className='bx bx-envelope'></i> hello@ebrium.code</p>
-                            </address>
-                        </div>
-                    </div>
-                    
-                    <div className="footer-bottom">
-                        <p>&copy; 2025 Ebrium. All rights reserved.</p>
-                    </div>
-                </div>
-            </footer>
+      {/* Partners Section - similar to marquee-container in MOB */}
+      <section className="partners-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Our Trusted Partners</h2>
+            <p className="section-subtitle">Leading Cloud Technology Providers</p>
+          </div>
+          
+          <div className="marquee-container">
+            <div className="marquee-content">
+              {/* Cloud partners */}
+              <div className="partner-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" />
+                <p>Amazon Web Services</p>
+              </div>
+              <div className="partner-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Microsoft Azure" />
+                <p>Microsoft Azure</p>
+              </div>
+              <div className="partner-logo">
+                <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg" alt="Google Cloud" />
+                <p>Google Cloud</p>
+              </div>
+              <div className="partner-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Cloud" />
+                <p>IBM Cloud</p>
+              </div>
+              
+              {/* Duplicate for seamless scrolling */}
+              <div className="partner-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" />
+                <p>Amazon Web Services</p>
+              </div>
+              <div className="partner-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Microsoft Azure" />
+                <p>Microsoft Azure</p>
+              </div>
+              <div className="partner-logo">
+                <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg" alt="Google Cloud" />
+                <p>Google Cloud</p>
+              </div>
+              <div className="partner-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Cloud" />
+                <p>IBM Cloud</p>
+              </div>
+            </div>
+          </div>
         </div>
-    );
-}
+      </section>
+
+      {/* Cloud Solutions Section - with tabs like MOB.tsx */}
+      <section id="cloud-services" className="cloud-services">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Our Cloud Solutions</h2>
+            <p className="section-subtitle">Comprehensive Cloud Services For Your Business Needs</p>
+          </div>
+
+          <div className="tabs-container">
+            <div className="tabs-header">
+              <button 
+                className={`tab-button ${activeTab === 'aws' ? 'active' : ''}`}
+                onClick={() => setActiveTab('aws')}
+              >
+                <i className='bx bxl-aws'></i> Cloud Migration
+              </button>
+              <button 
+                className={`tab-button ${activeTab === 'azure' ? 'active' : ''}`}
+                onClick={() => setActiveTab('azure')}
+              >
+                <i className='bx bx-cloud'></i> Hybrid & Multi-Cloud
+              </button>
+              <button 
+                className={`tab-button ${activeTab === 'manage' ? 'active' : ''}`}
+                onClick={() => setActiveTab('manage')}
+              >
+                <i className='bx bx-cog'></i> Cloud Management
+              </button>
+              <button 
+                className={`tab-button ${activeTab === 'devops' ? 'active' : ''}`}
+                onClick={() => setActiveTab('devops')}
+              >
+                <i className='bx bx-code-alt'></i> DevOps Services
+              </button>
+            </div>
+
+            <div className="tabs-content">
+              <div className={`tab-panel ${activeTab === 'aws' ? 'active' : ''}`}>
+                <div className="tab-content">
+                  <h3>Cloud Migration</h3>
+                  <p>We provide comprehensive cloud migration services to help businesses move their applications, data, and infrastructure from on-premises environments or other cloud platforms to modern cloud solutions. Our expert team ensures smooth transitions with minimal disruption to your operations.</p>
+                  <ul className="features-list">
+                    <li><i className='bx bx-check'></i> Assessment and planning of migration strategy</li>
+                    <li><i className='bx bx-check'></i> Data migration with zero loss guarantee</li>
+                    <li><i className='bx bx-check'></i> Application modernization during migration</li>
+                    <li><i className='bx bx-check'></i> Post-migration testing and validation</li>
+                    <li><i className='bx bx-check'></i> Phased implementation with minimal downtime</li>
+                  </ul>
+                </div>
+                <div className="tab-image">
+                  <img src={cloudImage1} alt="Cloud Migration" />
+                </div>
+              </div>
+
+              <div className={`tab-panel ${activeTab === 'azure' ? 'active' : ''}`}>
+                <div className="tab-content">
+                  <h3>Hybrid & Multi-Cloud Solutions</h3>
+                  <p>Our hybrid and multi-cloud strategies give you the flexibility to operate seamlessly across different cloud platforms and on-premises infrastructure. This approach optimizes performance, cost, and compliance while avoiding vendor lock-in and maximizing existing investments.</p>
+                  <ul className="features-list">
+                    <li><i className='bx bx-check'></i> Integration between on-premises and cloud resources</li>
+                    <li><i className='bx bx-check'></i> Workload distribution across multiple clouds</li>
+                    <li><i className='bx bx-check'></i> Consistent security and governance policies</li>
+                    <li><i className='bx bx-check'></i> Cost optimization across platforms</li>
+                    <li><i className='bx bx-check'></i> Disaster recovery between environments</li>
+                  </ul>
+                </div>
+                <div className="tab-image">
+                  <img src={cloudImage2} alt="Hybrid & Multi-Cloud Solutions" />
+                </div>
+              </div>
+
+              <div className={`tab-panel ${activeTab === 'manage' ? 'active' : ''}`}>
+                <div className="tab-content">
+                  <h3>Cloud Management</h3>
+                  <p>Our comprehensive cloud management services ensure your cloud environment operates at peak performance and efficiency. We provide ongoing monitoring, optimization, and support to maximize your return on cloud investments while minimizing operational overhead.</p>
+                  <ul className="features-list">
+                    <li><i className='bx bx-check'></i> 24/7 infrastructure monitoring and alerts</li>
+                    <li><i className='bx bx-check'></i> Performance optimization and scaling</li>
+                    <li><i className='bx bx-check'></i> Security posture management</li>
+                    <li><i className='bx bx-check'></i> Cost tracking and optimization</li>
+                    <li><i className='bx bx-check'></i> Regular maintenance and updates</li>
+                  </ul>
+                </div>
+                <div className="tab-image">
+                  <img src={cloudImage1} alt="Cloud Management" />
+                </div>
+              </div>
+
+              <div className={`tab-panel ${activeTab === 'devops' ? 'active' : ''}`}>
+                <div className="tab-content">
+                  <h3>DevOps Services</h3>
+                  <p>Our DevOps services combine development and operations to create a culture of collaboration and automation. We implement best practices, tools, and processes that accelerate software delivery while maintaining reliability and security in cloud environments.</p>
+                  <ul className="features-list">
+                    <li><i className='bx bx-check'></i> CI/CD pipeline implementation</li>
+                    <li><i className='bx bx-check'></i> Infrastructure as Code (IaC)</li>
+                    <li><i className='bx bx-check'></i> Containerization with Docker and Kubernetes</li>
+                    <li><i className='bx bx-check'></i> Automated testing and deployment</li>
+                    <li><i className='bx bx-check'></i> Monitoring and observability solutions</li>
+                  </ul>
+                </div>
+                <div className="tab-image">
+                  <img src={cloudImage2} alt="DevOps Services" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Cloud Platforms - using tech-section from MOB.tsx */}
+      <section className="tech-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Key Cloud Platforms & Products</h2>
+            <p className="section-subtitle">Industry-Leading Cloud Technologies We Specialize In</p>
+          </div>
+          
+          <div className="technologies-grid">
+            <div className="tech-card">
+              <div className="tech-icon">
+                <i className='bx bxl-aws'></i>
+              </div>
+              <h3>Amazon EC2</h3>
+              <p>Elastic compute resources to scale applications on demand.</p>
+            </div>
+            
+            <div className="tech-card">
+              <div className="tech-icon">
+                <i className='bx bx-data'></i>
+              </div>
+              <h3>Amazon S3</h3>
+              <p>Secure and durable storage for any type of data.</p>
+            </div>
+            
+            <div className="tech-card">
+              <div className="tech-icon">
+                <i className='bx bx-server'></i>
+              </div>
+              <h3>Amazon RDS</h3>
+              <p>Managed relational database service for high-performance applications.</p>
+            </div>
+            
+            <div className="tech-card">
+              <div className="tech-icon">
+                <i className='bx bx-globe'></i>
+              </div>
+              <h3>CloudFront</h3>
+              <p>Global content delivery network for faster data access.</p>
+            </div>
+            
+            <div className="tech-card">
+              <div className="tech-icon">
+                <i className='bx bxl-microsoft'></i>
+              </div>
+              <h3>Microsoft Azure</h3>
+              <p>Scalable infrastructure, AI solutions, and analytics tools.</p>
+            </div>
+            
+            <div className="tech-card">
+              <div className="tech-icon">
+                <i className='bx bx-group'></i>
+              </div>
+              <h3>Microsoft Teams</h3>
+              <p>Cloud-based communication and collaboration for modern businesses.</p>
+            </div>
+            
+            <div className="tech-card">
+              <div className="tech-icon">
+                <i className='bx bx-cloud-upload'></i>
+              </div>
+              <h3>OneDrive</h3>
+              <p>Secure cloud storage for seamless file sharing and backups.</p>
+            </div>
+            
+            <div className="tech-card">
+              <div className="tech-icon">
+                <i className='bx bx-bar-chart-alt-2'></i>
+              </div>
+              <h3>Power BI</h3>
+              <p>Cloud-powered business intelligence for actionable insights.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section - using why-choose-us grid from MOB.tsx */}
+      <section className="why-choose-us">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Benefits of Cloud Solutions</h2>
+            <p className="section-subtitle">Advantages of Moving Your Business to the Cloud</p>
+          </div>
+          
+          <div className="why-choose-grid">
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className='bx bx-dollar-circle'></i>
+              </div>
+              <h3>Cost Savings</h3>
+              <p>Reduce IT expenses significantly with flexible pay-as-you-go models, eliminating the need for costly hardware and maintenance.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className='bx bx-expand-alt'></i>
+              </div>
+              <h3>Flexibility</h3>
+              <p>Scale resources up or down instantly based on your business needs and demand fluctuations.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className='bx bx-group'></i>
+              </div>
+              <h3>Collaboration</h3>
+              <p>Enable seamless teamwork with real-time document sharing and editing across locations.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className='bx bx-shield-quarter'></i>
+              </div>
+              <h3>Data Security</h3>
+              <p>Protect your critical business information with advanced encryption and security protocols.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className='bx bx-revision'></i>
+              </div>
+              <h3>Disaster Recovery</h3>
+              <p>Ensure business continuity with automated backups and rapid recovery solutions.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className='bx bx-world'></i>
+              </div>
+              <h3>Global Access</h3>
+              <p>Access your applications and data from anywhere in the world with an internet connection.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section - using process-timeline from MOB.tsx */}
+      <section className="process-section cloud-process">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Our Cloud Implementation Process</h2>
+            <p className="section-subtitle">A Structured Approach to Cloud Adoption</p>
+          </div>
+          
+          <div className="process-timeline">
+            <div className="process-step">
+              <div className="process-number">1</div>
+              <div className="process-content">
+                <h3>Assessment</h3>
+                <p>We begin by evaluating your current systems, infrastructure, and business requirements to identify the best cloud opportunities and develop a strategic roadmap.</p>
+              </div>
+            </div>
+            
+            <div className="process-step">
+              <div className="process-number">2</div>
+              <div className="process-content">
+                <h3>Planning</h3>
+                <p>Our team designs tailored cloud solutions aligned with your business goals, including architecture planning, security considerations, and migration strategies.</p>
+              </div>
+            </div>
+            
+            <div className="process-step">
+              <div className="process-number">3</div>
+              <div className="process-content">
+                <h3>Migration</h3>
+                <p>We execute a seamless migration of your data, applications, and workflows to the cloud environment with minimal disruption to your operations.</p>
+              </div>
+            </div>
+            
+            <div className="process-step">
+              <div className="process-number">4</div>
+              <div className="process-content">
+                <h3>Optimization</h3>
+                <p>After deployment, we continuously monitor and optimize your cloud infrastructure for performance, cost efficiency, and security compliance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section - using why-choose-us grid from MOB.tsx */}
+      <section className="why-choose-us">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Why Choose Our Cloud Solutions</h2>
+            <p className="section-subtitle">What Sets Our Cloud Services Apart</p>
+          </div>
+          
+          <div className="why-choose-grid">
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className='bx bx-badge-check'></i>
+              </div>
+              <h3>Certified Expertise</h3>
+              <p>Our team includes AWS and Microsoft-certified cloud specialists with deep technical knowledge.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className='bx bx-package'></i>
+              </div>
+              <h3>End-to-End Solutions</h3>
+              <p>We handle every aspect of cloud adoption from planning to ongoing management.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className='bx bx-bulb'></i>
+              </div>
+              <h3>Cutting-Edge Technology</h3>
+              <p>We leverage the latest innovations from Amazon, Microsoft, and other cloud leaders.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className='bx bx-expand'></i>
+              </div>
+              <h3>Scalable Solutions</h3>
+              <p>Our services are tailored for businesses of all sizes, from startups to large enterprises.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className='bx bx-lock-alt'></i>
+              </div>
+              <h3>Security First</h3>
+              <p>We implement robust security measures and disaster recovery solutions for all cloud deployments.</p>
+            </div>
+            
+            <div className="why-choose-card">
+              <div className="why-choose-icon">
+                <i className='bx bx-money'></i>
+              </div>
+              <h3>Cost Efficiency</h3>
+              <p>We optimize your cloud spending with transparent pricing and measurable ROI.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Free Consultation CTA */}
+      <section className="cta-section">
+        <div className="container">
+          <div className="quote-container">
+            <div className="quote-form-container">
+              <h2>Personalized Cloud Solutions at No Cost</h2>
+              <p>Discover how cloud solutions can transform your business with our free consultation. Our experts will assess your requirements and provide tailored strategies to optimize your operations.</p>
+              <a href="#get-quote" className="btn btn-primary">Schedule Your Free Consultation</a>
+              {/* <div className="cta-highlight">
+                <h3>Top Microsoft Products</h3>
+              </div> */}
+            </div>
+            <div className="quote-image">
+              <img src={cloudImage1} alt="Cloud Solutions" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ and Contact Form */}
+      <section id="get-quote" className="faq-contact-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Cloud Solutions FAQs</h2>
+          </div>
+          <div className="faq-contact-container">
+            <div className="faq-section">
+              <div className="accordion">
+                <div className="accordion-item">
+                  <div 
+                    className={`accordion-header ${activeFaq === 0 ? 'active' : ''}`}
+                    onClick={() => toggleFaq(0)}
+                  >
+                    <h3>What is the difference between AWS and Microsoft Azure?</h3>
+                    <i className={`bx ${activeFaq === 0 ? 'bx-minus' : 'bx-plus'}`}></i>
+                  </div>
+                  <div className={`accordion-content ${activeFaq === 0 ? 'active' : ''}`}>
+                    <p>AWS and Microsoft Azure are leading cloud platforms with distinct features. AWS offers a broader range of services and is known for scalability, while Azure integrates seamlessly with Microsoft products and is ideal for businesses already using Windows-based tools.</p>
+                  </div>
+                </div>
+                
+                <div className="accordion-item">
+                  <div 
+                    className={`accordion-header ${activeFaq === 1 ? 'active' : ''}`}
+                    onClick={() => toggleFaq(1)}
+                  >
+                    <h3>How secure is cloud storage for sensitive data?</h3>
+                    <i className={`bx ${activeFaq === 1 ? 'bx-minus' : 'bx-plus'}`}></i>
+                  </div>
+                  <div className={`accordion-content ${activeFaq === 1 ? 'active' : ''}`}>
+                    <p>Cloud storage employs advanced encryption, access controls, and compliance certifications to protect sensitive data. Our solutions implement industry best practices and regular security audits to ensure your information remains secure.</p>
+                  </div>
+                </div>
+                
+                <div className="accordion-item">
+                  <div 
+                    className={`accordion-header ${activeFaq === 2 ? 'active' : ''}`}
+                    onClick={() => toggleFaq(2)}
+                  >
+                    <h3>Can you integrate cloud solutions with our existing IT setup?</h3>
+                    <i className={`bx ${activeFaq === 2 ? 'bx-minus' : 'bx-plus'}`}></i>
+                  </div>
+                  <div className={`accordion-content ${activeFaq === 2 ? 'active' : ''}`}>
+                    <p>Yes, we specialize in hybrid cloud solutions that seamlessly integrate with your existing infrastructure. Our experts will design a transition plan that ensures compatibility and minimal disruption to your operations.</p>
+                  </div>
+                </div>
+                
+                <div className="accordion-item">
+                  <div 
+                    className={`accordion-header ${activeFaq === 3 ? 'active' : ''}`}
+                    onClick={() => toggleFaq(3)}
+                  >
+                    <h3>How long does a typical cloud migration take?</h3>
+                    <i className={`bx ${activeFaq === 3 ? 'bx-minus' : 'bx-plus'}`}></i>
+                  </div>
+                  <div className={`accordion-content ${activeFaq === 3 ? 'active' : ''}`}>
+                    <p>Migration timelines vary based on complexity and scope. Small projects may take a few weeks, while enterprise-level migrations might require 3-6 months. We provide detailed timelines during the assessment phase.</p>
+                  </div>
+                </div>
+                
+                <div className="accordion-item">
+                  <div 
+                    className={`accordion-header ${activeFaq === 4 ? 'active' : ''}`}
+                    onClick={() => toggleFaq(4)}
+                  >
+                    <h3>What support do you offer post-migration?</h3>
+                    <i className={`bx ${activeFaq === 4 ? 'bx-minus' : 'bx-plus'}`}></i>
+                  </div>
+                  <div className={`accordion-content ${activeFaq === 4 ? 'active' : ''}`}>
+                    <p>We provide comprehensive post-migration support including 24/7 monitoring, regular maintenance, optimization services, and technical assistance. Our team ensures your cloud environment operates at peak performance.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="quick-contact-section">
+              <h2>Get in Touch</h2>
+              <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+              <form className="quick-contact-form">
+                <div className="form-group">
+                  <input type="text" id="quick-name" placeholder="Full Name" required />
+                </div>
+                <div className="form-group">
+                  <input type="email" id="quick-email" placeholder="Email Address" required />
+                </div>
+                <div className="form-group">
+                  <input type="tel" id="quick-phone" placeholder="Phone Number" required />
+                </div>
+                <div className="form-group">
+                  <select id="quick-plan" required>
+                    <option value="">Select a Plan</option>
+                    <option value="basic">Basic Cloud Migration</option>
+                    <option value="standard">Standard Cloud Management</option>
+                    <option value="premium">Premium Hybrid Cloud</option>
+                    <option value="enterprise">Enterprise Solutions</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <textarea id="quick-message" placeholder="Tell us about your project" rows={3} required></textarea>
+                </div>
+                <button type="submit" className="btn btn-primary">Submit Request</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer will be rendered from a different component */}
+      <Footer />
+    </div>
+  );
+};
 
 export default Cloud;
