@@ -5,103 +5,376 @@
     margin-top: 100px;
 }
 
-/* Partners Section */
-.partners-section {
-    background-color: #f9f9f9;
-    padding: 80px 0;
+/* Enhanced Ebrium Cloud Hero Styles */
+.ebrium-cloud-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color); /* Using primary color from App.css */
+  padding: 120px 0 80px;
 }
 
-.marquee-container {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
+.ebrium-cloud-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(177, 255, 8, 0.15) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(105, 138, 112, 0.1) 0%, transparent 40%);
+  z-index: 1;
 }
 
-.marquee-content {
-    display: flex;
-    animation: marquee 30s linear infinite;
+.ebrium-cloud-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(41, 76, 46, 0.95), rgba(41, 76, 46, 0.85));
+  z-index: 2;
 }
 
-.partner-logo {
-    min-width: 200px;
-    margin: 0 30px;
-    text-align: center;
+.ebrium-cloud-hero .container {
+  position: relative;
+  z-index: 5;
 }
 
-.partner-logo img {
-    max-width: 150px;
-    height: auto;
-    filter: grayscale(100%);
-    transition: all 0.3s ease;
+.ebrium-cloud-hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
 }
 
-.partner-logo:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.1);
+.ebrium-cloud-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.partner-logo p {
-    margin-top: 10px;
-    color: #666;
-    font-size: 0.9rem;
+.ebrium-cloud-hero-badge {
+  display: inline-block;
+  background-color: rgba(177, 255, 8, 0.2);
+  color: var(--light-green);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 30px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.8s ease-out;
 }
 
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+.ebrium-cloud-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  animation: fadeInUp 0.8s ease-out;
 }
 
-/* Cloud Process Section */
-
-/* Animated background shapes */
-.shape {
-    position: absolute;
-    z-index: -1;
-    opacity: 0.2;
+.ebrium-cloud-highlight {
+  color: var(--light-green);
+  position: relative;
+  display: inline-block;
 }
 
-.shape1 {
-    top: 20%;
-    left: 10%;
-    width: 300px;
-    height: 300px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    animation: float 8s ease-in-out infinite;
+.ebrium-cloud-highlight::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(177, 255, 8, 0.3);
+  z-index: -1;
 }
 
-.shape2 {
-    bottom: 10%;
-    right: 10%;
-    width: 200px;
-    height: 200px;
-    background-color: var(--light-green);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    animation: float 10s ease-in-out infinite reverse;
+.ebrium-cloud-hero-description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 35px;
+  max-width: 90%;
+  animation: fadeInUp 1s ease-out;
 }
 
-.shape3 {
-    top: 50%;
-    right: 30%;
-    width: 150px;
-    height: 150px;
-    background-color: var(--primary-color);
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    animation: float 12s ease-in-out infinite;
+.ebrium-cloud-hero-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.ebrium-cloud-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--light-green);
+  color: var(--primary-color);
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition-normal);
+  box-shadow: var(--box-shadow-light);
+}
+
+.ebrium-cloud-primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-medium);
+  background-color: rgb(187, 255, 58);
+  color: var(--primary-color);
+}
+
+.ebrium-cloud-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: var(--transition-normal);
+}
+
+.ebrium-cloud-secondary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+.ebrium-cloud-hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ebrium-cloud-hero-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ebrium-cloud-shape {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.ebrium-cloud-shape-1 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(177, 255, 8, 0.2), rgba(105, 138, 112, 0.2));
+  top: -30px;
+  right: 40px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.ebrium-cloud-shape-2 {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, rgba(105, 138, 112, 0.2), rgba(177, 255, 8, 0.2));
+  bottom: 40px;
+  left: 20px;
+  animation: float 8s ease-in-out infinite 1s;
+}
+
+.ebrium-cloud-shape-3 {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(177, 255, 8, 0.3), rgba(105, 138, 112, 0.3));
+  top: 50%;
+  left: 40%;
+  animation: float 7s ease-in-out infinite 0.5s;
+}
+
+.ebrium-cloud-hero-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.ebrium-cloud-hero-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  transition: var(--transition-normal);
+}
+
+.ebrium-cloud-hero-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: var(--box-shadow-medium);
+}
+
+.ebrium-cloud-hero-card-icon {
+  font-size: 2rem;
+  color: var(--light-green);
+  margin-bottom: 15px;
+}
+
+.ebrium-cloud-hero-card h3 {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.ebrium-cloud-scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  animation: fadeIn 2s ease-out;
+}
+
+.ebrium-cloud-scroll-indicator span {
+  margin-bottom: 10px;
+}
+
+.ebrium-cloud-scroll-indicator svg {
+  font-size: 1.2rem;
+  color: var(--light-green);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes float {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    50% {
-        transform: translate(15px, 15px) rotate(5deg);
-    }
-    100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
 }
+
+/* Responsive styles for the cloud hero widget */
+@media (max-width: 1200px) {
+  .ebrium-cloud-hero-title {
+    font-size: 3rem;
+  }
+  
+  .ebrium-cloud-hero-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .ebrium-cloud-hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .ebrium-cloud-hero-visual {
+    order: -1;
+  }
+  
+  .ebrium-cloud-hero-text {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .ebrium-cloud-hero-description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ebrium-cloud-hero {
+    padding: 100px 0 60px;
+  }
+  
+  .ebrium-cloud-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .ebrium-cloud-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .ebrium-cloud-primary-btn,
+  .ebrium-cloud-secondary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .ebrium-cloud-hero {
+    min-height: auto;
+  }
+  
+  .ebrium-cloud-hero-title {
+    font-size: 2rem;
+  }
+  
+  .ebrium-cloud-hero-description {
+    font-size: 1rem;
+  }
+  
+  .ebrium-cloud-hero-card h3 {
+    font-size: 1rem;
+  }
+  
+  .ebrium-cloud-hero-card-icon {
+    font-size: 1.5rem;
+  }
+  
+  .ebrium-cloud-shape-1 {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .ebrium-cloud-shape-2 {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .ebrium-cloud-shape-3 {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Partners Section */
+
+
+/* other css */

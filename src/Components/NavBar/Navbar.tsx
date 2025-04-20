@@ -64,7 +64,7 @@ const Navbar = () => {
                                 </ul>
                             </li>
                             <li className="nav__menu-item">
-                                <a href="#solutions">Solutions</a>
+                                <Link to="/solutions">Solutions</Link>
                             </li>
                             <li className="nav__menu-item">
                                 <a href="#about">About Us</a>

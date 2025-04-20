@@ -1,4 +1,3 @@
-
 import aboutImage from '../../assets/about_us.jpeg';
 import avatar from '../../assets/avatar.jpg';
 import { useState } from 'react'
@@ -8,8 +7,23 @@ import iosEmulator from '../../assets/app2.jpg';
 import Navbar from '../NavBar/Navbar';
 import Footer from '../Footer/Footer';
 
-// import './web.css';
+import './web.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+    faCode, 
+    faServer, 
+    faDatabase, 
+    faNetworkWired,
+    faArrowRight, 
+    faChevronDown,
+    faCheck,
+    faGlobe,
+    faShieldAlt,
+    faBolt,
+    faPaintBrush,
+    faRocket
+} from '@fortawesome/free-solid-svg-icons';
 
 const Web = () => {
 
@@ -26,34 +40,68 @@ const Web = () => {
         <div className="page-wrapper">
             <Navbar />
 
-                {/* Hero Section */}
-            <section className="mob-hero">
+            {/* Enhanced Hero Section */}
+            <section className="ebrium-web-hero">
+                <div className="ebrium-web-hero-bg"></div>
+                <div className="ebrium-web-hero-overlay"></div>
                 <div className="container">
-                    <div className="mob-hero-content">
-                        <div className="mob-hero-text">
-                            <h1 className="animated-title">Web App Development Services</h1>
-                            <p className="hero-subtitle">Transform Your Ideas Into Powerful, User-Friendly Web Applications</p>
-                            <div className="cta-buttons">
-                                <a href="#get-quote" className="btn btn-primary">Get a Quote</a>
-                                <a href="#services" className="btn btn-secondary">Explore Services</a>
+                    <div className="ebrium-web-hero-content">
+                        <div className="ebrium-web-hero-text">
+                            <span className="ebrium-web-hero-badge">Web Development</span>
+                            <h1 className="ebrium-web-hero-title">Modern <span className="ebrium-web-highlight">Web</span> Development Services</h1>
+                            <p className="ebrium-web-hero-description">
+                                Transform your ideas into powerful, user-friendly web applications. We build high-performance, responsive websites and web apps that engage users and drive business growth.
+                            </p>
+                            <div className="ebrium-web-hero-buttons">
+                                <a href="#get-quote" className="ebrium-web-primary-btn">
+                                    Get a Quote
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </a>
+                                <a href="#services" className="ebrium-web-secondary-btn">
+                                    Explore Services
+                                </a>
                             </div>
                         </div>
-                        <div className="mob-hero-image">
-                            <div className="emulator android-emulator">
-                                <img src={androidEmulator} alt="Android App" />
+                        <div className="ebrium-web-hero-visual">
+                            <div className="ebrium-web-hero-shapes">
+                                <div className="ebrium-web-shape ebrium-web-shape-1"></div>
+                                <div className="ebrium-web-shape ebrium-web-shape-2"></div>
+                                <div className="ebrium-web-shape ebrium-web-shape-3"></div>
                             </div>
-                            <div className="emulator ios-emulator">
-                                <img src={iosEmulator} alt="iOS App" />
+                            <div className="ebrium-web-hero-cards">
+                                <div className="ebrium-web-hero-card">
+                                    <div className="ebrium-web-hero-card-icon">
+                                        <FontAwesomeIcon icon={faCode} />
+                                    </div>
+                                    <h3>React</h3>
+                                </div>
+                                <div className="ebrium-web-hero-card">
+                                    <div className="ebrium-web-hero-card-icon">
+                                        <FontAwesomeIcon icon={faServer} />
+                                    </div>
+                                    <h3>Node.js</h3>
+                                </div>
+                                <div className="ebrium-web-hero-card">
+                                    <div className="ebrium-web-hero-card-icon">
+                                        <FontAwesomeIcon icon={faDatabase} />
+                                    </div>
+                                    <h3>MongoDB</h3>
+                                </div>
+                                <div className="ebrium-web-hero-card">
+                                    <div className="ebrium-web-hero-card-icon">
+                                        <FontAwesomeIcon icon={faNetworkWired} />
+                                    </div>
+                                    <h3>Express</h3>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div className="ebrium-web-scroll-indicator">
+                        <span>Scroll to explore</span>
+                        <FontAwesomeIcon icon={faChevronDown} bounce />
+                    </div>
                 </div>
-                {/* Animated background shapes */}
-                <div className="shape shape1"></div>
-                <div className="shape shape2"></div>
-                <div className="shape shape3"></div>
             </section>
-
 
             <section id="services" className="services-section">
                 <div className="container">

@@ -229,8 +229,8 @@ const Home = () => {
                                 <h3>Testing</h3>
                                 <p>Rigorous quality assurance ensures your solution works flawlessly across all platforms and scenarios.</p>
                             </div>
-                        </div>
-                        
+            </div>
+            
                         <div className="process-step">
                             <div className="process-number">4</div>
                             <div className="process-content">
@@ -319,8 +319,8 @@ const Home = () => {
                                     <p>Austria </p>
                                 </div>
                             </div>
-                        </div>
-                        
+                </div>
+                
                         <div className="testimonial-card">
                             <div className="testimonial-content">
                                 <p>"Ebrium Coders has demonstrated exceptional expertise in AI and machine learning, delivering a sophisticated recommendation engine with remarkable attention to detail. Their responsiveness and professionalism made the entire process smooth and efficient."</p>

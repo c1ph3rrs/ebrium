@@ -19,55 +19,72 @@ const AIML: React.FC = () => {
     }
   }
 
-  return (
-    <div className="page-wrapper">
+    return (
+        <div className="page-wrapper">
       {/* Navbar */}
       <Navbar />
 
       {/* Hero Section */}
-      <section className="aiml-hero main__container">
+      <section className="ebrium-aiml-hero">
+        <div className="ebrium-aiml-hero-bg"></div>
+        <div className="ebrium-aiml-hero-overlay"></div>
         <div className="container">
-          <div className="main__text">
-            <h1 className="animated-text">AI & Machine Learning</h1>
-            <p className="subtitle">
-              Transform your business with cutting-edge AI and Machine Learning solutions.
-            </p>
-          </div>
-          <div className='what__we__offer'>
-            <span>Our Expertise</span>
-            <div className="hero-text">
-              <h1>
-                <Typewriter
-                  words={[
-                    'Generative AI Solutions ✨',
-                    'Machine Learning Models 🧠',
-                    'Computer Vision Systems 👁️',
-                    'NLP & Conversational AI 💬',
-                    'AI Agents & Automation 🤖',
-                    'Prompt Engineering 📝'
-                  ]}
-                  loop={true}
-                  cursor
-                  cursorStyle='|'
-                  typeSpeed={70}
-                  deleteSpeed={40}
-                  delaySpeed={2500}
-                />
-              </h1>
-              <p className="hero-description">
+          <div className="ebrium-aiml-hero-content">
+            <div className="ebrium-aiml-hero-text">
+              <span className="ebrium-aiml-hero-badge">AI & Machine Learning</span>
+              <h1 className="ebrium-aiml-hero-title">Transform Your Business with <span className="ebrium-aiml-highlight">AI</span> Solutions</h1>
+              <p className="ebrium-aiml-hero-description">
                 From generative AI to predictive analytics, our expert team delivers custom solutions that drive innovation, efficiency, and competitive advantage.
               </p>
-              <div className="cta-buttons">
-                <a href="#get-quote" className="btn btn-primary">Get a Quote</a>
-                <a href="#ai-services" className="btn btn-secondary">Explore Services</a>
+              <div className="ebrium-aiml-hero-buttons">
+                <a href="#get-quote" className="ebrium-aiml-primary-btn">
+                  Get a Quote
+                  <i className='bx bx-right-arrow-alt'></i>
+                </a>
+                <a href="#ai-services" className="ebrium-aiml-secondary-btn">
+                  Explore Services
+                </a>
+              </div>
+            </div>
+            <div className="ebrium-aiml-hero-visual">
+              <div className="ebrium-aiml-hero-shapes">
+                <div className="ebrium-aiml-shape ebrium-aiml-shape-1"></div>
+                <div className="ebrium-aiml-shape ebrium-aiml-shape-2"></div>
+                <div className="ebrium-aiml-shape ebrium-aiml-shape-3"></div>
+              </div>
+              <div className="ebrium-aiml-hero-cards">
+                <div className="ebrium-aiml-hero-card">
+                  <div className="ebrium-aiml-hero-card-icon">
+                    <i className='bx bx-brain'></i>
+                  </div>
+                  <h3>Generative AI</h3>
+                </div>
+                <div className="ebrium-aiml-hero-card">
+                  <div className="ebrium-aiml-hero-card-icon">
+                    <i className='bx bx-bot'></i>
+                  </div>
+                  <h3>AI Agents</h3>
+                </div>
+                <div className="ebrium-aiml-hero-card">
+                  <div className="ebrium-aiml-hero-card-icon">
+                    <i className='bx bx-message-rounded-dots'></i>
+                  </div>
+                  <h3>Chatbots</h3>
+                </div>
+                <div className="ebrium-aiml-hero-card">
+                  <div className="ebrium-aiml-hero-card-icon">
+                    <i className='bx bx-line-chart'></i>
+                  </div>
+                  <h3>Machine Learning</h3>
+                </div>
               </div>
             </div>
           </div>
+          <div className="ebrium-aiml-scroll-indicator">
+            <span>Scroll to explore</span>
+            <i className='bx bx-chevron-down bx-fade-down'></i>
+          </div>
         </div>
-        {/* Animated background shapes */}
-        <div className="shape shape1"></div>
-        <div className="shape shape2"></div>
-        <div className="shape shape3"></div>
       </section>
 
       {/* Partners Section */}
@@ -510,12 +527,29 @@ const AIML: React.FC = () => {
                 </ul>
               </div>
             </div>
+
+            <div className="advanced-tech-card">
+              <div className="advanced-tech-icon">
+                <i className='bx bx-server'></i>
+              </div>
+              <h3>MCP Server</h3>
+              <p>High-performance computing infrastructure optimized for AI workloads, enabling scalable model training and inference with dedicated resources.</p>
+              <div className="tech-use-cases">
+                <span>Use Cases:</span>
+                <ul>
+                  <li>Large-scale model training</li>
+                  <li>Real-time inference services</li>
+                  <li>Enterprise AI deployments</li>
+                </ul>
+              </div>
+            </div>
+
           </div>
 
           <div className="tech-integration-cta">
             <h3>Looking to integrate these technologies into your business?</h3>
             <p>Our experts can help you select and implement the right AI solutions for your specific needs.</p>
-            <a href="#get-quote" className="btn btn-secondary">Get Expert Advice</a>
+            <a href="#get-quote" className="ml-btn">Get Expert Advice</a>
           </div>
         </div>
       </section>

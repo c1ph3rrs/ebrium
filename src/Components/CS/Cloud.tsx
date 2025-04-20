@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import './cloud-services.css';
+import './cloud-services.css';
 import mainLogo from '../../assets/main_logo.png';
 import CloudServices from '../../assets/cloud-services.png';
 import { Link } from 'react-router-dom';
@@ -11,6 +11,22 @@ import cloudImage2 from '../../assets/main_logo.png'; // Add these images to you
 
 import Navbar from '../NavBar/Navbar';
 import Footer from '../Footer/Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faCloud, 
+  faServer, 
+  faDatabase, 
+  faNetworkWired, 
+  faLock, 
+  faArrowRight, 
+  faChevronDown,
+  faCheck,
+  faSyncAlt,
+  faShieldAlt,
+  faCodeBranch,
+  faUsers,
+  faGlobe
+} from '@fortawesome/free-solid-svg-icons';
 
 const Cloud: React.FC = () => {
   
@@ -28,34 +44,73 @@ const Cloud: React.FC = () => {
   }
 
 
-  return (
+    return (
     <div className="page-wrapper">
       {/* Navbar */}
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="mob-hero">
-                <div className="container">
-                    <div className="mob-hero-content">
-                        <div className="mob-hero-text">
-                            <h1 className="animated-title">Cloud Services</h1>
-                            <p className="cloud-hero-subtitle">Unlock the potential of cloud computing with our expert solutions. From seamless migrations to robust cloud management, we empower your business with cutting-edge solutions from top platforms like Amazon Web Services (AWS) and Microsoft Azure. Enhance scalability, improve security, and drive innovation—all while reducing costs.</p>
-                            <div className="cta-buttons">
-                                <a href="#get-quote" className="btn btn-primary">Get a Quote</a>
-                                <a href="#services" className="btn btn-secondary">Explore Services</a>
-                            </div>
-                        </div>
-                        <div className="cloud-hero-image">
-                            <img src={CloudServices} className='cloud-services-hero-img' />
-                            {/* <i className='bx bx-cloud cloud-img'></i> */}
-                        </div>
-                    </div>
+      {/* Enhanced Hero Section */}
+      <section className="ebrium-cloud-hero">
+        <div className="ebrium-cloud-hero-bg"></div>
+        <div className="ebrium-cloud-hero-overlay"></div>
+        <div className="container">
+          <div className="ebrium-cloud-hero-content">
+            <div className="ebrium-cloud-hero-text">
+              <span className="ebrium-cloud-hero-badge">Cloud Solutions</span>
+              <h1 className="ebrium-cloud-hero-title">Enterprise <span className="ebrium-cloud-highlight">Cloud</span> Services</h1>
+              <p className="ebrium-cloud-hero-description">
+                Unlock the potential of cloud computing with our expert solutions. From seamless migrations to robust cloud management, we empower your business with cutting-edge solutions from top platforms. Enhance scalability, improve security, and drive innovation—all while reducing costs.
+              </p>
+              <div className="ebrium-cloud-hero-buttons">
+                <a href="#get-quote" className="ebrium-cloud-primary-btn">
+                  Get a Quote
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </a>
+                <a href="#cloud-services" className="ebrium-cloud-secondary-btn">
+                  Explore Services
+                </a>
+              </div>
+            </div>
+            <div className="ebrium-cloud-hero-visual">
+              <div className="ebrium-cloud-hero-shapes">
+                <div className="ebrium-cloud-shape ebrium-cloud-shape-1"></div>
+                <div className="ebrium-cloud-shape ebrium-cloud-shape-2"></div>
+                <div className="ebrium-cloud-shape ebrium-cloud-shape-3"></div>
+              </div>
+              <div className="ebrium-cloud-hero-cards">
+                <div className="ebrium-cloud-hero-card">
+                  <div className="ebrium-cloud-hero-card-icon">
+                    <FontAwesomeIcon icon={faNetworkWired} />
+                  </div>
+                  <h3>AWS</h3>
                 </div>
-                {/* Animated background shapes */}
-                <div className="shape shape1"></div>
-                <div className="shape shape2"></div>
-                <div className="shape shape3"></div>
-            </section>
+                <div className="ebrium-cloud-hero-card">
+                  <div className="ebrium-cloud-hero-card-icon">
+                    <FontAwesomeIcon icon={faDatabase} />
+                  </div>
+                  <h3>Azure</h3>
+                </div>
+                <div className="ebrium-cloud-hero-card">
+                  <div className="ebrium-cloud-hero-card-icon">
+                    <FontAwesomeIcon icon={faServer} />
+                  </div>
+                  <h3>Google Cloud</h3>
+                </div>
+                <div className="ebrium-cloud-hero-card">
+                  <div className="ebrium-cloud-hero-card-icon">
+                    <FontAwesomeIcon icon={faCloud} />
+                  </div>
+                  <h3>IBM Cloud</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="ebrium-cloud-scroll-indicator">
+            <span>Scroll to explore</span>
+            <FontAwesomeIcon icon={faChevronDown} bounce />
+          </div>
+        </div>
+      </section>
 
       {/* Partners Section - similar to marquee-container in MOB */}
       <section className="partners-section">

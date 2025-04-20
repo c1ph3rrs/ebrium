@@ -2,6 +2,23 @@ import './mob.css';
 import mainLogo from '../../assets/main_logo.png';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+    faMobile, 
+    faMobileScreen,
+    faAppleWhole, 
+    faCode, 
+    faCodeBranch, 
+    faArrowRight, 
+    faChevronDown,
+    faCheck,
+    faRocket,
+    faShieldAlt,
+    faHeadset,
+    faUsers,
+    faMobileAlt,
+    faTabletAlt
+} from '@fortawesome/free-solid-svg-icons';
 
 // Import images (you'll need to add these to your assets folder)
 import androidEmulator from '../../assets/app1.jpg';
@@ -48,32 +65,67 @@ const MOB = () => {
             {/* Navbar - Same as Home.tsx */}
             <Navbar />
 
-            {/* Hero Section */}
-            <section className="mob-hero">
+            {/* Enhanced Hero Section */}
+            <section className="ebrium-mob-hero">
+                <div className="ebrium-mob-hero-bg"></div>
+                <div className="ebrium-mob-hero-overlay"></div>
                 <div className="container">
-                    <div className="mob-hero-content">
-                        <div className="mob-hero-text">
-                            <h1 className="animated-title">Mobile App Development Services</h1>
-                            <p className="hero-subtitle">Transform Your Ideas Into Powerful, User-Friendly Mobile Applications</p>
-                            <div className="cta-buttons">
-                                <a href="#get-quote" className="btn btn-primary">Get a Quote</a>
-                                <a href="#services" className="btn btn-secondary">Explore Services</a>
+                    <div className="ebrium-mob-hero-content">
+                        <div className="ebrium-mob-hero-text">
+                            <span className="ebrium-mob-hero-badge">Mobile Development</span>
+                            <h1 className="ebrium-mob-hero-title">Mobile App <span className="ebrium-mob-highlight">Development</span> Services</h1>
+                            <p className="ebrium-mob-hero-description">
+                                Transform your ideas into powerful, user-friendly mobile applications. We build high-performance apps for Android, iOS, and cross-platform that engage users and drive business growth.
+                            </p>
+                            <div className="ebrium-mob-hero-buttons">
+                                <a href="#get-quote" className="ebrium-mob-primary-btn">
+                                    Get a Quote
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </a>
+                                <a href="#services" className="ebrium-mob-secondary-btn">
+                                    Explore Services
+                                </a>
                             </div>
                         </div>
-                        <div className="mob-hero-image">
-                            <div className="emulator android-emulator">
-                                <img src={androidEmulator} alt="Android App" />
+                        <div className="ebrium-mob-hero-visual">
+                            <div className="ebrium-mob-hero-shapes">
+                                <div className="ebrium-mob-shape ebrium-mob-shape-1"></div>
+                                <div className="ebrium-mob-shape ebrium-mob-shape-2"></div>
+                                <div className="ebrium-mob-shape ebrium-mob-shape-3"></div>
                             </div>
-                            <div className="emulator ios-emulator">
-                                <img src={iosEmulator} alt="iOS App" />
+                            <div className="ebrium-mob-hero-cards">
+                                <div className="ebrium-mob-hero-card">
+                                    <div className="ebrium-mob-hero-card-icon">
+                                        <FontAwesomeIcon icon={faMobileAlt} />
+                                    </div>
+                                    <h3>Android</h3>
+                                </div>
+                                <div className="ebrium-mob-hero-card">
+                                    <div className="ebrium-mob-hero-card-icon">
+                                        <FontAwesomeIcon icon={faTabletAlt} />
+                                    </div>
+                                    <h3>iOS</h3>
+                                </div>
+                                <div className="ebrium-mob-hero-card">
+                                    <div className="ebrium-mob-hero-card-icon">
+                                        <FontAwesomeIcon icon={faCode} />
+                                    </div>
+                                    <h3>Flutter</h3>
+                                </div>
+                                <div className="ebrium-mob-hero-card">
+                                    <div className="ebrium-mob-hero-card-icon">
+                                        <FontAwesomeIcon icon={faCodeBranch} />
+                                    </div>
+                                    <h3>Kotlin/Java</h3>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div className="ebrium-mob-scroll-indicator">
+                        <span>Scroll to explore</span>
+                        <FontAwesomeIcon icon={faChevronDown} bounce />
+                    </div>
                 </div>
-                {/* Animated background shapes */}
-                <div className="shape shape1"></div>
-                <div className="shape shape2"></div>
-                <div className="shape shape3"></div>
             </section>
 
             {/* Services Section */}
@@ -218,7 +270,7 @@ const MOB = () => {
                             </form>
                         </div>
                         <div className="quote-image">
-                            <img src={androidEmulator} alt="Mobile App Development" />
+                            <img src={iosEmulator} alt="Mobile App Development" />
                         </div>
                     </div>
                 </div>
