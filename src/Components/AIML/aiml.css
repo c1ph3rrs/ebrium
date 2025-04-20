@@ -615,13 +615,13 @@
   overflow: hidden;
 }
 
-.accordion-item {
+/* .accordion-item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .accordion-item:last-child {
   border-bottom: none;
-}
+} */
 
 .accordion-header {
   padding: 20px 25px;

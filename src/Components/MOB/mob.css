@@ -598,11 +598,11 @@
 }
 
 .accordion-header.active h3 {
-    color: white;
+    color: var(--primary-color);
 }
 
 .accordion-header.active i {
-    color: white;
+    color: var(--primary-color);
 }
 
 .accordion-content {

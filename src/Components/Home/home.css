@@ -343,12 +343,13 @@
 
 .btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 8px 20px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
     text-align: center;
+    font-size: 0.9rem;
 }
 
 .btn-primary {

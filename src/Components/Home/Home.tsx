@@ -156,36 +156,14 @@ const Home = () => {
                                 <p>Aqua Station</p>
                             </div>
                             <div className="partner-logo">
-                                <img src="https://static.tildacdn.one/tild3030-3264-4364-b039-313263313133/aquastation-logo-hea.svg" alt="Aqua Station" />
-                                <p>Aqua Station</p>
+                                <img src="https://i0.wp.com/elite-soft.io/website_e32d1e8d/wp-content/uploads/2024/03/Untitled-design-41.png" alt="Elite-soft" />
+                                <p>Elite Soft</p>
                             </div>
                             <div className="partner-logo">
-                                <img src="https://static.tildacdn.one/tild3030-3264-4364-b039-313263313133/aquastation-logo-hea.svg" alt="Aqua Station" />
-                                <p>Aqua Station</p>
-                            </div>
-                            <div className="partner-logo">
-                                <img src="https://static.tildacdn.one/tild3030-3264-4364-b039-313263313133/aquastation-logo-hea.svg" alt="Aqua Station" />
-                                <p>Aqua Station</p>
+                                <img src="https://i0.wp.com/elite-soft.io/website_e32d1e8d/wp-content/uploads/2024/03/logo.png" alt="whisper" />
+                                <p>Whisper</p>
                             </div>
                             
-                            
-                            {/* Duplicate for seamless scrolling */}
-                            <div className="partner-logo">
-                                <img src="https://static.tildacdn.one/tild3030-3264-4364-b039-313263313133/aquastation-logo-hea.svg" alt="Aqua Station" />
-                                <p>Aqua Station</p>
-                            </div>
-                            <div className="partner-logo">
-                                <img src="https://static.tildacdn.one/tild3030-3264-4364-b039-313263313133/aquastation-logo-hea.svg" alt="Aqua Station" />
-                                <p>Aqua Station</p>
-                            </div>
-                            <div className="partner-logo">
-                                <img src="https://static.tildacdn.one/tild3030-3264-4364-b039-313263313133/aquastation-logo-hea.svg" alt="Aqua Station" />
-                                <p>Aqua Station</p>
-                            </div>
-                            <div className="partner-logo">
-                                <img src="https://static.tildacdn.one/tild3030-3264-4364-b039-313263313133/aquastation-logo-hea.svg" alt="Aqua Station" />
-                                <p>Aqua Station</p>
-                            </div>
                         </div>
                     </div>
                 </div>
