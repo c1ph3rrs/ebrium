@@ -1,8 +1,6 @@
 import aboutImage from '../../assets/about_us.jpeg';
 import avatar from '../../assets/avatar.jpg';
 import { useState } from 'react'
-import androidEmulator from '../../assets/app1.jpg';
-import iosEmulator from '../../assets/app2.jpg';
 
 import Navbar from '../NavBar/Navbar';
 import Footer from '../Footer/Footer';
@@ -16,13 +14,7 @@ import {
     faDatabase, 
     faNetworkWired,
     faArrowRight, 
-    faChevronDown,
-    faCheck,
-    faGlobe,
-    faShieldAlt,
-    faBolt,
-    faPaintBrush,
-    faRocket
+    faChevronDown
 } from '@fortawesome/free-solid-svg-icons';
 
 const Web = () => {

@@ -10,9 +10,7 @@ import {
   faMobile, faGlobe, faCloud, faBrain, 
   faCheck, faAngleRight, faArrowRight, 
   faLaptopCode, faServer, faShieldAlt, 
-  faRocket, faCog, faCode, faLayerGroup,
-  faUserCog, faDollarSign, faHeadset,
-  faSyncAlt, faAward, faChartLine,
+  faRocket, faCog, faCode, faHeadset, faChartLine,
   faChevronDown
 } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons/faUsers';

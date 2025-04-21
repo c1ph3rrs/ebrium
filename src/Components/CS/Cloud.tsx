@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './cloud-services.css';
-import mainLogo from '../../assets/main_logo.png';
-import CloudServices from '../../assets/cloud-services.png';
-import { Link } from 'react-router-dom';
+
+
+
+import  cloudMigration  from '../../assets/cloud-migrations.svg';  
 
 
 import cloudImage1 from '../../assets/main_logo.png'; // Add these images to your assets
@@ -17,15 +18,8 @@ import {
   faServer, 
   faDatabase, 
   faNetworkWired, 
-  faLock, 
   faArrowRight, 
-  faChevronDown,
-  faCheck,
-  faSyncAlt,
-  faShieldAlt,
-  faCodeBranch,
-  faUsers,
-  faGlobe
+  faChevronDown
 } from '@fortawesome/free-solid-svg-icons';
 
 const Cloud: React.FC = () => {
@@ -212,7 +206,7 @@ const Cloud: React.FC = () => {
                   </ul>
                 </div>
                 <div className="tab-image">
-                  <img src={cloudImage1} alt="Cloud Migration" />
+                  <img src={cloudMigration} alt="Cloud Migration" />
                 </div>
               </div>
 

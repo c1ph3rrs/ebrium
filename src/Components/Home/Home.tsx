@@ -19,8 +19,6 @@ const Home = () => {
         console.log(`Done after 5 loops!`)
     }
 
-    
-
     return (
         <div className="page-wrapper">
             <section className="home main__container">

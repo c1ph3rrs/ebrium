@@ -1,21 +1,11 @@
 import './mob.css';
-import mainLogo from '../../assets/main_logo.png';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
-    faMobile, 
-    faMobileScreen,
-    faAppleWhole, 
     faCode, 
     faCodeBranch, 
     faArrowRight, 
     faChevronDown,
-    faCheck,
-    faRocket,
-    faShieldAlt,
-    faHeadset,
-    faUsers,
     faMobileAlt,
     faTabletAlt
 } from '@fortawesome/free-solid-svg-icons';

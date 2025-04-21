@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './aiml.css';
 import mainLogo from '../../assets/main_logo.png';
-import { Link } from 'react-router-dom';
 import Navbar from '../NavBar/Navbar';
 import Footer from '../Footer/Footer';
-import { Typewriter } from 'react-simple-typewriter';
 
 const AIML: React.FC = () => {
   
