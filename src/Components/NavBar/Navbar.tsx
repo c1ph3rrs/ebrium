@@ -67,10 +67,10 @@ const Navbar = () => {
                                 <Link to="/solutions">Solutions</Link>
                             </li>
                             <li className="nav__menu-item">
-                                <a href="#about">About Us</a>
+                                <Link to="/aboutus">About Us</Link>
                             </li>
                             <li className="nav__menu-item">
-                                <a href="#contact">Contact</a>
+                                <Link to="/contact">Contact Us</Link>
                             </li>
                             <li className="nav__menu-item consultation">
                                 <a href="#consultation">Get Free Consultation</a>

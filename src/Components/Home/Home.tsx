@@ -5,6 +5,15 @@ import { Typewriter } from 'react-simple-typewriter'
 import { Link } from 'react-router-dom';
 import Navbar from '../NavBar/Navbar';
 import Footer from '../Footer/Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+    faCode, 
+    faCloudArrowUp, 
+    faMobile, 
+    faBrain,
+    faChevronDown,
+    faArrowRight
+} from '@fortawesome/free-solid-svg-icons';
 
 
 const Home = () => {
@@ -26,17 +35,15 @@ const Home = () => {
                 
                 <Navbar />
 
-                {/* Hero Section */}
-                <div className="main__text">
-                    <h1 className="animated-text">Transform Your Ideas Into Digital Reality</h1>
-                    <p className="subtitle">
-                        Delivering Innovative, Scalable & Future-Ready Solutions
-                    </p>
-                </div>
-                <div className='what__we__offer'>
-                    <span>Our Expertise</span>
-                    <div className="hero-text">
-                        <h1>
+                {/* Enhanced Hero Section */}
+                <div className="ebrium-hero-content">
+                    <div className="ebrium-hero-text">
+                        <span className="ebrium-hero-badge">Digital Solutions</span>
+                        <h1 className="ebrium-hero-title">Transform Your Ideas Into <span className="ebrium-highlight">Digital Reality</span></h1>
+                        <p className="ebrium-hero-description">
+                            Delivering Innovative, Scalable & Future-Ready Solutions
+                        </p>
+                        <div className="typewriter-container">
                             <Typewriter
                                 words={[
                                     'Custom Software Development ✨',
@@ -55,15 +62,54 @@ const Home = () => {
                                 onLoopDone={handleDone}
                                 onType={handleType}
                             />
-                        </h1>
-                        <p className="hero-description">
-                            Partner with us to build cutting-edge digital solutions that drive your business forward
-                        </p>
-                        <div className="cta-buttons">
-                            <a href="#services" className="btn btn-primary">Explore Services</a>
-                            <a href="#contact" className="btn btn-secondary">Contact Us</a>
+                        </div>
+                        <div className="ebrium-hero-buttons">
+                            <a href="#services" className="ebrium-primary-btn">
+                                Explore Services
+                                <FontAwesomeIcon icon={faArrowRight} />
+                            </a>
+                            <a href="#contact" className="ebrium-secondary-btn">
+                                Contact Us
+                            </a>
                         </div>
                     </div>
+                    <div className="ebrium-hero-visual">
+                        <div className="ebrium-hero-shapes">
+                            <div className="ebrium-shape ebrium-shape-1"></div>
+                            <div className="ebrium-shape ebrium-shape-2"></div>
+                            <div className="ebrium-shape ebrium-shape-3"></div>
+                        </div>
+                        <div className="ebrium-hero-cards">
+                            <Link to="/mob" className="ebrium-hero-card">
+                                <div className="ebrium-hero-card-icon">
+                                    <FontAwesomeIcon icon={faMobile} />
+                                </div>
+                                <h3>Mobile Apps</h3>
+                            </Link>
+                            <Link to="/web" className="ebrium-hero-card">
+                                <div className="ebrium-hero-card-icon">
+                                    <FontAwesomeIcon icon={faCode} />
+                                </div>
+                                <h3>Web Development</h3>
+                            </Link>
+                            <Link to="/ai" className="ebrium-hero-card">
+                                <div className="ebrium-hero-card-icon">
+                                    <FontAwesomeIcon icon={faBrain} />
+                                </div>
+                                <h3>AI & ML</h3>
+                            </Link>
+                            <Link to="/cloud" className="ebrium-hero-card">
+                                <div className="ebrium-hero-card-icon">
+                                    <FontAwesomeIcon icon={faCloudArrowUp} />
+                                </div>
+                                <h3>Cloud Services</h3>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+                <div className="ebrium-scroll-indicator">
+                    <span>Scroll to explore</span>
+                    <FontAwesomeIcon icon={faChevronDown} bounce />
                 </div>
                 
                 {/* Animated background shapes */}

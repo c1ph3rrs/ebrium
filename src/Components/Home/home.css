@@ -15,6 +15,11 @@
     padding: 0 20px;
 }
 
+/* Home section and main container */
+.home {
+    padding-top: 80px; /* Account for navbar height */
+}
+
 /* Main container */
 .main__container {
     background-color: var(--primary-color);
@@ -24,6 +29,10 @@
     padding: 0;
     overflow-x: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Navbar Styles */
@@ -1086,4 +1095,320 @@
     .footer-content {
         grid-template-columns: 1fr;
     }
+}
+
+/* Enhanced Hero Section - based on MOB.tsx style */
+.ebrium-hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+  min-height: calc(100vh - 200px); /* Adjusted for navbar and scroll indicator */
+}
+
+.ebrium-hero-text {
+  flex: 1;
+  max-width: 600px;
+  color: white;
+  animation: fadeIn 1s ease-out;
+}
+
+.ebrium-hero-badge {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light-green);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ebrium-hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.ebrium-highlight {
+  color: var(--light-green);
+  position: relative;
+  display: inline-block;
+}
+
+.ebrium-highlight::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(177, 255, 8, 0.3);
+  bottom: 5px;
+  left: 0;
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.ebrium-hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.typewriter-container {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--light-green);
+  min-height: 100px;
+  margin-bottom: 2rem;
+}
+
+.ebrium-hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.ebrium-primary-btn, .ebrium-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.ebrium-primary-btn {
+  background-color: var(--light-green);
+  color: var(--primary-color);
+  box-shadow: 0 4px 15px rgba(177, 255, 8, 0.3);
+}
+
+.ebrium-primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(177, 255, 8, 0.4);
+}
+
+.ebrium-secondary-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.ebrium-secondary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.ebrium-hero-visual {
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.ebrium-hero-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.ebrium-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(177, 255, 8, 0.15);
+  filter: blur(30px);
+}
+
+.ebrium-shape-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  right: 20%;
+}
+
+.ebrium-shape-2 {
+  width: 250px;
+  height: 250px;
+  bottom: 10%;
+  left: 10%;
+}
+
+.ebrium-shape-3 {
+  width: 150px;
+  height: 150px;
+  top: 40%;
+  left: 30%;
+}
+
+.ebrium-hero-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 500px;
+}
+
+.ebrium-hero-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.ebrium-hero-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--light-green);
+}
+
+.ebrium-hero-card-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  transition: all 0.3s ease;
+}
+
+.ebrium-hero-card-icon svg {
+  font-size: 30px;
+  color: var(--light-green);
+}
+
+.ebrium-hero-card:hover .ebrium-hero-card-icon {
+  background-color: var(--light-green);
+}
+
+.ebrium-hero-card:hover .ebrium-hero-card-icon svg {
+  color: var(--primary-color);
+}
+
+.ebrium-hero-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.ebrium-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.ebrium-scroll-indicator span {
+  font-weight: 500;
+}
+
+.ebrium-scroll-indicator svg {
+  font-size: 1.2rem;
+}
+
+.ebrium-scroll-indicator:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Responsive styles for hero section */
+@media screen and (max-width: 1024px) {
+  .ebrium-hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px 100px;
+    justify-content: center;
+  }
+  
+  .ebrium-hero-text {
+    max-width: 700px;
+    margin-bottom: 2rem;
+  }
+  
+  .ebrium-hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .ebrium-hero-buttons {
+    justify-content: center;
+  }
+  
+  .typewriter-container {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ebrium-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .ebrium-hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .typewriter-container {
+    font-size: 1.3rem;
+    min-height: 80px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .ebrium-hero-title {
+    font-size: 2rem;
+  }
+  
+  .ebrium-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .ebrium-primary-btn, .ebrium-secondary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .ebrium-hero-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .typewriter-container {
+    font-size: 1.1rem;
+    min-height: 60px;
+  }
 }
