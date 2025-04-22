@@ -1,7 +1,7 @@
 import './contact.css';
 import Navbar from '../NavBar/Navbar';
 import Footer from '../Footer/Footer';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     faEnvelope, 
@@ -11,10 +11,15 @@ import {
     faCheck,
     faPaperPlane
 } from '@fortawesome/free-solid-svg-icons';
-// import {  faFiverr } from '@fortawesome/free-brands-svg-icons';
+
 import {  faSquareVirus } from '@fortawesome/free-solid-svg-icons';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+
+    const form = useRef<HTMLFormElement>(null);
+
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -35,20 +40,39 @@ const Contact = () => {
     
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        
-        setIsSubmitted(true);
-        
-        setTimeout(() => {
-            setIsSubmitted(false);
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                subject: '',
-                message: '',
-            });
-        }, 5000);
+
+        if (form.current) {
+            // Using the form directly with EmailJS
+            // The template expects: {{name}}, {{email}}, and {{project}}
+            // No need to create templateParams separately as the form fields
+            // should match the template variables
+            emailjs
+                .sendForm(
+                    'service_2nx168m', 
+                    'template_4y0je97', 
+                    form.current, 
+                    'fzjFI68zyrzIRPZXa'
+                )
+                .then((result) => {
+                    console.log('Email sent successfully:', result.text);
+                    setIsSubmitted(true);
+                    
+                    setTimeout(() => {
+                        setIsSubmitted(false);
+                        setFormData({
+                            name: '',
+                            email: '',
+                            phone: '',
+                            subject: '',
+                            message: '',
+                        });
+                    }, 5000);
+                })
+                .catch((error) => {
+                    console.error('Failed to send email:', error.text);
+                    alert('Failed to send message. Please try again later.');
+                });
+        }
     };
 
     return (
@@ -86,13 +110,13 @@ const Contact = () => {
                                     <div className="contact-info-content">
                                         <h3>Email</h3>
                                         <p>For general inquiries:</p>
-                                        <a href="mailto:info@ebrium.com" className="contact-link">
-                                            info@ebrium.com
+                                        <a href="mailto:hello@ebrium.codes" className="contact-link">
+                                            hello@ebrium.codes
                                         </a>
-                                        <p>For support:</p>
+                                        {/* <p>For support:</p>
                                         <a href="mailto:support@ebrium.com" className="contact-link">
                                             support@ebrium.com
-                                        </a>
+                                        </a> */}
                                     </div>
                                 </div>
                                 
@@ -103,8 +127,8 @@ const Contact = () => {
                                     <div className="contact-info-content">
                                         <h3>Fiverr</h3>
                                         <p>Find us on Fiverr for project-based work:</p>
-                                        <a href="https://www.fiverr.com/ebrium" target="_blank" rel="noopener noreferrer" className="contact-link">
-                                            fiverr.com/ebrium
+                                        <a href="https://www.fiverr.com/dev__ib" target="_blank" rel="noopener noreferrer" className="contact-link">
+                                            fiverr.com/dev__ib
                                         </a>
                                     </div>
                                 </div>
@@ -117,7 +141,7 @@ const Contact = () => {
                                         <h3>Phone</h3>
                                         <p>Call our customer service:</p>
                                         <a href="tel:+1234567890" className="contact-link">
-                                            +1 (234) 567-890
+                                            +92 317 1755276
                                         </a>
                                     </div>
                                 </div>
@@ -128,9 +152,9 @@ const Contact = () => {
                                     </div>
                                     <div className="contact-info-content">
                                         <h3>Office</h3>
-                                        <p>123 Tech Park Avenue</p>
-                                        <p>Suite 456</p>
-                                        <p>San Francisco, CA 94107</p>
+                                        <p>Pakistan</p>
+                                        <p>Islamabad</p>
+                                        <p>Islamabad, Pakistan</p>
                                     </div>
                                 </div>
                                 
@@ -150,7 +174,7 @@ const Contact = () => {
                         
                         <div className="contact-form-container">
                             {!isSubmitted ? (
-                                <form className="contact-form" onSubmit={handleSubmit}>
+                                <form ref={form} className="contact-form" onSubmit={handleSubmit}>
                                     <h2>Send Us a Message</h2>
                                     
                                     <div className="form-group floating-label">
@@ -205,8 +229,9 @@ const Contact = () => {
                                                 <option value="General Inquiry">General Inquiry</option>
                                                 <option value="Technical Support">Technical Support</option>
                                                 <option value="Cloud Services">Cloud Services</option>
-                                                <option value="Consultation">Consultation</option>
-                                                <option value="Partnership">Partnership</option>
+                                                <option value="Mobile App Development">Mobile App Development</option>
+                                                <option value="Web Development">Web Development</option>
+                                                <option value="Artificial Intelligence">Artificial Intelligence</option>
                                             </select>
                                             <label htmlFor="subject" className="select-label">Subject</label>
                                             <div className="select-arrow"></div>

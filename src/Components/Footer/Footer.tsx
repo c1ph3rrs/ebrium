@@ -60,7 +60,7 @@ const Footer = () => {
                         <address className="footer-address">
                             <p><i className='bx bx-map' ></i> Gujrat, Punjab, Pakistan</p>
                             <p><i className='bx bx-phone' ></i> +92 317 175 5276</p>
-                            <p><i className='bx bx-envelope' ></i> hello@ebrium.code</p>
+                            <p><i className='bx bx-envelope' ></i> hello@ebrium.codes</p>
                         </address>
                     </div>
                 </div>
