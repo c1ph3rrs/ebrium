@@ -68,9 +68,9 @@ const Home = () => {
                                 Explore Services
                                 <FontAwesomeIcon icon={faArrowRight} />
                             </a>
-                            <a href="#contact" className="ebrium-secondary-btn">
-                                Contact Us
-                            </a>
+                            <Link to="/consultation" className="ebrium-secondary-btn">
+                                Get Consultation
+                            </Link>
                         </div>
                     </div>
                     <div className="ebrium-hero-visual">
@@ -254,7 +254,9 @@ const Home = () => {
                         <div className="process-step">
                             <div className="process-number">1</div>
                             <div className="process-content">
-                                <h3>Consultation</h3>
+                                <h3>
+                                    <Link to="/consultation">Consultation</Link>
+                                </h3>
                                 <p>We start by understanding your business needs, goals, and challenges to develop a tailored approach.</p>
                             </div>
                         </div>

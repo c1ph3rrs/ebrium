@@ -73,7 +73,7 @@ const Navbar = () => {
                                 <Link to="/contact">Contact Us</Link>
                             </li>
                             <li className="nav__menu-item consultation">
-                                <a href="#consultation">Get Free Consultation</a>
+                                <Link to="/consultation">Get Free Consultation</Link>
                             </li>
                         </ul>
                     </div>

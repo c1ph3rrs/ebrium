@@ -8,6 +8,7 @@ import Cloud from './Components/CS/Cloud';
 import Solutions from './Components/Solutions/Solutions';
 import About from './Components/About/AboutUs';
 import Contact from './Components/Contact/Contact';
+import Consultation from './Components/Consultation/Consultation';
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/aboutus" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/consultation" element={<Consultation />} />
       </Routes>  
     </Router>
   )
