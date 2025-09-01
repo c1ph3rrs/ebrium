@@ -524,6 +524,45 @@ const Cloud: React.FC = () => {
         </div>
       </section>
 
+      {/* Hire Me Section - Fiverr & Upwork */}
+      <section className="hire-me-section">
+        <div className="container">
+          <div className="hire-me-content">
+            <h2>Ready to Migrate to the Cloud?</h2>
+            <p>Get expert cloud solutions from a trusted professional. Available on leading freelance platforms.</p>
+
+            <div className="platform-buttons">
+              <a href="https://www.fiverr.com/dev__ib" className="platform-btn fiverr-btn" target="_blank" rel="noopener noreferrer">
+                <i className='bx bxl-fiverr'></i>
+                <span>Hire on Fiverr</span>
+              </a>
+              <a href="https://www.upwork.com/freelancers/~dev__ib" className="platform-btn upwork-btn" target="_blank" rel="noopener noreferrer">
+                <i className='bx bxl-upwork'></i>
+                <span>Hire on Upwork</span>
+              </a>
+            </div>
+
+            <div className="trust-indicators">
+              <div className="trust-item">
+                <i className='bx bx-check-circle'></i>
+                <span>5-Star Rated Professional</span>
+              </div>
+              <div className="trust-item">
+                <i className='bx bx-check-circle'></i>
+                <span>100+ Successful Projects</span>
+              </div>
+              <div className="trust-item">
+                <i className='bx bx-check-circle'></i>
+                <span>Enterprise Experience</span>
+              </div>
+            </div>
+          </div>
+          <div className="hire-me-image">
+            <img src={cloudImage1} alt="Cloud Solutions" />
+          </div>
+        </div>
+      </section>
+
       {/* FAQ and Contact Form */}
       <section id="get-quote" className="faq-contact-section">
         <div className="container">

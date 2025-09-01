@@ -1,0 +1,493 @@
+/* Footer Component Styles */
+
+/* Import styles from home.css to maintain consistency */
+@import '../Home/home.css';
+
+/* Newsletter Section */
+.ebrium-footer-newsletter {
+    background-color: var(--primary-color);
+    padding: 60px 0;
+    color: white;
+}
+
+.ebrium-footer-newsletter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.ebrium-footer-newsletter-text h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.ebrium-footer-newsletter-text p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+    max-width: 500px;
+}
+
+.ebrium-footer-newsletter-form {
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+}
+
+.ebrium-footer-newsletter-input-group {
+    display: flex;
+    width: 100%;
+    background: white;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ebrium-footer-newsletter-input {
+    flex: 1;
+    padding: 16px 24px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.ebrium-footer-newsletter-input::placeholder {
+    color: #999;
+}
+
+.ebrium-footer-newsletter-btn {
+    padding: 16px 32px;
+    background-color: var(--light-green);
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.ebrium-footer-newsletter-btn:hover {
+    background-color: rgb(187, 255, 58);
+    transform: translateX(5px);
+}
+
+.ebrium-footer-newsletter-success {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    background: var(--light-green);
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-weight: 600;
+    animation: newsletterSuccess 0.5s ease-out;
+}
+
+@keyframes newsletterSuccess {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Footer Content */
+.ebrium-footer-main {
+    background-color: #f9f9f9;
+    padding: 80px 0 40px;
+}
+
+.ebrium-footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+/* Company Column */
+.ebrium-footer-column.ebrium-footer-company {
+    padding-right: 20px;
+}
+
+.ebrium-footer-logo img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.ebrium-footer-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.ebrium-footer-trust {
+    margin-bottom: 30px;
+}
+
+.ebrium-footer-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.ebrium-footer-trust-item svg {
+    color: var(--light-green);
+    font-size: 1rem;
+}
+
+.ebrium-footer-social h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.ebrium-footer-social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.ebrium-footer-social-link {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.ebrium-footer-social-link:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(41, 76, 46, 0.3);
+}
+
+/* Footer Columns */
+.ebrium-footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.ebrium-footer-heading {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.ebrium-footer-heading::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: var(--light-green);
+    bottom: -5px;
+    left: 0;
+}
+
+.ebrium-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ebrium-footer-links li {
+    margin-bottom: 10px;
+}
+
+.ebrium-footer-links a {
+    color: #666;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    display: inline-block;
+}
+
+.ebrium-footer-links a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+/* Contact Section */
+.ebrium-footer-contact {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.ebrium-footer-contact h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.ebrium-footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.ebrium-footer-contact-item svg {
+    color: var(--light-green);
+    font-size: 1rem;
+    min-width: 16px;
+}
+
+.ebrium-footer-contact-item a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.ebrium-footer-contact-item a:hover {
+    color: var(--primary-color);
+}
+
+/* Freelance Platforms Section */
+.ebrium-footer-platforms {
+    background-color: white;
+    padding: 60px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.ebrium-footer-platforms-content {
+    text-align: center;
+}
+
+.ebrium-footer-platforms-content h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.ebrium-footer-platforms-content p {
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ebrium-footer-platform-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ebrium-footer-platform-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+.ebrium-footer-fiverr-btn {
+    background-color: #1dbf73;
+    color: white;
+}
+
+.ebrium-footer-fiverr-btn:hover {
+    background-color: #18a164;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(29, 191, 115, 0.3);
+}
+
+.ebrium-footer-upwork-btn {
+    background-color: #14a800;
+    color: white;
+}
+
+.ebrium-footer-upwork-btn:hover {
+    background-color: #108000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(20, 168, 0, 0.3);
+}
+
+/* Footer Bottom */
+.ebrium-footer-bottom {
+    background-color: var(--primary-color);
+    padding: 25px 0;
+    color: white;
+}
+
+.ebrium-footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ebrium-footer-copyright {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.ebrium-footer-bottom-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.ebrium-footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.ebrium-footer-bottom-links a:hover {
+    color: var(--light-green);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .ebrium-footer-content {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    .ebrium-footer-column.ebrium-footer-company {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .ebrium-footer-newsletter-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .ebrium-footer-newsletter-form {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .ebrium-footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .ebrium-footer-column.ebrium-footer-company {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .ebrium-footer-social-links {
+        justify-content: center;
+    }
+
+    .ebrium-footer-contact {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .ebrium-footer-newsletter {
+        padding: 40px 0;
+    }
+
+    .ebrium-footer-newsletter-text h3 {
+        font-size: 1.6rem;
+    }
+
+    .ebrium-footer-main {
+        padding: 60px 0 30px;
+    }
+
+    .ebrium-footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .ebrium-footer-links {
+        text-align: center;
+    }
+
+    .ebrium-footer-links a:hover {
+        transform: none;
+    }
+
+    .ebrium-footer-platform-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ebrium-footer-bottom-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .ebrium-footer-bottom-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .ebrium-footer-newsletter-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .ebrium-footer-newsletter-input-group {
+        flex-direction: column;
+    }
+
+    .ebrium-footer-newsletter-btn {
+        justify-content: center;
+        padding: 12px 24px;
+    }
+
+    .ebrium-footer-logo img {
+        max-width: 120px;
+    }
+
+    .ebrium-footer-heading {
+        font-size: 1.2rem;
+    }
+
+    .ebrium-footer-platforms-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .ebrium-footer-platform-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .ebrium-footer-bottom-links {
+        gap: 15px;
+    }
+}
+
+/* Footer Component Styles */

@@ -1,6 +1,52 @@
 
-/* Import styles from home.css to maintain consistency */
-@import '../Home/home.css';
+/* Web Development Component - Self-contained CSS with ebrium-web- prefixes */
+
+/* Root variables for consistent theming */
+:root {
+  --ebrium-web-primary-color: #294c2e;
+  --ebrium-web-secondary-color: #698a70;
+  --ebrium-web-background-color: #f8f9fa;
+  --ebrium-web-light-green: #b1ff08;
+  --ebrium-web-text-color: #171923;
+  --ebrium-web-transition-normal: all 0.3s ease;
+  --ebrium-web-transition-fast: all 0.2s ease;
+  --ebrium-web-box-shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+  --ebrium-web-box-shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --ebrium-web-border-radius: 12px;
+  --ebrium-web-border-radius-large: 16px;
+  --ebrium-web-spacing-xs: 8px;
+  --ebrium-web-spacing-sm: 16px;
+  --ebrium-web-spacing-md: 24px;
+  --ebrium-web-spacing-lg: 32px;
+  --ebrium-web-spacing-xl: 48px;
+  --ebrium-web-spacing-xxl: 64px;
+  --ebrium-web-font-size-xs: 0.875rem;
+  --ebrium-web-font-size-sm: 1rem;
+  --ebrium-web-font-size-md: 1.125rem;
+  --ebrium-web-font-size-lg: 1.25rem;
+  --ebrium-web-font-size-xl: 1.5rem;
+  --ebrium-web-font-size-xxl: 2rem;
+  --ebrium-web-font-size-xxxl: 2.5rem;
+  --ebrium-web-font-weight-normal: 400;
+  --ebrium-web-font-weight-medium: 500;
+  --ebrium-web-font-weight-semibold: 600;
+  --ebrium-web-font-weight-bold: 700;
+  --ebrium-web-font-weight-extrabold: 800;
+}
+
+/* Global styles for Web component */
+.ebrium-web-page-wrapper {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--ebrium-web-text-color);
+  background-color: var(--ebrium-web-background-color);
+}
+
+.ebrium-web-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--ebrium-web-spacing-md);
+}
 
 /* Web Development specific styles */
 
@@ -371,5 +417,714 @@
   .ebrium-web-shape-3 {
     width: 50px;
     height: 50px;
+  }
+}
+
+/* Section Headers */
+.ebrium-web-section-header {
+  text-align: center;
+  margin-bottom: var(--ebrium-web-spacing-xxl);
+}
+
+.ebrium-web-section-title {
+  font-size: var(--ebrium-web-font-size-xxxl);
+  font-weight: var(--ebrium-web-font-weight-extrabold);
+  color: var(--ebrium-web-text-color);
+  margin-bottom: var(--ebrium-web-spacing-sm);
+  line-height: 1.2;
+}
+
+.ebrium-web-section-subtitle {
+  font-size: var(--ebrium-web-font-size-lg);
+  color: var(--ebrium-web-secondary-color);
+  font-weight: var(--ebrium-web-font-weight-medium);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Services Section */
+.ebrium-web-services-section {
+  padding: var(--ebrium-web-spacing-xxl) 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.ebrium-web-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--ebrium-web-spacing-lg);
+  margin-top: var(--ebrium-web-spacing-xl);
+}
+
+.ebrium-web-service-card {
+  background: #ffffff;
+  border-radius: var(--ebrium-web-border-radius-large);
+  padding: var(--ebrium-web-spacing-xl);
+  box-shadow: var(--ebrium-web-box-shadow-light);
+  border: 1px solid rgba(105, 138, 112, 0.1);
+  transition: var(--ebrium-web-transition-normal);
+  text-align: center;
+}
+
+.ebrium-web-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--ebrium-web-box-shadow-medium);
+  border-color: var(--ebrium-web-light-green);
+}
+
+.ebrium-web-service-icon {
+  font-size: 3rem;
+  color: var(--ebrium-web-light-green);
+  margin-bottom: var(--ebrium-web-spacing-md);
+}
+
+.ebrium-web-service-card h3 {
+  font-size: var(--ebrium-web-font-size-xl);
+  font-weight: var(--ebrium-web-font-weight-bold);
+  color: var(--ebrium-web-text-color);
+  margin-bottom: var(--ebrium-web-spacing-sm);
+}
+
+.ebrium-web-service-card p {
+  color: var(--ebrium-web-secondary-color);
+  font-size: var(--ebrium-web-font-size-sm);
+  margin-bottom: var(--ebrium-web-spacing-lg);
+}
+
+.ebrium-web-service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ebrium-web-spacing-xs);
+  color: var(--ebrium-web-primary-color);
+  font-weight: var(--ebrium-web-font-weight-semibold);
+  text-decoration: none;
+  transition: var(--ebrium-web-transition-fast);
+}
+
+.ebrium-web-service-link:hover {
+  color: var(--ebrium-web-light-green);
+  transform: translateX(4px);
+}
+
+/* Technology Section */
+.ebrium-web-tech-section {
+  padding: var(--ebrium-web-spacing-xxl) 0;
+  background: #ffffff;
+}
+
+.ebrium-web-technologies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--ebrium-web-spacing-lg);
+  margin-top: var(--ebrium-web-spacing-xl);
+}
+
+.ebrium-web-tech-card {
+  background: var(--ebrium-web-background-color);
+  border-radius: var(--ebrium-web-border-radius);
+  padding: var(--ebrium-web-spacing-lg);
+  text-align: center;
+  transition: var(--ebrium-web-transition-normal);
+  border: 1px solid rgba(105, 138, 112, 0.08);
+}
+
+.ebrium-web-tech-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ebrium-web-box-shadow-light);
+}
+
+.ebrium-web-tech-icon {
+  font-size: 2.5rem;
+  color: var(--ebrium-web-light-green);
+  margin-bottom: var(--ebrium-web-spacing-md);
+}
+
+.ebrium-web-tech-card h3 {
+  font-size: var(--ebrium-web-font-size-lg);
+  font-weight: var(--ebrium-web-font-weight-bold);
+  color: var(--ebrium-web-text-color);
+  margin-bottom: var(--ebrium-web-spacing-xs);
+}
+
+.ebrium-web-tech-card p {
+  color: var(--ebrium-web-secondary-color);
+  font-size: var(--ebrium-web-font-size-sm);
+}
+
+/* Partners Section */
+.ebrium-web-partners-section {
+  padding: var(--ebrium-web-spacing-xxl) 0;
+  background: linear-gradient(135deg, var(--ebrium-web-primary-color) 0%, var(--ebrium-web-secondary-color) 100%);
+  color: #ffffff;
+}
+
+.ebrium-web-marquee-container {
+  overflow: hidden;
+  position: relative;
+  margin-top: var(--ebrium-web-spacing-xl);
+}
+
+.ebrium-web-marquee-content {
+  display: flex;
+  animation: ebrium-web-marquee 30s linear infinite;
+}
+
+.ebrium-web-partner-logo {
+  flex-shrink: 0;
+  margin: 0 var(--ebrium-web-spacing-lg);
+  text-align: center;
+  opacity: 0.8;
+  transition: var(--ebrium-web-transition-fast);
+}
+
+.ebrium-web-partner-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.ebrium-web-partner-logo img {
+  width: 120px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.ebrium-web-partner-logo p {
+  margin-top: var(--ebrium-web-spacing-xs);
+  font-size: var(--ebrium-web-font-size-sm);
+  font-weight: var(--ebrium-web-font-weight-medium);
+}
+
+@keyframes ebrium-web-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* About Section */
+.ebrium-web-about-section {
+  padding: var(--ebrium-web-spacing-xxl) 0;
+  background: #ffffff;
+}
+
+.ebrium-web-about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ebrium-web-spacing-xxl);
+  align-items: center;
+  margin-top: var(--ebrium-web-spacing-xl);
+}
+
+.ebrium-web-about-image {
+  border-radius: var(--ebrium-web-border-radius-large);
+  overflow: hidden;
+  box-shadow: var(--ebrium-web-box-shadow-medium);
+}
+
+.ebrium-web-about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ebrium-web-about-text h3 {
+  font-size: var(--ebrium-web-font-size-xxl);
+  font-weight: var(--ebrium-web-font-weight-bold);
+  color: var(--ebrium-web-text-color);
+  margin-bottom: var(--ebrium-web-spacing-lg);
+}
+
+.ebrium-web-about-text p {
+  color: var(--ebrium-web-secondary-color);
+  font-size: var(--ebrium-web-font-size-md);
+  margin-bottom: var(--ebrium-web-spacing-md);
+  line-height: 1.7;
+}
+
+.ebrium-web-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ebrium-web-spacing-xs);
+  padding: var(--ebrium-web-spacing-sm) var(--ebrium-web-spacing-lg);
+  border-radius: 30px;
+  font-weight: var(--ebrium-web-font-weight-semibold);
+  text-decoration: none;
+  transition: var(--ebrium-web-transition-normal);
+  border: none;
+  cursor: pointer;
+}
+
+.ebrium-web-btn-primary {
+  background-color: var(--ebrium-web-light-green);
+  color: var(--ebrium-web-primary-color);
+}
+
+.ebrium-web-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(177, 255, 8, 0.3);
+}
+
+/* Process Section */
+.ebrium-web-process-section {
+  padding: var(--ebrium-web-spacing-xxl) 0;
+  background: var(--ebrium-web-background-color);
+}
+
+.ebrium-web-process-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--ebrium-web-spacing-lg);
+  margin-top: var(--ebrium-web-spacing-xl);
+}
+
+.ebrium-web-process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ebrium-web-spacing-md);
+  position: relative;
+}
+
+.ebrium-web-process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: calc(100% - 48px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--ebrium-web-light-green), var(--ebrium-web-secondary-color));
+  z-index: 1;
+}
+
+.ebrium-web-process-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ebrium-web-light-green), var(--ebrium-web-primary-color));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--ebrium-web-font-weight-bold);
+  font-size: var(--ebrium-web-font-size-lg);
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.ebrium-web-process-content h3 {
+  font-size: var(--ebrium-web-font-size-lg);
+  font-weight: var(--ebrium-web-font-weight-bold);
+  color: var(--ebrium-web-text-color);
+  margin-bottom: var(--ebrium-web-spacing-xs);
+}
+
+.ebrium-web-process-content p {
+  color: var(--ebrium-web-secondary-color);
+  font-size: var(--ebrium-web-font-size-sm);
+  line-height: 1.6;
+}
+
+/* Why Choose Us Section */
+.ebrium-web-why-choose-us {
+  padding: var(--ebrium-web-spacing-xxl) 0;
+  background: #ffffff;
+}
+
+.ebrium-web-why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--ebrium-web-spacing-lg);
+  margin-top: var(--ebrium-web-spacing-xl);
+}
+
+.ebrium-web-why-choose-card {
+  background: var(--ebrium-web-background-color);
+  border-radius: var(--ebrium-web-border-radius);
+  padding: var(--ebrium-web-spacing-lg);
+  text-align: center;
+  transition: var(--ebrium-web-transition-normal);
+  border: 1px solid rgba(105, 138, 112, 0.08);
+}
+
+.ebrium-web-why-choose-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ebrium-web-box-shadow-light);
+}
+
+.ebrium-web-why-choose-icon {
+  font-size: 2.5rem;
+  color: var(--ebrium-web-light-green);
+  margin-bottom: var(--ebrium-web-spacing-md);
+}
+
+.ebrium-web-why-choose-card h3 {
+  font-size: var(--ebrium-web-font-size-lg);
+  font-weight: var(--ebrium-web-font-weight-bold);
+  color: var(--ebrium-web-text-color);
+  margin-bottom: var(--ebrium-web-spacing-sm);
+}
+
+.ebrium-web-why-choose-card p {
+  color: var(--ebrium-web-secondary-color);
+  font-size: var(--ebrium-web-font-size-sm);
+  line-height: 1.6;
+}
+
+/* Pricing Section */
+.ebrium-web-pricing-section {
+  padding: var(--ebrium-web-spacing-xxl) 0;
+  background: var(--ebrium-web-background-color);
+}
+
+.ebrium-web-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--ebrium-web-spacing-lg);
+  margin-top: var(--ebrium-web-spacing-xl);
+}
+
+.ebrium-web-pricing-card {
+  background: #ffffff;
+  border-radius: var(--ebrium-web-border-radius-large);
+  padding: var(--ebrium-web-spacing-xl);
+  box-shadow: var(--ebrium-web-box-shadow-light);
+  border: 2px solid transparent;
+  transition: var(--ebrium-web-transition-normal);
+  position: relative;
+}
+
+.ebrium-web-pricing-card.featured {
+  border-color: var(--ebrium-web-light-green);
+  transform: scale(1.05);
+}
+
+.ebrium-web-popular-tag {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ebrium-web-light-green);
+  color: var(--ebrium-web-primary-color);
+  padding: var(--ebrium-web-spacing-xs) var(--ebrium-web-spacing-md);
+  border-radius: 20px;
+  font-size: var(--ebrium-web-font-size-xs);
+  font-weight: var(--ebrium-web-font-weight-bold);
+}
+
+.ebrium-web-pricing-header {
+  text-align: center;
+  margin-bottom: var(--ebrium-web-spacing-lg);
+}
+
+.ebrium-web-pricing-header h3 {
+  font-size: var(--ebrium-web-font-size-xl);
+  font-weight: var(--ebrium-web-font-weight-bold);
+  color: var(--ebrium-web-text-color);
+  margin-bottom: var(--ebrium-web-spacing-xs);
+}
+
+.ebrium-web-price {
+  font-size: var(--ebrium-web-font-size-xxxl);
+  font-weight: var(--ebrium-web-font-weight-extrabold);
+  color: var(--ebrium-web-primary-color);
+  margin-bottom: var(--ebrium-web-spacing-xs);
+}
+
+.ebrium-web-pricing-header p {
+  color: var(--ebrium-web-secondary-color);
+  font-size: var(--ebrium-web-font-size-sm);
+}
+
+.ebrium-web-pricing-features {
+  margin-bottom: var(--ebrium-web-spacing-xl);
+}
+
+.ebrium-web-pricing-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ebrium-web-pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: var(--ebrium-web-spacing-sm);
+  margin-bottom: var(--ebrium-web-spacing-xs);
+  color: var(--ebrium-web-secondary-color);
+  font-size: var(--ebrium-web-font-size-sm);
+}
+
+.ebrium-web-pricing-features li i {
+  color: var(--ebrium-web-light-green);
+  flex-shrink: 0;
+}
+
+.ebrium-web-btn-outline {
+  background-color: transparent;
+  color: var(--ebrium-web-primary-color);
+  border: 2px solid var(--ebrium-web-primary-color);
+}
+
+.ebrium-web-btn-outline:hover {
+  background-color: var(--ebrium-web-primary-color);
+  color: #ffffff;
+}
+
+/* FAQ Section */
+.ebrium-web-faq-contact-section {
+  padding: var(--ebrium-web-spacing-xxl) 0;
+  background: #ffffff;
+}
+
+.ebrium-web-faq-contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ebrium-web-spacing-xxl);
+  margin-top: var(--ebrium-web-spacing-xl);
+}
+
+.ebrium-web-faq-section h2 {
+  font-size: var(--ebrium-web-font-size-xxl);
+  font-weight: var(--ebrium-web-font-weight-bold);
+  color: var(--ebrium-web-text-color);
+  margin-bottom: var(--ebrium-web-spacing-lg);
+}
+
+.ebrium-web-accordion-item {
+  border: 1px solid rgba(105, 138, 112, 0.1);
+  border-radius: var(--ebrium-web-border-radius);
+  margin-bottom: var(--ebrium-web-spacing-sm);
+  overflow: hidden;
+}
+
+.ebrium-web-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--ebrium-web-spacing-lg);
+  background: var(--ebrium-web-background-color);
+  cursor: pointer;
+  transition: var(--ebrium-web-transition-fast);
+}
+
+.ebrium-web-accordion-header:hover {
+  background: rgba(105, 138, 112, 0.05);
+}
+
+.ebrium-web-accordion-header.active {
+  background: rgba(177, 255, 8, 0.1);
+}
+
+.ebrium-web-accordion-header h3 {
+  font-size: var(--ebrium-web-font-size-md);
+  font-weight: var(--ebrium-web-font-weight-semibold);
+  color: var(--ebrium-web-text-color);
+  margin: 0;
+}
+
+.ebrium-web-accordion-header i {
+  color: var(--ebrium-web-light-green);
+  font-size: var(--ebrium-web-font-size-lg);
+  transition: var(--ebrium-web-transition-fast);
+}
+
+.ebrium-web-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--ebrium-web-transition-normal);
+  background: #ffffff;
+}
+
+.ebrium-web-accordion-content.active {
+  max-height: 200px;
+  padding: 0 var(--ebrium-web-spacing-lg) var(--ebrium-web-spacing-lg);
+}
+
+.ebrium-web-accordion-content p {
+  color: var(--ebrium-web-secondary-color);
+  font-size: var(--ebrium-web-font-size-sm);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Quick Contact Section */
+.ebrium-web-quick-contact-section h2 {
+  font-size: var(--ebrium-web-font-size-xxl);
+  font-weight: var(--ebrium-web-font-weight-bold);
+  color: var(--ebrium-web-text-color);
+  margin-bottom: var(--ebrium-web-spacing-md);
+}
+
+.ebrium-web-quick-contact-section p {
+  color: var(--ebrium-web-secondary-color);
+  font-size: var(--ebrium-web-font-size-md);
+  margin-bottom: var(--ebrium-web-spacing-lg);
+}
+
+.ebrium-web-quick-contact-form {
+  background: var(--ebrium-web-background-color);
+  border-radius: var(--ebrium-web-border-radius);
+  padding: var(--ebrium-web-spacing-xl);
+}
+
+.ebrium-web-form-group {
+  margin-bottom: var(--ebrium-web-spacing-md);
+}
+
+.ebrium-web-form-group input,
+.ebrium-web-form-group select,
+.ebrium-web-form-group textarea {
+  width: 100%;
+  padding: var(--ebrium-web-spacing-md);
+  border: 1px solid rgba(105, 138, 112, 0.2);
+  border-radius: var(--ebrium-web-border-radius);
+  font-size: var(--ebrium-web-font-size-sm);
+  transition: var(--ebrium-web-transition-fast);
+  background: #ffffff;
+}
+
+.ebrium-web-form-group input:focus,
+.ebrium-web-form-group select:focus,
+.ebrium-web-form-group textarea:focus {
+  outline: none;
+  border-color: var(--ebrium-web-light-green);
+  box-shadow: 0 0 0 3px rgba(177, 255, 8, 0.1);
+}
+
+.ebrium-web-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Testimonials Section */
+.ebrium-web-testimonials-section {
+  padding: var(--ebrium-web-spacing-xxl) 0;
+  background: var(--ebrium-web-background-color);
+}
+
+.ebrium-web-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--ebrium-web-spacing-lg);
+  margin-top: var(--ebrium-web-spacing-xl);
+}
+
+.ebrium-web-testimonial-card {
+  background: #ffffff;
+  border-radius: var(--ebrium-web-border-radius-large);
+  padding: var(--ebrium-web-spacing-xl);
+  box-shadow: var(--ebrium-web-box-shadow-light);
+  border: 1px solid rgba(105, 138, 112, 0.1);
+}
+
+.ebrium-web-testimonial-content {
+  margin-bottom: var(--ebrium-web-spacing-lg);
+}
+
+.ebrium-web-testimonial-content p {
+  font-size: var(--ebrium-web-font-size-md);
+  color: var(--ebrium-web-text-color);
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+}
+
+.ebrium-web-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: var(--ebrium-web-spacing-md);
+}
+
+.ebrium-web-testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ebrium-web-testimonial-info h4 {
+  font-size: var(--ebrium-web-font-size-md);
+  font-weight: var(--ebrium-web-font-weight-semibold);
+  color: var(--ebrium-web-text-color);
+  margin: 0 0 var(--ebrium-web-spacing-xs) 0;
+}
+
+.ebrium-web-testimonial-info p {
+  font-size: var(--ebrium-web-font-size-sm);
+  color: var(--ebrium-web-secondary-color);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ebrium-web-about-content,
+  .ebrium-web-faq-contact-container {
+    grid-template-columns: 1fr;
+    gap: var(--ebrium-web-spacing-xl);
+  }
+
+  .ebrium-web-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ebrium-web-pricing-card.featured {
+    transform: none;
+  }
+
+  .ebrium-web-process-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .ebrium-web-process-step:not(:last-child)::after {
+    display: none;
+  }
+
+  .ebrium-web-hero-title {
+    font-size: var(--ebrium-web-font-size-xxl);
+  }
+
+  .ebrium-web-section-title {
+    font-size: var(--ebrium-web-font-size-xxl);
+  }
+}
+
+@media (max-width: 576px) {
+  .ebrium-web-hero-content {
+    grid-template-columns: 1fr;
+    gap: var(--ebrium-web-spacing-lg);
+  }
+
+  .ebrium-web-hero-visual {
+    order: -1;
+  }
+
+  .ebrium-web-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .ebrium-web-hero-buttons .ebrium-web-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ebrium-web-services-grid,
+  .ebrium-web-technologies-grid,
+  .ebrium-web-why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ebrium-web-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ebrium-web-hero-title {
+    font-size: var(--ebrium-web-font-size-xl);
+  }
+
+  .ebrium-web-section-title {
+    font-size: var(--ebrium-web-font-size-xl);
   }
 }

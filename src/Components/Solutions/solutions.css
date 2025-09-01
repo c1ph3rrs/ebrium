@@ -1,5 +1,16 @@
 /* Variables */
 /* Solutions Component Variables */
+
+/* Import styles from home.css to maintain consistency */
+@import '../Home/home.css';
+
+/* Page Layout */
+.page-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Enhanced Ebrium Solutions Hero Styles */
 .solutions-page-wrapper {
     --primary-color: #294c2e;
     --secondary-color: #698a70;

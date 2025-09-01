@@ -377,4 +377,113 @@
 /* Partners Section */
 
 
+/* Hire Me Section */
+.hire-me-section {
+  background-color: #f9f9f9;
+  padding: 100px 0;
+}
+
+.hire-me-content {
+  max-width: 600px;
+}
+
+.hire-me-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.hire-me-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.platform-buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.platform-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fiverr-btn {
+  background-color: #1dbf73;
+  color: white;
+}
+
+.fiverr-btn:hover {
+  background-color: #18a164;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(29, 191, 115, 0.3);
+}
+
+.upwork-btn {
+  background-color: #14a800;
+  color: white;
+}
+
+.upwork-btn:hover {
+  background-color: #108000;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(20, 168, 0, 0.3);
+}
+
+.trust-indicators {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-weight: 500;
+}
+
+.trust-item i {
+  color: var(--light-green);
+}
+
+.hire-me-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hire-me-image img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Hire Me Section */
+@media (max-width: 768px) {
+  .platform-buttons {
+    flex-direction: column;
+  }
+
+  .platform-btn {
+    justify-content: center;
+  }
+
+  .trust-indicators {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
 /* other css */

@@ -668,7 +668,7 @@ const Consultation = () => {
   };
 
   return (
-    <div className="consultation-page">
+    <div className="ebrium-consultation-page-wrapper">
       <Navbar />
       
       <div className="consultation-hero">
@@ -696,7 +696,46 @@ const Consultation = () => {
           )}
         </div>
       </div>
-      
+
+      {/* Hire Me Section - Fiverr & Upwork */}
+      <section className="hire-me-section">
+        <div className="container">
+          <div className="hire-me-content">
+            <h2>Need Immediate Assistance?</h2>
+            <p>Get expert consultation and project work from our trusted team. Available on leading freelance platforms.</p>
+
+            <div className="platform-buttons">
+              <a href="https://www.fiverr.com/dev__ib" className="platform-btn fiverr-btn" target="_blank" rel="noopener noreferrer">
+                <i className='bx bxl-fiverr'></i>
+                <span>Hire on Fiverr</span>
+              </a>
+              <a href="https://www.upwork.com/freelancers/~dev__ib" className="platform-btn upwork-btn" target="_blank" rel="noopener noreferrer">
+                <i className='bx bxl-upwork'></i>
+                <span>Hire on Upwork</span>
+              </a>
+            </div>
+
+            <div className="trust-indicators">
+              <div className="trust-item">
+                <i className='bx bx-check-circle'></i>
+                <span>5-Star Rated Professional</span>
+              </div>
+              <div className="trust-item">
+                <i className='bx bx-check-circle'></i>
+                <span>100+ Successful Projects</span>
+              </div>
+              <div className="trust-item">
+                <i className='bx bx-check-circle'></i>
+                <span>Enterprise Experience</span>
+              </div>
+            </div>
+          </div>
+          <div className="hire-me-image">
+            <img src="../../assets/main_logo.png" alt="Ebrium Digital Solutions" />
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

@@ -1,18 +1,24 @@
 import './contact.css';
+import mainLogo from '../../assets/main_logo.png';
 import Navbar from '../NavBar/Navbar';
 import Footer from '../Footer/Footer';
 import React, { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-    faEnvelope, 
-    faPhone, 
-    faLocationDot, 
+import {
+    faEnvelope,
+    faPhone,
+    faLocationDot,
     faClock,
     faCheck,
-    faPaperPlane
+    faPaperPlane,
+    faArrowRight,
+    faChevronDown,
+    faMapMarkerAlt,
+    faUser,
+    faMessage,
+    faGlobe
 } from '@fortawesome/free-solid-svg-icons';
 
-import {  faSquareVirus } from '@fortawesome/free-solid-svg-icons';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -76,202 +82,280 @@ const Contact = () => {
     };
 
     return (
-        <div className="contact-page">
+        <div className="page-wrapper">
             <Navbar />
-            
-            {/* Hero Section */}
-            <section className="contact-hero">
+
+            {/* Enhanced Hero Section */}
+            <section className="ebrium-contact-hero">
+                <div className="ebrium-contact-hero-bg"></div>
+                <div className="ebrium-contact-hero-overlay"></div>
                 <div className="container">
-                    <div className="contact-hero-content">
-                        <h1>Get in Touch</h1>
-                        <div className="contact-divider"></div>
-                        <p className="contact-tagline">We're here to answer your questions and help you succeed</p>
-                    </div>
-                </div>
-                <div className="contact-shape contact-shape-1"></div>
-                <div className="contact-shape contact-shape-2"></div>
-            </section>
-            
-            {/* Main Contact Section */}
-            <section className="contact-main">
-                <div className="container">
-                    <div className="contact-grid">
-                        <div className="contact-info-container">
-                            <div className="contact-info-card">
-                                <h2>Contact Information</h2>
-                                <p className="contact-intro">
-                                    Have questions about our services? Reach out to us through any of these channels and we'll get back to you promptly.
-                                </p>
-                                
-                                <div className="contact-info-item">
-                                    <div className="contact-info-icon">
-                                        <FontAwesomeIcon icon={faEnvelope} />
+                    <div className="ebrium-contact-hero-content">
+                        <div className="ebrium-contact-hero-text">
+                            <span className="ebrium-contact-hero-badge">Get in Touch</span>
+                            <h1 className="ebrium-contact-hero-title">Let's Build Something <span className="ebrium-contact-highlight">Amazing</span> Together</h1>
+                            <p className="ebrium-contact-hero-description">
+                                Ready to transform your business with innovative digital solutions? We're here to answer your questions, discuss your project, and help you achieve your goals.
+                            </p>
+                            <div className="ebrium-contact-hero-buttons">
+                                <a href="#contact-form" className="ebrium-contact-primary-btn">
+                                    Send Message
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </a>
+                                <a href="#contact-info" className="ebrium-contact-secondary-btn">
+                                    Contact Info
+                                </a>
+                            </div>
+                        </div>
+                        <div className="ebrium-contact-hero-visual">
+                            <div className="ebrium-contact-hero-shapes">
+                                <div className="ebrium-contact-shape ebrium-contact-shape-1"></div>
+                                <div className="ebrium-contact-shape ebrium-contact-shape-2"></div>
+                                <div className="ebrium-contact-shape ebrium-contact-shape-3"></div>
+                            </div>
+                            <div className="ebrium-contact-hero-cards">
+                                <div className="ebrium-contact-hero-card">
+                                    <div className="ebrium-contact-hero-card-icon">
+                                        <FontAwesomeIcon icon={faUser} />
                                     </div>
-                                    <div className="contact-info-content">
-                                        <h3>Email</h3>
-                                        <p>For general inquiries:</p>
-                                        <a href="mailto:hello@ebrium.codes" className="contact-link">
-                                            hello@ebrium.codes
-                                        </a>
-                                        {/* <p>For support:</p>
-                                        <a href="mailto:support@ebrium.com" className="contact-link">
-                                            support@ebrium.com
-                                        </a> */}
-                                    </div>
+                                    <h3>Expert Team</h3>
+                                    <p>Skilled professionals ready to help</p>
                                 </div>
-                                
-                                <div className="contact-info-item">
-                                    <div className="contact-info-icon">
-                                        <FontAwesomeIcon icon={faSquareVirus} />
+                                <div className="ebrium-contact-hero-card">
+                                    <div className="ebrium-contact-hero-card-icon">
+                                        <FontAwesomeIcon icon={faMessage} />
                                     </div>
-                                    <div className="contact-info-content">
-                                        <h3>Fiverr</h3>
-                                        <p>Find us on Fiverr for project-based work:</p>
-                                        <a href="https://www.fiverr.com/dev__ib" target="_blank" rel="noopener noreferrer" className="contact-link">
-                                            fiverr.com/dev__ib
-                                        </a>
-                                    </div>
+                                    <h3>Quick Response</h3>
+                                    <p>24-48 hours guaranteed reply</p>
                                 </div>
-                                
-                                <div className="contact-info-item">
-                                    <div className="contact-info-icon">
+                                <div className="ebrium-contact-hero-card">
+                                    <div className="ebrium-contact-hero-card-icon">
                                         <FontAwesomeIcon icon={faPhone} />
                                     </div>
-                                    <div className="contact-info-content">
-                                        <h3>Phone</h3>
-                                        <p>Call our customer service:</p>
-                                        <a href="tel:+1234567890" className="contact-link">
-                                            +92 317 1755276
-                                        </a>
-                                    </div>
+                                    <h3>Direct Support</h3>
+                                    <p>Phone and live chat available</p>
                                 </div>
-                                
-                                <div className="contact-info-item">
-                                    <div className="contact-info-icon">
-                                        <FontAwesomeIcon icon={faLocationDot} />
+                                <div className="ebrium-contact-hero-card">
+                                    <div className="ebrium-contact-hero-card-icon">
+                                        <FontAwesomeIcon icon={faEnvelope} />
                                     </div>
-                                    <div className="contact-info-content">
-                                        <h3>Office</h3>
-                                        <p>Pakistan</p>
-                                        <p>Islamabad</p>
-                                        <p>Islamabad, Pakistan</p>
-                                    </div>
-                                </div>
-                                
-                                <div className="contact-info-item">
-                                    <div className="contact-info-icon">
-                                        <FontAwesomeIcon icon={faClock} />
-                                    </div>
-                                    <div className="contact-info-content">
-                                        <h3>Business Hours</h3>
-                                        <p>Monday - Friday: 9:00 AM to 5:00 PM</p>
-                                        <p>Saturday: 10:00 AM to 2:00 PM</p>
-                                        <p>Sunday: Closed</p>
-                                    </div>
+                                    <h3>Email Support</h3>
+                                    <p>Dedicated support channels</p>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div className="contact-form-container">
-                            {!isSubmitted ? (
-                                <form ref={form} className="contact-form" onSubmit={handleSubmit}>
-                                    <h2>Send Us a Message</h2>
-                                    
-                                    <div className="form-group floating-label">
-                                        <input 
-                                            type="text" 
-                                            id="name" 
-                                            name="name" 
-                                            value={formData.name} 
-                                            onChange={handleChange} 
-                                            required 
-                                        />
-                                        <label htmlFor="name">Full Name</label>
-                                        <div className="input-highlight"></div>
-                                    </div>
-                                    
-                                    <div className="form-group floating-label">
-                                        <input 
-                                            type="email" 
-                                            id="email" 
-                                            name="email" 
-                                            value={formData.email} 
-                                            onChange={handleChange} 
-                                            required 
-                                        />
-                                        <label htmlFor="email">Email Address</label>
-                                        <div className="input-highlight"></div>
-                                    </div>
-                                    
-                                    <div className="form-row">
-                                        <div className="form-group floating-label">
-                                            <input 
-                                                type="tel" 
-                                                id="phone" 
-                                                name="phone" 
-                                                value={formData.phone} 
-                                                onChange={handleChange} 
-                                            />
-                                            <label htmlFor="phone">Phone Number</label>
-                                            <div className="input-highlight"></div>
-                                        </div>
-                                        
-                                        <div className="form-group select-wrapper">
-                                            <select 
-                                                id="subject" 
-                                                name="subject" 
-                                                value={formData.subject} 
+                    </div>
+                    <div className="ebrium-contact-scroll-indicator">
+                        <span>Scroll to explore</span>
+                        <FontAwesomeIcon icon={faChevronDown} bounce />
+                    </div>
+                </div>
+            </section>
+            
+            {/* Contact Information Section */}
+            <section id="contact-info" className="ebrium-contact-info">
+                <div className="container">
+                    <div className="ebrium-contact-info-content">
+                        <div className="ebrium-contact-section-header">
+                            <h2 className="ebrium-contact-section-title">Get in Touch</h2>
+                            <p className="ebrium-contact-section-subtitle">Multiple ways to connect with our team</p>
+                        </div>
+
+                        <div className="ebrium-contact-info-grid">
+                            <div className="ebrium-contact-info-card">
+                                <div className="ebrium-contact-info-icon">
+                                    <FontAwesomeIcon icon={faEnvelope} />
+                                </div>
+                                <div className="ebrium-contact-info-content">
+                                    <h3>Email Us</h3>
+                                    <p>Send us an email and we'll respond within 24 hours</p>
+                                    <a href="mailto:hello@ebrium.codes" className="ebrium-contact-link">
+                                        hello@ebrium.codes
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="ebrium-contact-info-card">
+                                <div className="ebrium-contact-info-icon">
+                                    <FontAwesomeIcon icon={faPhone} />
+                                </div>
+                                <div className="ebrium-contact-info-content">
+                                    <h3>Call Us</h3>
+                                    <p>Speak directly with our experts</p>
+                                    <a href="tel:+923171755276" className="ebrium-contact-link">
+                                        +92 317 1755276
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="ebrium-contact-info-card">
+                                <div className="ebrium-contact-info-icon">
+                                    <FontAwesomeIcon icon={faMapMarkerAlt} />
+                                </div>
+                                <div className="ebrium-contact-info-content">
+                                    <h3>Our Location</h3>
+                                    <p>Serving clients worldwide from Pakistan</p>
+                                    <span className="ebrium-contact-location">Islamabad, Pakistan</span>
+                                </div>
+                            </div>
+
+                            <div className="ebrium-contact-info-card">
+                                <div className="ebrium-contact-info-icon">
+                                    <FontAwesomeIcon icon={faClock} />
+                                </div>
+                                <div className="ebrium-contact-info-content">
+                                    <h3>Business Hours</h3>
+                                    <p>Mon-Fri: 9AM-5PM</p>
+                                    <p>Sat: 10AM-2PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Hire Me Section - Fiverr & Upwork */}
+                        <div className="ebrium-contact-hire-section">
+                            <h3>Available on Freelance Platforms</h3>
+                            <p>Hire our expert team through trusted freelance marketplaces</p>
+
+                            <div className="ebrium-contact-platform-buttons">
+                                <a href="https://www.fiverr.com/dev__ib" className="ebrium-contact-platform-btn ebrium-contact-fiverr-btn" target="_blank" rel="noopener noreferrer">
+                                    <i className='bx bxl-fiverr'></i>
+                                    <span>Hire on Fiverr</span>
+                                </a>
+                                <a href="https://www.upwork.com/freelancers/~dev__ib" className="ebrium-contact-platform-btn ebrium-contact-upwork-btn" target="_blank" rel="noopener noreferrer">
+                                    <i className='bx bxl-upwork'></i>
+                                    <span>Hire on Upwork</span>
+                                </a>
+                            </div>
+
+                            <div className="ebrium-contact-trust-indicators">
+                                <div className="ebrium-contact-trust-item">
+                                    <i className='bx bx-check-circle'></i>
+                                    <span>5-Star Rated Professional</span>
+                                </div>
+                                <div className="ebrium-contact-trust-item">
+                                    <i className='bx bx-check-circle'></i>
+                                    <span>100+ Successful Projects</span>
+                                </div>
+                                <div className="ebrium-contact-trust-item">
+                                    <i className='bx bx-check-circle'></i>
+                                    <span>Enterprise Experience</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* Contact Form Section */}
+            <section id="contact-form" className="ebrium-contact-form-section">
+                <div className="container">
+                    <div className="ebrium-contact-form-container">
+                        {!isSubmitted ? (
+                            <div className="ebrium-contact-form-wrapper">
+                                <div className="ebrium-contact-form-header">
+                                    <h2 className="ebrium-contact-form-title">Send Us a Message</h2>
+                                    <p className="ebrium-contact-form-subtitle">Fill out the form below and we'll get back to you within 24 hours</p>
+                                </div>
+
+                                <form ref={form} className="ebrium-contact-form" onSubmit={handleSubmit}>
+                                    <div className="ebrium-contact-form-grid">
+                                        <div className="ebrium-contact-form-group">
+                                            <label htmlFor="name" className="ebrium-contact-form-label">Full Name</label>
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                name="name"
+                                                value={formData.name}
                                                 onChange={handleChange}
+                                                className="ebrium-contact-form-input"
+                                                placeholder="Enter your full name"
                                                 required
-                                                className="styled-select"
+                                            />
+                                        </div>
+
+                                        <div className="ebrium-contact-form-group">
+                                            <label htmlFor="email" className="ebrium-contact-form-label">Email Address</label>
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                className="ebrium-contact-form-input"
+                                                placeholder="Enter your email address"
+                                                required
+                                            />
+                                        </div>
+
+                                        <div className="ebrium-contact-form-group">
+                                            <label htmlFor="phone" className="ebrium-contact-form-label">Phone Number</label>
+                                            <input
+                                                type="tel"
+                                                id="phone"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                className="ebrium-contact-form-input"
+                                                placeholder="Enter your phone number"
+                                            />
+                                        </div>
+
+                                        <div className="ebrium-contact-form-group">
+                                            <label htmlFor="subject" className="ebrium-contact-form-label">Service Interest</label>
+                                            <select
+                                                id="subject"
+                                                name="subject"
+                                                value={formData.subject}
+                                                onChange={handleChange}
+                                                className="ebrium-contact-form-select"
+                                                required
                                             >
-                                                <option value="" disabled>Select a subject</option>
+                                                <option value="" disabled>Select a service</option>
                                                 <option value="General Inquiry">General Inquiry</option>
-                                                <option value="Technical Support">Technical Support</option>
-                                                <option value="Cloud Services">Cloud Services</option>
                                                 <option value="Mobile App Development">Mobile App Development</option>
                                                 <option value="Web Development">Web Development</option>
-                                                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                                                <option value="AI & Machine Learning">AI & Machine Learning</option>
+                                                <option value="Cloud Solutions">Cloud Solutions</option>
+                                                <option value="Business Intelligence">Business Intelligence</option>
+                                                <option value="Consultation">Free Consultation</option>
                                             </select>
-                                            <label htmlFor="subject" className="select-label">Subject</label>
-                                            <div className="select-arrow"></div>
                                         </div>
                                     </div>
-                                    
-                                    <div className="form-group floating-label textarea-wrapper">
-                                        <textarea 
-                                            id="message" 
-                                            name="message" 
-                                            rows={6} 
-                                            value={formData.message} 
-                                            onChange={handleChange} 
+
+                                    <div className="ebrium-contact-form-group ebrium-contact-form-group-full">
+                                        <label htmlFor="message" className="ebrium-contact-form-label">Message</label>
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            rows={6}
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            className="ebrium-contact-form-textarea"
+                                            placeholder="Tell us about your project, timeline, and specific requirements..."
                                             required
                                         ></textarea>
-                                        <label htmlFor="message">Message</label>
-                                        <div className="input-highlight"></div>
                                     </div>
-                                    
-                                    <button type="submit" className="contact-submit-btn">
+
+                                    <button type="submit" className="ebrium-contact-submit-btn">
                                         <span>Send Message</span>
                                         <FontAwesomeIcon icon={faPaperPlane} />
                                     </button>
                                 </form>
-                            ) : (
-                                <div className="contact-success-message">
-                                    <div className="success-icon">
-                                        <FontAwesomeIcon icon={faCheck} />
-                                    </div>
-                                    <h2>Message Sent!</h2>
-                                    <p>Thank you for contacting us. We'll get back to you shortly.</p>
-                                    <button 
-                                        onClick={() => window.location.reload()} 
-                                        className="send-another-btn"
-                                    >
-                                        Send Another Message
-                                    </button>
+                            </div>
+                        ) : (
+                            <div className="ebrium-contact-success-message">
+                                <div className="ebrium-contact-success-icon">
+                                    <FontAwesomeIcon icon={faCheck} />
                                 </div>
-                            )}
-                        </div>
+                                <h2 className="ebrium-contact-success-title">Message Sent Successfully!</h2>
+                                <p className="ebrium-contact-success-text">Thank you for contacting us. We'll get back to you within 24 hours with a detailed response.</p>
+                                <button
+                                    onClick={() => window.location.reload()}
+                                    className="ebrium-contact-send-another-btn"
+                                >
+                                    Send Another Message
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>
@@ -298,32 +382,52 @@ const Contact = () => {
             </section>
             
             {/* FAQ Section */}
-            <section className="contact-faq">
+            <section className="ebrium-contact-faq">
                 <div className="container">
-                    <div className="contact-section-header">
-                        <h2>Frequently Asked Questions</h2>
-                        <p>Find quick answers to common questions about contacting us</p>
+                    <div className="ebrium-contact-section-header">
+                        <h2 className="ebrium-contact-section-title">Frequently Asked Questions</h2>
+                        <p className="ebrium-contact-section-subtitle">Find quick answers to common questions</p>
                     </div>
-                    
-                    <div className="faq-container">
-                        <div className="faq-item">
-                            <h3>How quickly will I receive a response?</h3>
-                            <p>We typically respond to all inquiries within 24-48 business hours. For urgent matters, we recommend calling our support line directly.</p>
+
+                    <div className="ebrium-contact-faq-container">
+                        <div className="ebrium-contact-faq-item">
+                            <div className="ebrium-contact-faq-icon">
+                                <FontAwesomeIcon icon={faClock} />
+                            </div>
+                            <div className="ebrium-contact-faq-content">
+                                <h3>How quickly will I receive a response?</h3>
+                                <p>We typically respond to all inquiries within 24-48 business hours. For urgent matters, we recommend calling our support line directly for immediate assistance.</p>
+                            </div>
                         </div>
-                        
-                        <div className="faq-item">
-                            <h3>Can I schedule a consultation?</h3>
-                            <p>Yes! You can schedule a free 30-minute consultation by filling out the contact form and selecting "Consultation" as the subject, or by calling our office directly.</p>
+
+                        <div className="ebrium-contact-faq-item">
+                            <div className="ebrium-contact-faq-icon">
+                                <FontAwesomeIcon icon={faUser} />
+                            </div>
+                            <div className="ebrium-contact-faq-content">
+                                <h3>Can I schedule a consultation?</h3>
+                                <p>Yes! You can schedule a free 30-minute consultation by filling out the contact form and selecting "Free Consultation" as the subject, or by calling our office directly.</p>
+                            </div>
                         </div>
-                        
-                        <div className="faq-item">
-                            <h3>Do you work with international clients?</h3>
-                            <p>Absolutely. We have clients around the globe and can accommodate different time zones for meetings and support.</p>
+
+                        <div className="ebrium-contact-faq-item">
+                            <div className="ebrium-contact-faq-icon">
+                                <FontAwesomeIcon icon={faGlobe} />
+                            </div>
+                            <div className="ebrium-contact-faq-content">
+                                <h3>Do you work with international clients?</h3>
+                                <p>Absolutely. We have clients around the globe and can accommodate different time zones for meetings and support. Our team is experienced in international project management.</p>
+                            </div>
                         </div>
-                        
-                        <div className="faq-item">
-                            <h3>What information should I include in my message?</h3>
-                            <p>To help us address your inquiry effectively, please include details about your project, timeline, budget considerations, and specific services you're interested in.</p>
+
+                        <div className="ebrium-contact-faq-item">
+                            <div className="ebrium-contact-faq-icon">
+                                <FontAwesomeIcon icon={faMessage} />
+                            </div>
+                            <div className="ebrium-contact-faq-content">
+                                <h3>What information should I include in my message?</h3>
+                                <p>To help us address your inquiry effectively, please include details about your project, timeline, budget considerations, and specific services you're interested in.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

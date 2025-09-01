@@ -1,36 +1,73 @@
-/* AIML Component Styles */
+/* AIML Component - Self-contained CSS with ebrium-aiml- prefixes */
 
-/* General Styles */
-/* .page-wrapper {
-  position: relative;
-  overflow-x: hidden;
+/* Root variables for consistent theming */
+:root {
+  --ebrium-aiml-primary-color: #294c2e;
+  --ebrium-aiml-secondary-color: #698a70;
+  --ebrium-aiml-background-color: #f8f9fa;
+  --ebrium-aiml-light-green: #b1ff08;
+  --ebrium-aiml-text-color: #171923;
+  --ebrium-aiml-transition-normal: all 0.3s ease;
+  --ebrium-aiml-transition-fast: all 0.2s ease;
+  --ebrium-aiml-box-shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+  --ebrium-aiml-box-shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --ebrium-aiml-border-radius: 12px;
+  --ebrium-aiml-border-radius-large: 16px;
+  --ebrium-aiml-spacing-xs: 8px;
+  --ebrium-aiml-spacing-sm: 16px;
+  --ebrium-aiml-spacing-md: 24px;
+  --ebrium-aiml-spacing-lg: 32px;
+  --ebrium-aiml-spacing-xl: 48px;
+  --ebrium-aiml-spacing-xxl: 64px;
+  --ebrium-aiml-font-size-xs: 0.875rem;
+  --ebrium-aiml-font-size-sm: 1rem;
+  --ebrium-aiml-font-size-md: 1.125rem;
+  --ebrium-aiml-font-size-lg: 1.25rem;
+  --ebrium-aiml-font-size-xl: 1.5rem;
+  --ebrium-aiml-font-size-xxl: 2rem;
+  --ebrium-aiml-font-size-xxxl: 2.5rem;
+  --ebrium-aiml-font-weight-normal: 400;
+  --ebrium-aiml-font-weight-medium: 500;
+  --ebrium-aiml-font-weight-semibold: 600;
+  --ebrium-aiml-font-weight-bold: 700;
+  --ebrium-aiml-font-weight-extrabold: 800;
 }
 
-.container {
+/* Global styles for AIML component */
+.ebrium-aiml-page-wrapper {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--ebrium-aiml-text-color);
+  background-color: var(--ebrium-aiml-background-color);
+}
+
+.ebrium-aiml-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--ebrium-aiml-spacing-md);
 }
 
-.section-header {
+/* Section Headers */
+.ebrium-aiml-section-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: var(--ebrium-aiml-spacing-xxl);
 }
 
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: var(--text-color);
-  position: relative;
-  display: inline-block;
-} */
-/* 
-.section-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  max-width: 800px;
+.ebrium-aiml-section-title {
+  font-size: var(--ebrium-aiml-font-size-xxxl);
+  font-weight: var(--ebrium-aiml-font-weight-extrabold);
+  color: var(--ebrium-aiml-text-color);
+  margin-bottom: var(--ebrium-aiml-spacing-sm);
+  line-height: 1.2;
+}
+
+.ebrium-aiml-section-subtitle {
+  font-size: var(--ebrium-aiml-font-size-lg);
+  color: var(--ebrium-aiml-secondary-color);
+  font-weight: var(--ebrium-aiml-font-weight-medium);
+  max-width: 600px;
   margin: 0 auto;
-} */
+}
 
 
 /* Hero Section */
@@ -1379,5 +1416,958 @@
   .ebrium-aiml-shape-3 {
     width: 50px;
     height: 50px;
+  }
+}
+
+/* Services Section with Tabs */
+.ebrium-aiml-services-section {
+  padding: var(--ebrium-aiml-spacing-xxl) 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.ebrium-aiml-tabs-container {
+  margin-top: var(--ebrium-aiml-spacing-xl);
+}
+
+.ebrium-aiml-tabs-header {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--ebrium-aiml-spacing-sm);
+  margin-bottom: var(--ebrium-aiml-spacing-xl);
+}
+
+.ebrium-aiml-tab-button {
+  padding: var(--ebrium-aiml-spacing-md) var(--ebrium-aiml-spacing-lg);
+  background-color: transparent;
+  border: 2px solid var(--ebrium-aiml-primary-color);
+  border-radius: 30px;
+  color: var(--ebrium-aiml-primary-color);
+  font-size: var(--ebrium-aiml-font-size-sm);
+  font-weight: var(--ebrium-aiml-font-weight-medium);
+  cursor: pointer;
+  transition: var(--ebrium-aiml-transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--ebrium-aiml-spacing-xs);
+}
+
+.ebrium-aiml-tab-button i {
+  font-size: var(--ebrium-aiml-font-size-lg);
+}
+
+.ebrium-aiml-tab-button.active {
+  background-color: var(--ebrium-aiml-primary-color);
+  color: #ffffff;
+}
+
+.ebrium-aiml-tab-button:hover:not(.active) {
+  background-color: rgba(41, 76, 46, 0.1);
+}
+
+.ebrium-aiml-tabs-content {
+  position: relative;
+  min-height: 400px;
+}
+
+.ebrium-aiml-tab-panel {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ebrium-aiml-spacing-xxl);
+  align-items: center;
+  opacity: 0;
+  animation: ebrium-aiml-fadeIn 0.5s ease-out forwards;
+}
+
+.ebrium-aiml-tab-panel.active {
+  display: grid;
+}
+
+.ebrium-aiml-tab-content h3 {
+  font-size: var(--ebrium-aiml-font-size-xxl);
+  color: var(--ebrium-aiml-primary-color);
+  margin-bottom: var(--ebrium-aiml-spacing-lg);
+}
+
+.ebrium-aiml-tab-content p {
+  margin-bottom: var(--ebrium-aiml-spacing-lg);
+  color: var(--ebrium-aiml-secondary-color);
+  line-height: 1.6;
+}
+
+.ebrium-aiml-features-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ebrium-aiml-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ebrium-aiml-spacing-sm);
+  margin-bottom: var(--ebrium-aiml-spacing-md);
+}
+
+.ebrium-aiml-features-list li i {
+  color: var(--ebrium-aiml-light-green);
+  font-size: var(--ebrium-aiml-font-size-lg);
+  margin-top: 2px;
+}
+
+.ebrium-aiml-tab-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ebrium-aiml-tab-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--ebrium-aiml-border-radius-large);
+  box-shadow: var(--ebrium-aiml-box-shadow-medium);
+  transition: var(--ebrium-aiml-transition-normal);
+}
+
+.ebrium-aiml-tab-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Technologies Section */
+.ebrium-aiml-technologies-section {
+  padding: var(--ebrium-aiml-spacing-xxl) 0;
+  background: #ffffff;
+}
+
+.ebrium-aiml-technologies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--ebrium-aiml-spacing-lg);
+  margin-top: var(--ebrium-aiml-spacing-xl);
+}
+
+.ebrium-aiml-tech-card {
+  background: var(--ebrium-aiml-background-color);
+  border-radius: var(--ebrium-aiml-border-radius);
+  padding: var(--ebrium-aiml-spacing-xl);
+  text-align: center;
+  transition: var(--ebrium-aiml-transition-normal);
+  border: 1px solid rgba(105, 138, 112, 0.08);
+}
+
+.ebrium-aiml-tech-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--ebrium-aiml-box-shadow-light);
+  border-color: var(--ebrium-aiml-light-green);
+}
+
+.ebrium-aiml-tech-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--ebrium-aiml-spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ebrium-aiml-tech-icon i {
+  font-size: 4rem;
+  color: var(--ebrium-aiml-light-green);
+}
+
+.ebrium-aiml-tech-card h3 {
+  font-size: var(--ebrium-aiml-font-size-lg);
+  font-weight: var(--ebrium-aiml-font-weight-bold);
+  color: var(--ebrium-aiml-text-color);
+  margin-bottom: var(--ebrium-aiml-spacing-sm);
+}
+
+.ebrium-aiml-tech-card p {
+  color: var(--ebrium-aiml-secondary-color);
+  font-size: var(--ebrium-aiml-font-size-sm);
+  line-height: 1.6;
+}
+
+/* Advanced AI Technologies Section */
+.ebrium-aiml-advanced-section {
+  padding: var(--ebrium-aiml-spacing-xxl) 0;
+  background: var(--ebrium-aiml-primary-color);
+  color: #ffffff;
+}
+
+.ebrium-aiml-advanced-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--ebrium-aiml-spacing-lg);
+  margin-top: var(--ebrium-aiml-spacing-xl);
+}
+
+.ebrium-aiml-advanced-tech-card {
+  background: var(--ebrium-aiml-background-color);
+  border-radius: var(--ebrium-aiml-border-radius);
+  padding: var(--ebrium-aiml-spacing-xl);
+  transition: var(--ebrium-aiml-transition-normal);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--ebrium-aiml-box-shadow-light);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ebrium-aiml-advanced-tech-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--ebrium-aiml-light-green), var(--ebrium-aiml-primary-color));
+  z-index: 1;
+}
+
+.ebrium-aiml-advanced-tech-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--ebrium-aiml-box-shadow-medium);
+}
+
+.ebrium-aiml-advanced-tech-icon {
+  font-size: 2.2rem;
+  color: var(--ebrium-aiml-primary-color);
+  margin-bottom: var(--ebrium-aiml-spacing-lg);
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ebrium-aiml-border-radius);
+  background: rgba(177, 255, 8, 0.1);
+}
+
+.ebrium-aiml-advanced-tech-card h3 {
+  font-size: var(--ebrium-aiml-font-size-lg);
+  margin-bottom: var(--ebrium-aiml-spacing-sm);
+  color: var(--ebrium-aiml-text-color);
+}
+
+.ebrium-aiml-advanced-tech-card p {
+  color: var(--ebrium-aiml-secondary-color);
+  font-size: var(--ebrium-aiml-font-size-sm);
+  line-height: 1.6;
+  margin-bottom: var(--ebrium-aiml-spacing-lg);
+}
+
+.ebrium-aiml-tech-use-cases {
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--ebrium-aiml-spacing-md);
+}
+
+.ebrium-aiml-tech-use-cases span {
+  display: block;
+  font-weight: var(--ebrium-aiml-font-weight-bold);
+  font-size: var(--ebrium-aiml-font-size-sm);
+  color: var(--ebrium-aiml-primary-color);
+  margin-bottom: var(--ebrium-aiml-spacing-sm);
+}
+
+.ebrium-aiml-tech-use-cases ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ebrium-aiml-tech-use-cases li {
+  font-size: var(--ebrium-aiml-font-size-sm);
+  margin-bottom: 5px;
+  color: var(--ebrium-aiml-secondary-color);
+  padding-left: var(--ebrium-aiml-spacing-lg);
+  position: relative;
+}
+
+.ebrium-aiml-tech-use-cases li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--ebrium-aiml-light-green);
+}
+
+.ebrium-aiml-tech-integration-cta {
+  text-align: center;
+  margin-top: var(--ebrium-aiml-spacing-xxl);
+  padding: var(--ebrium-aiml-spacing-xl);
+  background: rgba(177, 255, 8, 0.05);
+  border-radius: var(--ebrium-aiml-border-radius-large);
+  border: 1px solid rgba(177, 255, 8, 0.2);
+}
+
+.ebrium-aiml-tech-integration-cta h3 {
+  font-size: var(--ebrium-aiml-font-size-xl);
+  margin-bottom: var(--ebrium-aiml-spacing-sm);
+  color: var(--ebrium-aiml-text-color);
+}
+
+.ebrium-aiml-tech-integration-cta p {
+  font-size: var(--ebrium-aiml-font-size-md);
+  line-height: 1.6;
+  color: var(--ebrium-aiml-secondary-color);
+  max-width: 700px;
+  margin: 0 auto var(--ebrium-aiml-spacing-lg);
+}
+
+/* AI Ethics & Governance Section */
+.ebrium-aiml-ethics-section {
+  padding: var(--ebrium-aiml-spacing-xxl) 0;
+  background: linear-gradient(to bottom, var(--ebrium-aiml-primary-color), var(--ebrium-aiml-secondary-color));
+  position: relative;
+  overflow: hidden;
+}
+
+.ebrium-aiml-ethics-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(177, 255, 8, 0.1) 0%, rgba(177, 255, 8, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.ebrium-aiml-ethics-content {
+  position: relative;
+  z-index: 1;
+}
+
+.ebrium-aiml-ethics-intro {
+  font-size: var(--ebrium-aiml-font-size-lg);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto var(--ebrium-aiml-spacing-xxl);
+  text-align: center;
+}
+
+.ebrium-aiml-ethics-principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: var(--ebrium-aiml-spacing-lg);
+  margin-bottom: var(--ebrium-aiml-spacing-xxl);
+}
+
+.ebrium-aiml-principle-item {
+  display: flex;
+  gap: var(--ebrium-aiml-spacing-lg);
+  background: var(--ebrium-aiml-background-color);
+  padding: var(--ebrium-aiml-spacing-xl);
+  border-radius: var(--ebrium-aiml-border-radius);
+  transition: var(--ebrium-aiml-transition-normal);
+}
+
+.ebrium-aiml-principle-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ebrium-aiml-box-shadow-medium);
+}
+
+.ebrium-aiml-principle-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: rgba(177, 255, 8, 0.1);
+  color: var(--ebrium-aiml-light-green);
+  font-size: var(--ebrium-aiml-font-size-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ebrium-aiml-border-radius);
+}
+
+.ebrium-aiml-principle-content h3 {
+  font-size: var(--ebrium-aiml-font-size-lg);
+  margin-bottom: var(--ebrium-aiml-spacing-sm);
+  color: var(--ebrium-aiml-text-color);
+}
+
+.ebrium-aiml-principle-content p {
+  color: var(--ebrium-aiml-secondary-color);
+  line-height: 1.6;
+  font-size: var(--ebrium-aiml-font-size-sm);
+}
+
+.ebrium-aiml-ethics-cta {
+  background: linear-gradient(135deg, rgba(177, 255, 8, 0.15), rgba(105, 138, 112, 0.15));
+  border-radius: var(--ebrium-aiml-border-radius-large);
+  overflow: hidden;
+  padding: var(--ebrium-aiml-spacing-xxl);
+  text-align: center;
+  border: 1px solid rgba(177, 255, 8, 0.2);
+}
+
+.ebrium-aiml-ethics-cta-content h3 {
+  font-size: var(--ebrium-aiml-font-size-xl);
+  margin-bottom: var(--ebrium-aiml-spacing-sm);
+  color: var(--ebrium-aiml-text-color);
+}
+
+.ebrium-aiml-ethics-cta-content p {
+  font-size: var(--ebrium-aiml-font-size-md);
+  line-height: 1.6;
+  color: var(--ebrium-aiml-secondary-color);
+  max-width: 700px;
+  margin: 0 auto var(--ebrium-aiml-spacing-lg);
+}
+
+/* Why Choose Us Section */
+.ebrium-aiml-why-choose-us {
+  padding: var(--ebrium-aiml-spacing-xxl) 0;
+  background: var(--ebrium-aiml-background-color);
+}
+
+.ebrium-aiml-why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--ebrium-aiml-spacing-lg);
+  margin-top: var(--ebrium-aiml-spacing-xl);
+}
+
+.ebrium-aiml-why-choose-card {
+  background: #ffffff;
+  border-radius: var(--ebrium-aiml-border-radius);
+  padding: var(--ebrium-aiml-spacing-xl);
+  transition: var(--ebrium-aiml-transition-normal);
+  height: 100%;
+  border: 1px solid rgba(105, 138, 112, 0.08);
+}
+
+.ebrium-aiml-why-choose-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--ebrium-aiml-box-shadow-medium);
+}
+
+.ebrium-aiml-why-choose-icon {
+  font-size: 2.5rem;
+  color: var(--ebrium-aiml-light-green);
+  margin-bottom: var(--ebrium-aiml-spacing-lg);
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(177, 255, 8, 0.1);
+}
+
+.ebrium-aiml-why-choose-card h3 {
+  font-size: var(--ebrium-aiml-font-size-lg);
+  font-weight: var(--ebrium-aiml-font-weight-bold);
+  color: var(--ebrium-aiml-text-color);
+  margin-bottom: var(--ebrium-aiml-spacing-sm);
+}
+
+.ebrium-aiml-why-choose-card p {
+  color: var(--ebrium-aiml-secondary-color);
+  line-height: 1.6;
+  font-size: var(--ebrium-aiml-font-size-sm);
+}
+
+/* Process Section */
+.ebrium-aiml-process-section {
+  padding: var(--ebrium-aiml-spacing-xxl) 0;
+  background: #ffffff;
+}
+
+.ebrium-aiml-process-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--ebrium-aiml-spacing-lg);
+  margin-top: var(--ebrium-aiml-spacing-xl);
+}
+
+.ebrium-aiml-process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ebrium-aiml-spacing-md);
+  position: relative;
+}
+
+.ebrium-aiml-process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: calc(100% - 48px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--ebrium-aiml-light-green), var(--ebrium-aiml-secondary-color));
+  z-index: 1;
+}
+
+.ebrium-aiml-process-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ebrium-aiml-light-green), var(--ebrium-aiml-primary-color));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--ebrium-aiml-font-weight-bold);
+  font-size: var(--ebrium-aiml-font-size-lg);
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.ebrium-aiml-process-content h3 {
+  font-size: var(--ebrium-aiml-font-size-lg);
+  font-weight: var(--ebrium-aiml-font-weight-bold);
+  color: var(--ebrium-aiml-text-color);
+  margin-bottom: var(--ebrium-aiml-spacing-xs);
+}
+
+.ebrium-aiml-process-content p {
+  color: var(--ebrium-aiml-secondary-color);
+  font-size: var(--ebrium-aiml-font-size-sm);
+  line-height: 1.6;
+}
+
+/* Benefits Section */
+.ebrium-aiml-benefits-section {
+  padding: var(--ebrium-aiml-spacing-xxl) 0;
+  background: var(--ebrium-aiml-primary-color);
+  color: #ffffff;
+}
+
+.ebrium-aiml-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--ebrium-aiml-spacing-lg);
+  margin-top: var(--ebrium-aiml-spacing-xl);
+}
+
+.ebrium-aiml-benefit-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--ebrium-aiml-border-radius);
+  padding: var(--ebrium-aiml-spacing-xl);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: var(--ebrium-aiml-transition-normal);
+}
+
+.ebrium-aiml-benefit-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: var(--ebrium-aiml-box-shadow-medium);
+}
+
+.ebrium-aiml-benefit-icon {
+  font-size: 2.5rem;
+  color: var(--ebrium-aiml-light-green);
+  margin-bottom: var(--ebrium-aiml-spacing-lg);
+}
+
+.ebrium-aiml-benefit-card h3 {
+  font-size: var(--ebrium-aiml-font-size-lg);
+  font-weight: var(--ebrium-aiml-font-weight-bold);
+  color: #ffffff;
+  margin-bottom: var(--ebrium-aiml-spacing-sm);
+}
+
+.ebrium-aiml-benefit-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--ebrium-aiml-font-size-sm);
+  line-height: 1.6;
+}
+
+/* Why Choose Our AI Services Section */
+.ebrium-aiml-why-choose-ai-section {
+  padding: var(--ebrium-aiml-spacing-xxl) 0;
+  background: #ffffff;
+}
+
+.ebrium-aiml-why-choose-ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--ebrium-aiml-spacing-lg);
+  margin-top: var(--ebrium-aiml-spacing-xl);
+}
+
+.ebrium-aiml-why-choose-ai-card {
+  background: var(--ebrium-aiml-background-color);
+  border-radius: var(--ebrium-aiml-border-radius-large);
+  padding: var(--ebrium-aiml-spacing-xl);
+  box-shadow: var(--ebrium-aiml-box-shadow-light);
+  border: 1px solid rgba(105, 138, 112, 0.08);
+  transition: var(--ebrium-aiml-transition-normal);
+  text-align: center;
+}
+
+.ebrium-aiml-why-choose-ai-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--ebrium-aiml-box-shadow-medium);
+  border-color: var(--ebrium-aiml-light-green);
+}
+
+.ebrium-aiml-why-choose-ai-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--ebrium-aiml-spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ebrium-aiml-light-green), var(--ebrium-aiml-primary-color));
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.ebrium-aiml-why-choose-ai-card h3 {
+  font-size: var(--ebrium-aiml-font-size-lg);
+  font-weight: var(--ebrium-aiml-font-weight-bold);
+  color: var(--ebrium-aiml-text-color);
+  margin-bottom: var(--ebrium-aiml-spacing-sm);
+}
+
+.ebrium-aiml-why-choose-ai-card p {
+  color: var(--ebrium-aiml-secondary-color);
+  font-size: var(--ebrium-aiml-font-size-sm);
+  line-height: 1.6;
+}
+
+/* FAQ Section */
+.ebrium-aiml-faq-section {
+  padding: var(--ebrium-aiml-spacing-xxl) 0;
+  background: var(--ebrium-aiml-background-color);
+}
+
+.ebrium-aiml-accordion {
+  background: #ffffff;
+  border-radius: var(--ebrium-aiml-border-radius-large);
+  overflow: hidden;
+  box-shadow: var(--ebrium-aiml-box-shadow-light);
+}
+
+.ebrium-aiml-accordion-item {
+  border-bottom: 1px solid rgba(105, 138, 112, 0.1);
+}
+
+.ebrium-aiml-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.ebrium-aiml-accordion-header {
+  padding: var(--ebrium-aiml-spacing-lg) var(--ebrium-aiml-spacing-xl);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--ebrium-aiml-transition-fast);
+  background: var(--ebrium-aiml-background-color);
+}
+
+.ebrium-aiml-accordion-header:hover {
+  background: rgba(105, 138, 112, 0.05);
+}
+
+.ebrium-aiml-accordion-header.active {
+  background: rgba(177, 255, 8, 0.1);
+}
+
+.ebrium-aiml-accordion-header h3 {
+  font-size: var(--ebrium-aiml-font-size-md);
+  color: var(--ebrium-aiml-text-color);
+  margin: 0;
+}
+
+.ebrium-aiml-accordion-header i {
+  font-size: var(--ebrium-aiml-font-size-lg);
+  color: var(--ebrium-aiml-light-green);
+  transition: var(--ebrium-aiml-transition-fast);
+}
+
+.ebrium-aiml-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--ebrium-aiml-transition-normal);
+  background: #ffffff;
+}
+
+.ebrium-aiml-accordion-content.active {
+  max-height: 300px;
+  padding: 0 var(--ebrium-aiml-spacing-xl) var(--ebrium-aiml-spacing-lg);
+}
+
+.ebrium-aiml-accordion-content p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--ebrium-aiml-secondary-color);
+  font-size: var(--ebrium-aiml-font-size-sm);
+}
+
+/* Hire Me Section */
+.ebrium-aiml-hire-section {
+  padding: var(--ebrium-aiml-spacing-xxl) 0;
+  background: linear-gradient(135deg, var(--ebrium-aiml-primary-color) 0%, var(--ebrium-aiml-secondary-color) 100%);
+  color: #ffffff;
+  text-align: center;
+}
+
+.ebrium-aiml-hire-section h3 {
+  font-size: var(--ebrium-aiml-font-size-xxl);
+  font-weight: var(--ebrium-aiml-font-weight-bold);
+  margin-bottom: var(--ebrium-aiml-spacing-lg);
+}
+
+.ebrium-aiml-hire-section p {
+  font-size: var(--ebrium-aiml-font-size-lg);
+  margin-bottom: var(--ebrium-aiml-spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ebrium-aiml-platform-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--ebrium-aiml-spacing-lg);
+  margin-bottom: var(--ebrium-aiml-spacing-xl);
+}
+
+.ebrium-aiml-platform-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ebrium-aiml-spacing-sm);
+  padding: var(--ebrium-aiml-spacing-md) var(--ebrium-aiml-spacing-lg);
+  border-radius: 30px;
+  font-weight: var(--ebrium-aiml-font-weight-semibold);
+  text-decoration: none;
+  transition: var(--ebrium-aiml-transition-normal);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  background: transparent;
+}
+
+.ebrium-aiml-platform-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.ebrium-aiml-trust-indicators {
+  display: flex;
+  justify-content: center;
+  gap: var(--ebrium-aiml-spacing-lg);
+  flex-wrap: wrap;
+}
+
+.ebrium-aiml-trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--ebrium-aiml-spacing-xs);
+  color: #ffffff;
+  font-size: var(--ebrium-aiml-font-size-sm);
+}
+
+.ebrium-aiml-trust-item i {
+  color: var(--ebrium-aiml-light-green);
+}
+
+/* Partners Section */
+.ebrium-aiml-partners-section {
+  padding: var(--ebrium-aiml-spacing-xxl) 0;
+  background: linear-gradient(135deg, var(--ebrium-aiml-primary-color) 0%, var(--ebrium-aiml-secondary-color) 100%);
+  color: #ffffff;
+}
+
+.ebrium-aiml-marquee-container {
+  overflow: hidden;
+  position: relative;
+  margin-top: var(--ebrium-aiml-spacing-xl);
+}
+
+.ebrium-aiml-marquee-content {
+  display: flex;
+  animation: ebrium-aiml-marquee 30s linear infinite;
+}
+
+.ebrium-aiml-partner-logo {
+  flex-shrink: 0;
+  margin: 0 var(--ebrium-aiml-spacing-lg);
+  text-align: center;
+  opacity: 0.8;
+  transition: var(--ebrium-aiml-transition-fast);
+}
+
+.ebrium-aiml-partner-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.ebrium-aiml-partner-logo img {
+  width: 120px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.ebrium-aiml-partner-logo p {
+  margin-top: var(--ebrium-aiml-spacing-xs);
+  font-size: var(--ebrium-aiml-font-size-sm);
+  font-weight: var(--ebrium-aiml-font-weight-medium);
+}
+
+@keyframes ebrium-aiml-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .ebrium-aiml-hero-content,
+  .ebrium-aiml-tab-panel,
+  .ebrium-aiml-ethics-principles {
+    grid-template-columns: 1fr;
+    gap: var(--ebrium-aiml-spacing-xl);
+  }
+
+  .ebrium-aiml-hero-text {
+    text-align: center;
+    order: 1;
+  }
+
+  .ebrium-aiml-hero-visual {
+    order: 2;
+  }
+
+  .ebrium-aiml-tab-content {
+    order: 1;
+  }
+
+  .ebrium-aiml-tab-image {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .ebrium-aiml-hero-title,
+  .ebrium-aiml-section-title {
+    font-size: var(--ebrium-aiml-font-size-xxl);
+  }
+
+  .ebrium-aiml-hero-subtitle,
+  .ebrium-aiml-section-subtitle {
+    font-size: var(--ebrium-aiml-font-size-md);
+  }
+
+  .ebrium-aiml-tabs-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ebrium-aiml-tab-panel.active {
+    flex-direction: column;
+  }
+
+  .ebrium-aiml-technologies-grid,
+  .ebrium-aiml-advanced-tech-grid,
+  .ebrium-aiml-why-choose-grid,
+  .ebrium-aiml-benefits-grid,
+  .ebrium-aiml-why-choose-ai-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ebrium-aiml-platform-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ebrium-aiml-trust-indicators {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--ebrium-aiml-spacing-md);
+  }
+}
+
+@media (max-width: 576px) {
+  .ebrium-aiml-hero {
+    padding: 100px 0 60px;
+  }
+
+  .ebrium-aiml-hero-title {
+    font-size: var(--ebrium-aiml-font-size-xl);
+  }
+
+  .ebrium-aiml-section-title {
+    font-size: var(--ebrium-aiml-font-size-xl);
+  }
+
+  .ebrium-aiml-hero-description {
+    font-size: var(--ebrium-aiml-font-size-sm);
+  }
+
+  .ebrium-aiml-tabs-content {
+    min-height: 300px;
+  }
+
+  .ebrium-aiml-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .ebrium-aiml-hero-buttons .ebrium-aiml-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ebrium-aiml-advanced-tech-card,
+  .ebrium-aiml-why-choose-card,
+  .ebrium-aiml-benefit-card,
+  .ebrium-aiml-why-choose-ai-card {
+    padding: var(--ebrium-aiml-spacing-lg);
+  }
+}
+
+/* Animation keyframes */
+@keyframes ebrium-aiml-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ebrium-aiml-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ebrium-aiml-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes ebrium-aiml-slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

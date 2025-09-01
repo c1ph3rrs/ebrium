@@ -1,0 +1,533 @@
+/* Navbar Component Styles */
+
+/* Import styles from home.css to maintain consistency */
+@import '../Home/home.css';
+
+/* Base Navbar Styles */
+.ebrium-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(41, 76, 46, 0.1);
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.ebrium-navbar-scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+}
+
+.ebrium-navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 70px;
+}
+
+/* Logo */
+.ebrium-navbar-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.ebrium-navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+.ebrium-navbar-logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Desktop Menu */
+.ebrium-navbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.ebrium-navbar-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.ebrium-navbar-item {
+    position: relative;
+}
+
+.ebrium-navbar-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.ebrium-navbar-link:hover,
+.ebrium-navbar-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.ebrium-navbar-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--light-green);
+    border-radius: 50%;
+}
+
+/* Dropdown Styles */
+.ebrium-navbar-dropdown {
+    position: relative;
+}
+
+.ebrium-navbar-dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+.ebrium-navbar-dropdown-icon {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.ebrium-navbar-dropdown-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.ebrium-navbar-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 250px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    padding: 8px 0;
+    margin-top: 8px;
+    border: 1px solid rgba(41, 76, 46, 0.1);
+}
+
+.ebrium-navbar-dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.ebrium-navbar-dropdown-item {
+    list-style: none;
+}
+
+.ebrium-navbar-dropdown-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    margin: 2px 8px;
+}
+
+.ebrium-navbar-dropdown-link:hover {
+    background-color: rgba(177, 255, 8, 0.1);
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.ebrium-navbar-dropdown-link svg {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Actions (Platform Links + CTA) */
+.ebrium-navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ebrium-navbar-platform-links {
+    display: flex;
+    gap: 12px;
+}
+
+.ebrium-navbar-platform-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ebrium-navbar-fiverr {
+    background-color: #1dbf73;
+    color: white;
+}
+
+.ebrium-navbar-fiverr:hover {
+    background-color: #18a164;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 191, 115, 0.3);
+}
+
+.ebrium-navbar-upwork {
+    background-color: #14a800;
+    color: white;
+}
+
+.ebrium-navbar-upwork:hover {
+    background-color: #108000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(20, 168, 0, 0.3);
+}
+
+.ebrium-navbar-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(41, 76, 46, 0.25);
+}
+
+.ebrium-navbar-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(41, 76, 46, 0.35);
+    background-color: var(--secondary-color);
+}
+
+.ebrium-navbar-cta svg {
+    font-size: 0.8rem;
+}
+
+/* Mobile Menu Toggle */
+.ebrium-navbar-mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.ebrium-navbar-mobile-toggle svg {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.ebrium-navbar-mobile-toggle:hover svg {
+    color: var(--secondary-color);
+}
+
+/* Mobile Menu */
+.ebrium-navbar-mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-top: 1px solid rgba(41, 76, 46, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ebrium-navbar-mobile-menu.open {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.ebrium-navbar-mobile-list {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+}
+
+.ebrium-navbar-mobile-item {
+    margin-bottom: 10px;
+}
+
+.ebrium-navbar-mobile-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.ebrium-navbar-mobile-link:hover,
+.ebrium-navbar-mobile-link.active {
+    background-color: rgba(177, 255, 8, 0.1);
+    color: var(--primary-color);
+}
+
+.ebrium-navbar-mobile-dropdown-toggle {
+    width: 100%;
+}
+
+.ebrium-navbar-mobile-dropdown-icon {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.ebrium-navbar-mobile-dropdown-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.ebrium-navbar-mobile-dropdown {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: rgba(41, 76, 46, 0.02);
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.ebrium-navbar-mobile-dropdown.show {
+    max-height: 300px;
+}
+
+.ebrium-navbar-mobile-dropdown-item {
+    padding: 8px 0;
+}
+
+.ebrium-navbar-mobile-dropdown-item a {
+    display: block;
+    padding: 8px 32px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    margin: 2px 16px;
+}
+
+.ebrium-navbar-mobile-dropdown-item a:hover {
+    background-color: rgba(177, 255, 8, 0.1);
+    color: var(--primary-color);
+}
+
+/* Mobile Platform Links */
+.ebrium-navbar-mobile-platforms {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(41, 76, 46, 0.1);
+}
+
+.ebrium-navbar-mobile-platform-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.ebrium-navbar-mobile-platform-links {
+    display: flex;
+    gap: 12px;
+}
+
+.ebrium-navbar-mobile-platform-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.ebrium-navbar-mobile-platform-link:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.ebrium-navbar-mobile-platform-link i {
+    font-size: 1rem;
+}
+
+/* Mobile CTA */
+.ebrium-navbar-mobile-cta {
+    margin-top: 20px;
+}
+
+.ebrium-navbar-mobile-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(41, 76, 46, 0.25);
+    width: 100%;
+    justify-content: center;
+}
+
+.ebrium-navbar-mobile-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(41, 76, 46, 0.35);
+    background-color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .ebrium-navbar-menu {
+        display: none;
+    }
+
+    .ebrium-navbar-actions {
+        display: none;
+    }
+
+    .ebrium-navbar-mobile-toggle {
+        display: flex;
+    }
+
+    .ebrium-navbar-container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ebrium-navbar-list {
+        gap: 20px;
+    }
+
+    .ebrium-navbar-link {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .ebrium-navbar-dropdown-menu {
+        min-width: 220px;
+    }
+
+    .ebrium-navbar-mobile-list {
+        padding: 15px;
+    }
+
+    .ebrium-navbar-mobile-link {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .ebrium-navbar-container {
+        padding: 0 10px;
+    }
+
+    .ebrium-navbar-logo img {
+        height: 35px;
+    }
+
+    .ebrium-navbar-list {
+        gap: 15px;
+    }
+
+    .ebrium-navbar-link {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    .ebrium-navbar-dropdown-menu {
+        min-width: 200px;
+        left: -50px;
+    }
+
+    .ebrium-navbar-mobile-platform-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .ebrium-navbar-mobile-platform-link {
+        justify-content: center;
+    }
+}
+
+/* Focus States for Accessibility */
+.ebrium-navbar-link:focus,
+.ebrium-navbar-dropdown-link:focus,
+.ebrium-navbar-platform-link:focus,
+.ebrium-navbar-cta:focus,
+.ebrium-navbar-mobile-toggle:focus {
+    outline: 2px solid var(--light-green);
+    outline-offset: 2px;
+}
+
+/* Navbar Component Styles */
