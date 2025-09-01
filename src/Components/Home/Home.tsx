@@ -251,7 +251,7 @@ const Home = () => {
                             <p>
                                 With a focus on innovation, quality, and client satisfaction, we've helped businesses of all sizes across various industries transform their digital presence and operations.
                             </p>
-                            <Link to="/about" className="ebrium-home-about-btn">
+                            <Link to="/aboutus" className="ebrium-home-about-btn">
                                 Get to know us
                                 <FontAwesomeIcon icon={faArrowRight} />
                             </Link>

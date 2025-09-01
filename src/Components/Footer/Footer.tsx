@@ -130,7 +130,7 @@ const Footer = () => {
                         <div className="ebrium-footer-column">
                             <h3 className="ebrium-footer-heading">Quick Links</h3>
                             <ul className="ebrium-footer-links">
-                                <li><Link to="/about">About Us</Link></li>
+                                <li><Link to="/aboutus">About Us</Link></li>
                                 <li><Link to="/solutions">Our Solutions</Link></li>
                                 <li><Link to="/consultation">Free Consultation</Link></li>
                                 <li><Link to="/testimonials">Client Testimonials</Link></li>

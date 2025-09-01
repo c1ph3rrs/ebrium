@@ -150,7 +150,7 @@ const Navbar = () => {
 
                         <li className="ebrium-navbar-item">
                             <Link
-                                to="/about"
+                                to="/aboutus"
                                 className={`ebrium-navbar-link ${location.pathname === '/about' ? 'active' : ''}`}
                             >
                                 About
@@ -274,8 +274,8 @@ const Navbar = () => {
 
                     <li className="ebrium-navbar-mobile-item">
                         <Link
-                            to="/about"
-                            className={`ebrium-navbar-mobile-link ${location.pathname === '/about' ? 'active' : ''}`}
+                            to="/aboutus"
+                            className={`ebrium-navbar-mobile-link ${location.pathname === '/aboutus' ? 'active' : ''}`}
                             onClick={closeAllMenus}
                         >
                             About

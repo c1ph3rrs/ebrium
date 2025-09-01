@@ -16,6 +16,8 @@ import {
 import { faUsers } from '@fortawesome/free-solid-svg-icons/faUsers';
 import { faHandshake } from '@fortawesome/free-solid-svg-icons/faHandshake';
 
+import mainLogo from '../../assets/main_logo.png';
+
 const Solutions: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -45,7 +47,7 @@ const Solutions: React.FC = () => {
                   Get Started
                   <FontAwesomeIcon icon={faArrowRight} />
                 </Link>
-                <Link to="/about" className="ebrium-solutions-secondary-btn">
+                <Link to="/aboutus" className="ebrium-solutions-secondary-btn">
                   Learn More
                 </Link>
               </div>
