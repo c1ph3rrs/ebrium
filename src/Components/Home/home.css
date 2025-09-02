@@ -4,7 +4,7 @@
 }
 
 /* Page Layout */
-.page-wrapper {
+.ebrium-home-page-wrapper {
     overflow-x: hidden;
     width: 100%;
 }
@@ -16,12 +16,12 @@
 }
 
 /* Home section and main container */
-.home {
+.ebrium-home {
     padding-top: 80px; /* Account for navbar height */
 }
 
 /* Main container */
-.main__container {
+.ebrium-home-main-container {
     background-color: var(--primary-color);
     min-height: 100vh;
     width: 100%;
@@ -36,7 +36,7 @@
 }
 
 /* Navbar Styles */
-.nav {
+.ebrium-home-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,33 +53,33 @@
     transition: all 0.3s ease;
 }
 
-.nav-scrolled {
+.ebrium-home-nav-scrolled {
     height: 70px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-.nav__logo {
+.ebrium-home-nav-logo {
     display: flex;
     align-items: center;
     z-index: 1001;
 }
 
-.nav__logo img {
+.ebrium-home-nav-logo img {
     height: 75px;
     width: auto;
     transition: transform 0.3s ease;
 }
 
-.nav__logo img:hover {
+.ebrium-home-nav-logo img:hover {
     transform: scale(1.05);
 }
 
-.nav__menu {
+.ebrium-home-nav-menu {
     display: flex;
     align-items: center;
 }
 
-.nav__menu-list {
+.ebrium-home-nav-menu-list {
     display: flex;
     gap: 2rem;
     list-style: none;
@@ -87,18 +87,18 @@
     padding: 0;
 }
 
-.nav__menu-item {
+.ebrium-home-nav-menu-item {
     position: relative;
     padding: 20px 0;
 }
 
-.nav__menu-item:hover .nav__dropdown {
+.ebrium-home-nav-menu-item:hover .ebrium-home-nav-dropdown {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
 }
 
-.nav__menu-item a {
+.ebrium-home-nav-menu-item a {
     color: var(--primary-color);
     text-decoration: none;
     font-size: 1.1rem;
@@ -107,7 +107,7 @@
     position: relative;
 }
 
-.nav__menu-item a::after {
+.ebrium-home-nav-menu-item a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -118,28 +118,28 @@
     transition: width 0.3s ease;
 }
 
-.nav__menu-item a:hover::after {
+.ebrium-home-nav-menu-item a:hover::after {
     width: 100%;
 }
 
-.nav__menu-item a:hover {
+.ebrium-home-nav-menu-item a:hover {
     color: var(--secondary-color);
 }
 
 /* Mobile Menu Toggle */
-.mobile-menu-toggle {
+.ebrium-home-mobile-menu-toggle {
     display: none;
     cursor: pointer;
     z-index: 1001;
 }
 
-.hamburger {
+.ebrium-home-hamburger {
     width: 30px;
     height: 20px;
     position: relative;
 }
 
-.hamburger span {
+.ebrium-home-hamburger span {
     display: block;
     position: absolute;
     height: 3px;
@@ -152,47 +152,47 @@
     transition: .25s ease-in-out;
 }
 
-.hamburger span:nth-child(1) {
+.ebrium-home-hamburger span:nth-child(1) {
     top: 0px;
 }
 
-.hamburger span:nth-child(2) {
+.ebrium-home-hamburger span:nth-child(2) {
     top: 8px;
 }
 
-.hamburger span:nth-child(3) {
+.ebrium-home-hamburger span:nth-child(3) {
     top: 16px;
 }
 
-.hamburger.active span:nth-child(1) {
+.ebrium-home-hamburger.active span:nth-child(1) {
     top: 8px;
     transform: rotate(135deg);
 }
 
-.hamburger.active span:nth-child(2) {
+.ebrium-home-hamburger.active span:nth-child(2) {
     opacity: 0;
     left: -60px;
 }
 
-.hamburger.active span:nth-child(3) {
+.ebrium-home-hamburger.active span:nth-child(3) {
     top: 8px;
     transform: rotate(-135deg);
 }
 
 /* Grid utility class */
-.grid {
+.ebrium-home-grid {
     display: flex;
     align-items: center;
 }
 
-.nav__menu-link {
+.ebrium-home-nav-menu-link {
     display: flex;
     align-items: center;
     gap: 4px;
     cursor: pointer;
 }
 
-.consultation a {
+.ebrium-home-consultation a {
     background-color: var(--primary-color);
     color: white !important;
     padding: 10px 20px;
@@ -200,17 +200,17 @@
     transition: all 0.3s ease;
 }
 
-.consultation a:hover {
+.ebrium-home-consultation a:hover {
     background-color: var(--secondary-color);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.consultation a::after {
+.ebrium-home-consultation a::after {
     display: none;
 }
 
-.nav__dropdown {
+.ebrium-home-nav-dropdown {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -228,35 +228,217 @@
     margin-top: -10px;
 }
 
-.nav__dropdown-item {
+.ebrium-home-nav-dropdown-item {
     padding: 12px 20px;
     text-align: left;
     transition: all 0.2s ease;
 }
 
-.nav__dropdown-item:hover {
+.ebrium-home-nav-dropdown-item:hover {
     background-color: var(--background-color);
     transform: translateX(5px);
 }
 
-.nav__dropdown a {
+.ebrium-home-nav-dropdown a {
     display: block;
     color: var(--text-color);
     text-decoration: none;
     font-size: 1rem;
 }
 
-/* Hero Section */
-.main__text {
-    text-align: center;
-    padding: 150px 20px 50px;
-    color: white;
-    max-width: 1200px;
-    margin: 0 auto;
-    animation: fadeIn 1s ease-out;
+/* Modern Hero Section */
+.ebrium-home-hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1a1a2e 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.main__text .animated-text {
+.ebrium-home-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.ebrium-home-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(177, 255, 8, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(177, 255, 8, 0.05) 0%, transparent 50%);
+}
+
+.ebrium-home-hero-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+    z-index: 2;
+    padding: 120px 0 60px;
+}
+
+.ebrium-home-hero-text {
+    flex: 1;
+    max-width: 600px;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.ebrium-home-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(177, 255, 8, 0.1);
+    border: 1px solid rgba(177, 255, 8, 0.3);
+    color: var(--light-green);
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ebrium-home-hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.ebrium-home-highlight {
+    background: linear-gradient(135deg, var(--light-green), #88ff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.ebrium-home-hero-description {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.ebrium-home-typewriter-container {
+    margin-bottom: 3rem;
+    min-height: 80px;
+}
+
+.ebrium-home-typewriter-label {
+    display: block;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.ebrium-home-typewriter-container span:last-child {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--light-green);
+    text-shadow: 0 0 20px rgba(177, 255, 8, 0.3);
+}
+
+.ebrium-home-hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.ebrium-home-hero-stat {
+    text-align: center;
+}
+
+.ebrium-home-stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--background-color);
+    line-height: 1;
+}
+
+.ebrium-home-stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ebrium-home-hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.ebrium-home-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--light-green), #88ff00);
+    color: var(--primary-color);
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(177, 255, 8, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ebrium-home-primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(177, 255, 8, 0.4);
+    filter: brightness(1.1);
+}
+
+.ebrium-home-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ebrium-home-whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+    background: #20b858;
+}
+
+.ebrium-home-hero-visual {
+    flex: 1;
+    position: relative;
+    min-height: 500px;
+    animation: fadeInRight 1s ease-out;
+}
+
+.ebrium-home-main-text .ebrium-home-animated-text {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -264,7 +446,7 @@
     display: inline-block;
 }
 
-.main__text .animated-text::after {
+.ebrium-home-main-text .ebrium-home-animated-text::after {
     content: '';
     position: absolute;
     width: 100px;
@@ -276,14 +458,14 @@
     border-radius: 2px;
 }
 
-.main__text .subtitle {
+.ebrium-home-main-text .ebrium-home-subtitle {
     font-size: 1.5rem;
     margin-top: 2rem;
     color: var(--light-green);
     font-weight: 300;
 }
 
-.what__we__offer {
+.ebrium-home-what-we-offer {
     text-align: center;
     color: var(--light-green);
     max-width: 1200px;
@@ -294,14 +476,14 @@
     animation: slideUp 1s ease-out;
 }
 
-.what__we__offer span {
+.ebrium-home-what-we-offer span {
     position: relative;
     display: inline-block;
     padding-bottom: 10px;
 }
 
-.what__we__offer span::before,
-.what__we__offer span::after {
+.ebrium-home-what-we-offer span::before,
+.ebrium-home-what-we-offer span::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -310,15 +492,15 @@
     background-color: var(--light-green);
 }
 
-.what__we__offer span::before {
+.ebrium-home-what-we-offer span::before {
     left: -40px;
 }
 
-.what__we__offer span::after {
+.ebrium-home-what-we-offer span::after {
     right: -40px;
 }
 
-.hero-text {
+.ebrium-home-hero-text {
     text-align: center;
     padding: 40px 20px 80px;
     color: white;
@@ -327,7 +509,7 @@
     animation: fadeIn 1.5s ease-out;
 }
 
-.hero-text h1 {
+.ebrium-home-hero-text h1 {
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.2;
@@ -335,7 +517,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.hero-description {
+.ebrium-home-hero-description {
     font-size: 1.2rem;
     margin-top: 2rem;
     color: white;
@@ -343,14 +525,14 @@
 }
 
 /* CTA Buttons */
-.cta-buttons {
+.ebrium-home-cta-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-top: 40px;
 }
 
-.btn {
+.ebrium-home-btn {
     display: inline-block;
     padding: 8px 20px;
     border-radius: 50px;
@@ -361,38 +543,38 @@
     font-size: 0.9rem;
 }
 
-.btn-primary {
+.ebrium-home-btn-primary {
     background-color: var(--light-green);
     color: var(--primary-color);
     box-shadow: 0 4px 15px rgba(177, 255, 8, 0.3);
 }
 
-.btn-primary:hover {
+.ebrium-home-btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(177, 255, 8, 0.4);
 }
 
-.btn-secondary {
+.ebrium-home-btn-secondary {
     background-color: transparent;
     color: white;
     border: 2px solid white;
 }
 
-.btn-secondary:hover {
+.ebrium-home-btn-secondary:hover {
     background-color: white;
     color: var(--primary-color);
     transform: translateY(-3px);
 }
 
 /* Animated background shapes */
-.shape {
+.ebrium-home-shape {
     position: absolute;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     animation: float 10s infinite ease-in-out;
 }
 
-.shape1 {
+.ebrium-home-shape1 {
     width: 300px;
     height: 300px;
     top: 20%;
@@ -400,7 +582,7 @@
     animation-delay: 0s;
 }
 
-.shape2 {
+.ebrium-home-shape2 {
     width: 200px;
     height: 200px;
     top: 60%;
@@ -408,7 +590,7 @@
     animation-delay: 3s;
 }
 
-.shape3 {
+.ebrium-home-shape3 {
     width: 150px;
     height: 150px;
     bottom: 10%;
@@ -428,18 +610,29 @@
     }
 }
 
-/* Services Section */
-.services-section {
-    background-color: white;
-    padding: 100px 0;
+/* Modern Services Section */
+.ebrium-home-services-section {
+    background: white;
+    padding: 120px 0;
+    position: relative;
 }
 
-.section-header {
+.ebrium-home-services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(177, 255, 8, 0.02) 50%, transparent 100%);
+}
+
+.ebrium-home-section-header {
     text-align: center;
     margin-bottom: 60px;
 }
 
-.section-title {
+.ebrium-home-section-title {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 15px;
@@ -447,7 +640,7 @@
     display: inline-block;
 }
 
-.section-title::after {
+.ebrium-home-section-title::after {
     content: '';
     position: absolute;
     width: 80px;
@@ -458,7 +651,7 @@
     transform: translateX(-50%);
 }
 
-.section-subtitle {
+.ebrium-home-section-subtitle {
     font-size: 1.2rem;
     color: var(--secondary-color);
     max-width: 600px;
@@ -466,13 +659,13 @@
     padding-top: 20px;
 }
 
-.services-grid {
+.ebrium-home-services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-.service-card {
+.ebrium-home-service-card {
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
@@ -484,13 +677,13 @@
     align-items: center;
 }
 
-.service-card:hover {
+.ebrium-home-service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-bottom: 4px solid var(--secondary-color);
 }
 
-.service-icon {
+.ebrium-home-service-icon {
     width: 70px;
     height: 70px;
     background-color: var(--primary-color);
@@ -502,28 +695,28 @@
     transition: all 0.3s ease;
 }
 
-.service-icon i {
+.ebrium-home-service-icon i {
     font-size: 30px;
     color: white;
 }
 
-.service-card:hover .service-icon {
+.ebrium-home-service-card:hover .ebrium-home-service-icon {
     background-color: var(--secondary-color);
 }
 
-.service-card h3 {
+.ebrium-home-service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: var(--primary-color);
 }
 
-.service-card p {
+.ebrium-home-service-card p {
     color: #666;
     margin-bottom: 20px;
     line-height: 1.6;
 }
 
-.service-link {
+.ebrium-home-service-link {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
@@ -533,124 +726,420 @@
     transition: all 0.3s ease;
 }
 
-.service-link span {
+.ebrium-home-service-link span {
     transition: all 0.3s ease;
 }
 
-.service-card:hover .service-link {
+.ebrium-home-service-card:hover .ebrium-home-service-link {
     color: var(--secondary-color);
 }
 
-.service-card:hover .service-link span {
+.ebrium-home-service-card:hover .ebrium-home-service-link span {
     transform: translateX(5px);
 }
 
-/* Partners Section with Marquee */
-.partners-section {
-    background-color: #f9f9f9;
-    padding: 80px 0;
+/* Modern Partners Section */
+.ebrium-home-partners-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 120px 0;
+    position: relative;
 }
 
-.marquee-container {
+.ebrium-home-partners-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 80%, rgba(177, 255, 8, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(52, 73, 93, 0.05) 0%, transparent 50%);
+}
+
+.ebrium-home-partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.ebrium-home-partner-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
     overflow: hidden;
-    margin-top: 50px;
 }
 
-.marquee-content {
-    display: flex;
-    animation: marquee 30s linear infinite;
+.ebrium-home-partner-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(135deg, var(--primary-color), var(--light-green));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
-.partner-logo {
-    min-width: 200px;
-    margin: 0 30px;
+.ebrium-home-partner-card:hover::before {
+    transform: scaleX(1);
+}
+
+.ebrium-home-partner-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.ebrium-home-partner-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: #f8f9fa;
+    flex-shrink: 0;
+    position: relative;
 }
 
-.partner-logo img {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 10px;
+.ebrium-home-partner-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     transition: all 0.3s ease;
-    filter: grayscale(100%);
+    filter: grayscale(30%);
 }
 
-.partner-logo p {
-    font-size: 0.9rem;
-    color: #666;
+.ebrium-home-partner-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--light-green));
+    color: white;
+    font-size: 2rem;
 }
 
-.partner-logo:hover img {
+.ebrium-home-partner-card:hover .ebrium-home-partner-logo img {
     filter: grayscale(0%);
-  transform: scale(1.05);
+    transform: scale(1.1);
 }
 
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+.ebrium-home-partner-info h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 0.5rem;
 }
 
-/* About Us Section */
-.about-section {
-    background-color: white;
-    padding: 100px 0;
+.ebrium-home-partner-info p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 0 0.5rem;
+    font-weight: 500;
 }
 
-.about-content {
+.ebrium-home-partner-category {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--light-green), #88ff00);
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ebrium-home-partners-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.ebrium-home-partners-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.ebrium-home-partners-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.ebrium-home-partners-stat svg {
+    color: var(--light-green);
+    font-size: 1.5rem;
+}
+
+.ebrium-home-partners-stat span {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+/* Enhanced About Us Section */
+.ebrium-home-about-section {
+    background: white;
+    padding: 120px 0;
+    position: relative;
+}
+
+.ebrium-home-about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 4rem;
     align-items: center;
 }
 
-.about-image img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.ebrium-home-about-visual {
+    position: relative;
+}
+
+.ebrium-home-about-image {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     transition: all 0.5s ease;
 }
 
-.about-image:hover img {
-    transform: scale(1.03) rotate(1deg);
+.ebrium-home-about-image:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
 }
 
-.about-text h3 {
-    font-size: 2rem;
+.ebrium-home-about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.ebrium-home-about-image:hover img {
+    transform: scale(1.05);
+}
+
+.ebrium-home-about-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 73, 93, 0.8), rgba(177, 255, 8, 0.1));
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.ebrium-home-about-image:hover .ebrium-home-about-overlay {
+    opacity: 1;
+}
+
+.ebrium-home-about-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
     color: var(--primary-color);
-    margin-bottom: 20px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.about-text p {
-    margin-bottom: 20px;
-    color: #555;
-    line-height: 1.8;
+.ebrium-home-about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.ebrium-home-about-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.ebrium-home-about-feature:hover {
+    background: var(--light-green);
+    color: var(--primary-color);
+    transform: translateX(10px);
+}
+
+.ebrium-home-about-feature svg {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.ebrium-home-about-feature:hover svg {
+    color: var(--primary-color);
+}
+
+.ebrium-home-about-feature h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.ebrium-home-about-feature p {
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.ebrium-home-about-text {
+    padding-left: 2rem;
+}
+
+.ebrium-home-about-intro h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.ebrium-home-about-lead {
+    font-size: 1.3rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+.ebrium-home-about-points {
+    margin-bottom: 3rem;
+}
+
+.ebrium-home-about-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.ebrium-home-about-point svg {
+    color: var(--light-green);
+    font-size: 1.2rem;
+    margin-top: 0.25rem;
+    background: rgba(177, 255, 8, 0.1);
+    padding: 0.5rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.ebrium-home-about-point h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 0.5rem;
+}
+
+.ebrium-home-about-point p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.ebrium-home-about-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.ebrium-home-about-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, var(--primary-color), #1a1a2e);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(52, 73, 93, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.ebrium-home-about-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(52, 73, 93, 0.4);
+    background: linear-gradient(135deg, #1a1a2e, var(--primary-color));
+}
+
+.ebrium-home-about-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #25D366;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.ebrium-home-about-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+    background: #20b858;
 }
 
 /* Process Section */
-.process-section {
+.ebrium-home-process-section {
     background-color: var(--primary-color);
     padding: 100px 0;
     color: white;
 }
 
-.process-section .section-title,
-.process-section .section-subtitle {
+.ebrium-home-process-section .ebrium-home-section-title,
+.ebrium-home-process-section .ebrium-home-section-subtitle {
     color: white;
 }
 
-.process-section .section-title::after {
+.ebrium-home-process-section .ebrium-home-section-title::after {
     background-color: var(--light-green);
 }
 
-.process-timeline {
+.ebrium-home-process-timeline {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
@@ -658,7 +1147,7 @@
 
 
 
-.process-timeline::before {
+.ebrium-home-process-timeline::before {
     content: '';
     position: absolute;
     width: 4px;
@@ -670,18 +1159,18 @@
     border-radius: 2px;
 }
 
-.process-step {
+.ebrium-home-process-step {
     display: flex;
     align-items: center;
     margin-bottom: 50px;
     position: relative;
 }
 
-.process-step:nth-child(odd) {
+.ebrium-home-process-step:nth-child(odd) {
     flex-direction: row-reverse;
 }
 
-.process-number {
+.ebrium-home-process-number {
     width: 60px;
     height: 60px;
     background-color: var(--light-green);
@@ -696,7 +1185,7 @@
     box-shadow: 0 0 0 10px rgba(177, 255, 8, 0.2);
 }
 
-.process-content {
+.ebrium-home-process-content {
     width: calc(50% - 40px);
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -706,188 +1195,698 @@
     transition: all 0.3s ease;
 }
 
-.process-step:hover .process-content {
+.ebrium-home-process-step:hover .ebrium-home-process-content {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.process-content h3 {
+.ebrium-home-process-content h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-.process-content h3 a{
+.ebrium-home-process-content h3 a{
     font-size: 1.5rem;
     margin-bottom: 10px;
     color: white;
     text-decoration: none;
 }
 
-.process-content p {
+.ebrium-home-process-content p {
     margin: 0;
     line-height: 1.6;
 }
 
-/* Stats Section */
-.stats-section {
-    background-color: #f9f9f9;
-    padding: 100px 0;
+/* Why Choose Us Section */
+.ebrium-home-why-choose-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 120px 0;
+    position: relative;
 }
 
-.stats-container {
+.ebrium-home-why-choose-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 20%, rgba(177, 255, 8, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(52, 73, 93, 0.05) 0%, transparent 50%);
+}
+
+.ebrium-home-why-choose-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
 }
 
-.stat-card {
-    background-color: white;
-    padding: 40px 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    transition: all 0.3s ease;
+.ebrium-home-why-choose-reasons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 }
 
-.stat-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+.ebrium-home-reason-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
 }
 
-.stat-icon {
-    width: 70px;
-    height: 70px;
-    background-color: var(--primary-color);
+.ebrium-home-reason-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--light-green));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.ebrium-home-reason-card:hover::before {
+    transform: scaleX(1);
+}
+
+.ebrium-home-reason-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.ebrium-home-reason-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), #1a1a2e);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(52, 73, 93, 0.2);
 }
 
-.stat-icon i {
-    font-size: 30px;
+.ebrium-home-reason-card:hover .ebrium-home-reason-icon {
+    background: linear-gradient(135deg, var(--light-green), #88ff00);
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(177, 255, 8, 0.3);
+}
+
+.ebrium-home-reason-icon svg {
     color: white;
-}
-
-.stat-number {
-    font-size: 3rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.stat-title {
-    font-size: 1.2rem;
-    color: #666;
-}
-
-/* Testimonials Section */
-.testimonials-section {
-    background-color: white;
-    padding: 100px 0;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.testimonial-card {
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    font-size: 2rem;
     transition: all 0.3s ease;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-content {
-    margin-bottom: 20px;
-    position: relative;
-    padding: 0 10px;
-}
-
-.testimonial-content::before {
-    content: '"';
-    font-size: 5rem;
+.ebrium-home-reason-card:hover .ebrium-home-reason-icon svg {
     color: var(--primary-color);
-    opacity: 0.2;
-    position: absolute;
-    top: -40px;
-    left: -10px;
 }
 
-.testimonial-content p {
-    font-style: italic;
-    color: #444;
-    line-height: 1.8;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.testimonial-author img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--primary-color);
-}
-
-.author-details h4 {
-    font-size: 1.1rem;
+.ebrium-home-reason-card h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--primary-color);
-    margin: 0 0 5px;
+    margin-bottom: 1rem;
 }
 
-.author-details p {
-    font-size: 0.9rem;
+.ebrium-home-reason-card p {
     color: #666;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.ebrium-home-reason-card ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
+.ebrium-home-reason-card li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.ebrium-home-reason-card li::before {
+    content: '✓';
+    color: var(--light-green);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.ebrium-home-stats-showcase {
+    background: white;
+    border-radius: 25px;
+    padding: 3rem 2rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ebrium-home-stats-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--light-green));
+}
+
+.ebrium-home-stats-showcase h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.ebrium-home-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.ebrium-home-stat-item {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.ebrium-home-stat-item:last-child {
+    border-bottom: none;
+}
+
+.ebrium-home-stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--light-green);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(177, 255, 8, 0.3);
+}
+
+.ebrium-home-stat-label {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.ebrium-home-stats-cta {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.ebrium-home-stats-cta p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.ebrium-home-stats-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #25D366;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.ebrium-home-stats-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+    background: #20b858;
+}
+
+/* Client Success Stories Section */
+.ebrium-home-success-stories-section {
+    background: white;
+    padding: 120px 0;
+    position: relative;
+}
+
+.ebrium-home-stories-showcase {
+    margin-top: 4rem;
+}
+
+.ebrium-home-featured-story {
+    background: linear-gradient(135deg, var(--primary-color), #1a1a2e);
+    border-radius: 25px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.ebrium-home-featured-story::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 20%, rgba(177, 255, 8, 0.1) 0%, transparent 50%);
+}
+
+.ebrium-home-story-content {
+    position: relative;
+    z-index: 1;
+}
+
+.ebrium-home-story-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.ebrium-home-story-company {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.ebrium-home-story-company img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    background: white;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.ebrium-home-company-info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: white;
+}
+
+.ebrium-home-company-info p {
+    font-size: 1.1rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.ebrium-home-story-metrics {
+    display: flex;
+    gap: 2rem;
+}
+
+.ebrium-home-metric {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ebrium-home-metric-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--light-green);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.ebrium-home-metric-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ebrium-home-story-quote {
+    position: relative;
+}
+
+.ebrium-home-large-quote {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    font-size: 4rem;
+    color: var(--light-green);
+    opacity: 0.3;
+}
+
+.ebrium-home-story-quote p {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 300;
+}
+
+.ebrium-home-story-author {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.ebrium-home-story-author img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--light-green);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.ebrium-home-story-author h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+    color: white;
+}
+
+.ebrium-home-story-author p {
+    font-size: 1rem;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.ebrium-home-stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.ebrium-home-story-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.ebrium-home-story-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--light-green));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.ebrium-home-story-card:hover::before {
+    transform: scaleX(1);
+}
+
+.ebrium-home-story-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.ebrium-home-story-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.ebrium-home-story-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.ebrium-home-story-rating svg {
+    color: #ffd700;
+    font-size: 1rem;
+}
+
+.ebrium-home-story-rating span {
+    margin-left: 0.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.ebrium-home-story-category {
+    background: linear-gradient(135deg, var(--light-green), #88ff00);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ebrium-home-story-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.ebrium-home-story-author-mini {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.ebrium-home-story-author-mini img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--light-green);
+}
+
+.ebrium-home-story-author-mini h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+    color: var(--primary-color);
+}
+
+.ebrium-home-story-author-mini span {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.ebrium-home-story-result {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(177, 255, 8, 0.1);
+    padding: 1rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--light-green);
+}
+
+.ebrium-home-story-result svg {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.ebrium-home-story-result span {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.ebrium-home-stories-cta {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 25px;
+    padding: 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ebrium-home-stories-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--light-green));
+}
+
+.ebrium-home-stories-cta-content h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.ebrium-home-stories-cta-content p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+.ebrium-home-stories-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.ebrium-home-stories-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #25D366;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.ebrium-home-stories-primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+    background: #20b858;
+}
+
+.ebrium-home-stories-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: transparent;
+    color: var(--primary-color);
+    padding: 1rem 2rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.ebrium-home-stories-secondary-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(52, 73, 93, 0.3);
+}
+
+/* Floating WhatsApp Button */
+.ebrium-home-whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, #25D366, #20b858);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+.ebrium-home-whatsapp-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+    color: white;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4), 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
 /* Footer */
-.footer {
+.ebrium-home-footer {
     background-color: var(--primary-color);
     color: white;
     padding: 80px 0 20px;
 }
 
-.footer-content {
+.ebrium-home-footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 50px;
     margin-bottom: 50px;
 }
 
-.footer-logo img {
+.ebrium-home-footer-logo img {
     height: 60px;
     margin-bottom: 20px;
 }
 
-.footer-description {
+.ebrium-home-footer-description {
     line-height: 1.6;
     margin-bottom: 20px;
     opacity: 0.8;
 }
 
-.social-links {
+.ebrium-home-social-links {
     display: flex;
     gap: 15px;
 }
 
-.social-link {
+.ebrium-home-social-link {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -900,20 +1899,20 @@
     text-decoration: none;
 }
 
-.social-link:hover {
+.ebrium-home-social-link:hover {
     background-color: var(--light-green);
     color: var(--primary-color);
     transform: translateY(-3px);
 }
 
-.footer-column h3 {
+.ebrium-home-footer-column h3 {
     font-size: 1.3rem;
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 10px;
 }
 
-.footer-column h3::after {
+.ebrium-home-footer-column h3::after {
     content: '';
     position: absolute;
     width: 40px;
@@ -923,30 +1922,30 @@
     left: 0;
 }
 
-.footer-links {
+.ebrium-home-footer-links {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.footer-links li {
+.ebrium-home-footer-links li {
     margin-bottom: 10px;
 }
 
-.footer-links a {
+.ebrium-home-footer-links a {
     color: white;
     opacity: 0.8;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.footer-links a:hover {
+.ebrium-home-footer-links a:hover {
     opacity: 1;
     color: var(--light-green);
     padding-left: 5px;
 }
 
-.footer-address p {  
+.ebrium-home-footer-address p {  
     margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -954,33 +1953,55 @@
     opacity: 0.8;
 }
 
-.footer-address p i {
+.ebrium-home-footer-address p i {
     color: var(--light-green);
 }
 
-.footer-bottom {
+.ebrium-home-footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* Animations */
+/* Enhanced Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
-        transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-        transform: translateY(40px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
@@ -988,31 +2009,51 @@
   }
 }
 
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
 /* Responsive styles */
 @media screen and (max-width: 1024px) {
-    .process-timeline::before {
+    .ebrium-home-process-timeline::before {
         left: 30px;
     }
     
-    .process-step {
+    .ebrium-home-process-step {
         flex-direction: row !important;
     }
     
-    .process-content {
+    .ebrium-home-process-content {
         width: calc(100% - 90px);
     }
 }
 
 @media screen and (max-width: 768px) {
-    .nav {
+    .ebrium-home-nav {
         padding: 0 20px;
     }
     
-    .mobile-menu-toggle {
+    .ebrium-home-mobile-menu-toggle {
         display: block;
     }
     
-    .nav__menu {
+    .ebrium-home-nav-menu {
         position: fixed;
         top: 0;
         right: -100%;
@@ -1028,20 +2069,20 @@
         z-index: 1000;
     }
     
-    .nav__menu.mobile-active {
+    .ebrium-home-nav-menu.mobile-active {
         right: 0;
     }
     
-    .nav__menu-list {
+    .ebrium-home-nav-menu-list {
         flex-direction: column;
         width: 100%;
     }
     
-    .nav__menu-item {
+    .ebrium-home-nav-menu-item {
         width: 100%;
     }
     
-    .nav__dropdown {
+    .ebrium-home-nav-dropdown {
         position: static;
         transform: none;
         opacity: 0;
@@ -1269,7 +2310,7 @@
   left: 30%;
 }
 
-.ebrium-hero-cards {
+.ebrium-home-hero-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
@@ -1279,54 +2320,89 @@
   max-width: 500px;
 }
 
-.ebrium-hero-card {
+.ebrium-home-hero-card {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-decoration: none;
   color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-.ebrium-hero-card:hover {
-  transform: translateY(-10px);
+.ebrium-home-hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(177, 255, 8, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ebrium-home-hero-card:hover::before {
+  opacity: 1;
+}
+
+.ebrium-home-hero-card:hover {
+  transform: translateY(-15px) scale(1.02);
   background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   border-color: var(--light-green);
 }
 
-.ebrium-hero-card-icon {
-  width: 70px;
-  height: 70px;
-  background-color: var(--primary-color);
+.ebrium-home-hero-card-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--primary-color), #1a1a2e);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.5rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.ebrium-home-hero-card-icon svg {
+  font-size: 35px;
+  color: var(--light-green);
   transition: all 0.3s ease;
 }
 
-.ebrium-hero-card-icon svg {
-  font-size: 30px;
-  color: var(--light-green);
+.ebrium-home-hero-card:hover .ebrium-home-hero-card-icon {
+  background: linear-gradient(135deg, var(--light-green), #88ff00);
+  transform: rotateY(180deg);
+  box-shadow: 0 12px 35px rgba(177, 255, 8, 0.3);
 }
 
-.ebrium-hero-card:hover .ebrium-hero-card-icon {
-  background-color: var(--light-green);
-}
-
-.ebrium-hero-card:hover .ebrium-hero-card-icon svg {
+.ebrium-home-hero-card:hover .ebrium-home-hero-card-icon svg {
   color: var(--primary-color);
 }
 
-.ebrium-hero-card h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
+.ebrium-home-hero-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.ebrium-home-hero-card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
+  font-weight: 400;
+}
+
+.ebrium-home-hero-card:hover h3 {
+  color: var(--light-green);
 }
 
 .ebrium-scroll-indicator {
@@ -1358,69 +2434,194 @@
   transform: translateX(-50%) translateY(-5px);
 }
 
-/* Responsive styles for hero section */
+/* Enhanced Responsive Design */
 @media screen and (max-width: 1024px) {
-  .ebrium-hero-content {
+  .ebrium-home-hero-content {
     flex-direction: column;
     text-align: center;
-    padding: 40px 20px 100px;
-    justify-content: center;
+    padding: 100px 0 80px;
+    gap: 3rem;
   }
   
-  .ebrium-hero-text {
+  .ebrium-home-hero-text {
     max-width: 700px;
-    margin-bottom: 2rem;
   }
   
-  .ebrium-hero-title {
-    font-size: 2.8rem;
+  .ebrium-home-hero-title {
+    font-size: 3.2rem;
   }
   
-  .ebrium-hero-buttons {
+  .ebrium-home-hero-stats {
     justify-content: center;
   }
   
-  .typewriter-container {
-    font-size: 1.5rem;
+  .ebrium-home-hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .ebrium-home-typewriter-container span:last-child {
+    font-size: 1.6rem;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .ebrium-hero-title {
-    font-size: 2.5rem;
+  .ebrium-home-hero-title {
+    font-size: 2.8rem;
   }
   
-  .ebrium-hero-description {
-    font-size: 1.1rem;
+  .ebrium-home-hero-description {
+    font-size: 1.2rem;
   }
   
-  .typewriter-container {
-    font-size: 1.3rem;
-    min-height: 80px;
+  .ebrium-home-hero-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .ebrium-home-hero-stat {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .ebrium-home-stat-number {
+    font-size: 2rem;
+  }
+  
+  .ebrium-home-typewriter-container span:last-child {
+    font-size: 1.4rem;
+  }
+  
+  .ebrium-home-hero-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .ebrium-home-hero-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .ebrium-home-hero-card-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .ebrium-home-hero-card-icon svg {
+    font-size: 25px;
+  }
+  
+  .ebrium-home-whatsapp-float {
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+    bottom: 20px;
+    right: 20px;
   }
 }
 
 @media screen and (max-width: 576px) {
-  .ebrium-hero-title {
-    font-size: 2rem;
+  .ebrium-home-hero-title {
+    font-size: 2.2rem;
   }
   
-  .ebrium-hero-buttons {
+  .ebrium-home-hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .ebrium-home-hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  
+  .ebrium-home-primary-btn, 
+  .ebrium-home-whatsapp-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+  
+  .ebrium-home-hero-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .ebrium-home-typewriter-container span:last-child {
+    font-size: 1.2rem;
+  }
+  
+  .ebrium-home-testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .ebrium-home-testimonial-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .ebrium-home-services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ebrium-home-whatsapp-float {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+  
+  /* Partners Section Responsive */
+  .ebrium-home-partners-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .ebrium-home-partners-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* About Section Responsive */
+  .ebrium-home-about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .ebrium-home-about-text {
+    padding-left: 0;
+  }
+  
+  .ebrium-home-about-features {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .ebrium-home-about-actions {
     flex-direction: column;
     width: 100%;
   }
   
-  .ebrium-primary-btn, .ebrium-secondary-btn {
+  .ebrium-home-about-btn,
+  .ebrium-home-about-contact {
     width: 100%;
     justify-content: center;
   }
   
-  .ebrium-hero-cards {
+  /* Why Choose Section Responsive */
+  .ebrium-home-why-choose-content {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
   
-  .typewriter-container {
-    font-size: 1.1rem;
-    min-height: 60px;
+  .ebrium-home-why-choose-reasons {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .ebrium-home-reason-card {
+    padding: 2rem 1.5rem;
   }
 }
+
+

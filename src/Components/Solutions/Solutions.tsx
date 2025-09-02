@@ -31,120 +31,223 @@ const Solutions: React.FC = () => {
       <Navbar />
 
       {/* Enhanced Hero Section */}
-      <section className="ebrium-solutions-hero">
-        <div className="ebrium-solutions-hero-bg"></div>
-        <div className="ebrium-solutions-hero-overlay"></div>
+      <section className="solutions-hero-section">
+        <div className="solutions-hero-bg"></div>
+        <div className="solutions-hero-overlay"></div>
         <div className="container">
-          <div className="ebrium-solutions-hero-content">
-            <div className="ebrium-solutions-hero-text">
-              <span className="ebrium-solutions-hero-badge">Tech Solutions</span>
-              <h1 className="ebrium-solutions-hero-title">Innovative Tech <span className="ebrium-solutions-highlight">Solutions</span></h1>
-              <p className="ebrium-solutions-hero-description">
-                We deliver cutting-edge technology solutions that help businesses transform, innovate, and grow. Our expertise spans mobile, web, cloud, and AI to address your unique challenges.
+          <div className="solutions-hero-content">
+            <div className="solutions-hero-text">
+              <div className="solutions-hero-badge">
+                <FontAwesomeIcon icon={faRocket} />
+                <span>Digital Solutions</span>
+              </div>
+              <h1 className="solutions-hero-title">
+                Comprehensive Technology 
+                <span className="solutions-highlight"> Solutions</span>
+              </h1>
+              <p className="solutions-hero-description">
+                From mobile applications to AI-powered systems, we deliver cutting-edge technology solutions 
+                that drive business growth and digital transformation across industries.
               </p>
-              <div className="ebrium-solutions-hero-buttons">
-                <Link to="/contact" className="ebrium-solutions-primary-btn">
-                  Get Started
-                  <FontAwesomeIcon icon={faArrowRight} />
-                </Link>
-                <Link to="/aboutus" className="ebrium-solutions-secondary-btn">
-                  Learn More
-                </Link>
+              <div className="solutions-typewriter-container">
+                <span className="solutions-typewriter-label">Our Expertise:</span>
+                <div className="solutions-expertise-list">
+                  <span>Mobile App Development</span>
+                  <span>Web Application Solutions</span>
+                  <span>Cloud Infrastructure</span>
+                  <span>AI & Machine Learning</span>
+                  <span>Business Intelligence</span>
+                  <span>Enterprise Software</span>
+                </div>
+              </div>
+              <div className="solutions-hero-stats">
+                <div className="solutions-hero-stat">
+                  <span className="solutions-stat-number">6+</span>
+                  <span className="solutions-stat-label">Core Solutions</span>
+                </div>
+                <div className="solutions-hero-stat">
+                  <span className="solutions-stat-number">100+</span>
+                  <span className="solutions-stat-label">Projects Delivered</span>
+                </div>
+                <div className="solutions-hero-stat">
+                  <span className="solutions-stat-number">24/7</span>
+                  <span className="solutions-stat-label">Support</span>
+                </div>
+              </div>
+              <div className="solutions-hero-buttons">
+                <a href="#solutions-overview" className="solutions-primary-btn">
+                  <FontAwesomeIcon icon={faRocket} />
+                  Explore Solutions
+                </a>
+                <a href="https://wa.me/971563271660" target="_blank" rel="noopener noreferrer" className="solutions-whatsapp-btn">
+                  <FontAwesomeIcon icon={faAngleRight} />
+                  Get Quote
+                </a>
               </div>
             </div>
-            <div className="ebrium-solutions-hero-visual">
-              <div className="ebrium-solutions-hero-shapes">
-                <div className="ebrium-solutions-shape ebrium-solutions-shape-1"></div>
-                <div className="ebrium-solutions-shape ebrium-solutions-shape-2"></div>
-                <div className="ebrium-solutions-shape ebrium-solutions-shape-3"></div>
+            <div className="solutions-hero-visual">
+              <div className="solutions-hero-shapes">
+                <div className="solutions-shape solutions-shape-1"></div>
+                <div className="solutions-shape solutions-shape-2"></div>
+                <div className="solutions-shape solutions-shape-3"></div>
               </div>
-              <div className="ebrium-solutions-hero-cards">
-                <div className="ebrium-solutions-hero-card">
-                  <div className="ebrium-solutions-hero-card-icon">
+              <div className="solutions-hero-cards">
+                <Link to="/mob" className="solutions-hero-card">
+                  <div className="solutions-hero-card-icon">
                     <FontAwesomeIcon icon={faMobile} />
                   </div>
-                  <h3>Mobile Apps</h3>
-                </div>
-                <div className="ebrium-solutions-hero-card">
-                  <div className="ebrium-solutions-hero-card-icon">
+                  <h3>Mobile Development</h3>
+                  <p>iOS & Android Apps</p>
+                </Link>
+                <Link to="/web" className="solutions-hero-card">
+                  <div className="solutions-hero-card-icon">
                     <FontAwesomeIcon icon={faGlobe} />
                   </div>
-                  <h3>Web Apps</h3>
-                </div>
-                <div className="ebrium-solutions-hero-card">
-                  <div className="ebrium-solutions-hero-card-icon">
-                    <FontAwesomeIcon icon={faCloud} />
-                  </div>
-                  <h3>Cloud Services</h3>
-                </div>
-                <div className="ebrium-solutions-hero-card">
-                  <div className="ebrium-solutions-hero-card-icon">
+                  <h3>Web Solutions</h3>
+                  <p>Modern Web Apps</p>
+                </Link>
+                <Link to="/ai" className="solutions-hero-card">
+                  <div className="solutions-hero-card-icon">
                     <FontAwesomeIcon icon={faBrain} />
                   </div>
                   <h3>AI & ML</h3>
-                </div>
+                  <p>Intelligent Systems</p>
+                </Link>
+                <Link to="/cloud" className="solutions-hero-card">
+                  <div className="solutions-hero-card-icon">
+                    <FontAwesomeIcon icon={faCloud} />
+                  </div>
+                  <h3>Cloud Services</h3>
+                  <p>Scalable Infrastructure</p>
+                </Link>
               </div>
             </div>
           </div>
-          <div className="ebrium-solutions-scroll-indicator">
-            <span>Scroll to explore</span>
+          <div className="solutions-scroll-indicator">
+            <span>Discover Our Solutions</span>
             <FontAwesomeIcon icon={faChevronDown} bounce />
           </div>
         </div>
       </section>
 
       {/* Solutions Overview */}
-      <section className="ebrium-solutions-overview">
+      <section id="solutions-overview" className="solutions-overview-section">
         <div className="container">
-          <div className="ebrium-solutions-section-header">
-            <h2 className="ebrium-solutions-section-title">Our Technology Solutions</h2>
-            <p className="ebrium-solutions-section-subtitle">Comprehensive suite of digital solutions tailored to meet the evolving needs of modern businesses. From mobile applications to artificial intelligence, we've got you covered.</p>
+          <div className="solutions-section-header">
+            <h2 className="solutions-section-title">Our Technology Solutions</h2>
+            <p className="solutions-section-subtitle">Comprehensive suite of digital solutions tailored to meet the evolving needs of modern businesses. From mobile applications to artificial intelligence, we deliver excellence across all domains.</p>
           </div>
 
-          <div className="ebrium-solutions-overview-grid">
-            <div className="ebrium-solutions-overview-card">
-              <div className="ebrium-solutions-overview-card-icon">
+          <div className="solutions-overview-grid">
+            <div className="solutions-overview-card">
+              <div className="solutions-overview-card-icon">
                 <FontAwesomeIcon icon={faMobile} />
               </div>
-              <h3>Mobile App Development</h3>
-              <p>Create stunning, high-performance mobile applications for Android and iOS platforms to engage your customers.</p>
-              <Link to="/mobile" className="ebrium-solutions-overview-link">
+              <div className="solutions-overview-card-content">
+                <h3>Mobile App Development</h3>
+                <p>Create stunning, high-performance mobile applications for Android and iOS platforms that engage customers and drive business growth.</p>
+                <ul className="solutions-overview-features">
+                  <li><FontAwesomeIcon icon={faCheck} /> Native iOS & Android</li>
+                  <li><FontAwesomeIcon icon={faCheck} /> Cross-platform Solutions</li>
+                  <li><FontAwesomeIcon icon={faCheck} /> App Store Optimization</li>
+                </ul>
+              </div>
+              <Link to="/mob" className="solutions-overview-link">
                 Learn More
                 <FontAwesomeIcon icon={faArrowRight} />
               </Link>
             </div>
 
-            <div className="ebrium-solutions-overview-card">
-              <div className="ebrium-solutions-overview-card-icon">
+            <div className="solutions-overview-card">
+              <div className="solutions-overview-card-icon">
                 <FontAwesomeIcon icon={faGlobe} />
               </div>
-              <h3>Web Applications</h3>
-              <p>Build modern, responsive web applications and websites that provide seamless user experiences across devices.</p>
-              <Link to="/web" className="ebrium-solutions-overview-link">
+              <div className="solutions-overview-card-content">
+                <h3>Web Applications</h3>
+                <p>Build modern, responsive web applications and websites that provide seamless user experiences across all devices and platforms.</p>
+                <ul className="solutions-overview-features">
+                  <li><FontAwesomeIcon icon={faCheck} /> Responsive Design</li>
+                  <li><FontAwesomeIcon icon={faCheck} /> Progressive Web Apps</li>
+                  <li><FontAwesomeIcon icon={faCheck} /> E-commerce Solutions</li>
+                </ul>
+              </div>
+              <Link to="/web" className="solutions-overview-link">
                 Learn More
                 <FontAwesomeIcon icon={faArrowRight} />
               </Link>
             </div>
 
-            <div className="ebrium-solutions-overview-card">
-              <div className="ebrium-solutions-overview-card-icon">
+            <div className="solutions-overview-card">
+              <div className="solutions-overview-card-icon">
                 <FontAwesomeIcon icon={faCloud} />
               </div>
-              <h3>Cloud Services</h3>
-              <p>Harness the power of cloud computing with our scalable, secure, and efficient cloud infrastructure solutions.</p>
-              <Link to="/cloud" className="ebrium-solutions-overview-link">
+              <div className="solutions-overview-card-content">
+                <h3>Cloud Services</h3>
+                <p>Harness the power of cloud computing with our scalable, secure, and efficient cloud infrastructure solutions that grow with your business.</p>
+                <ul className="solutions-overview-features">
+                  <li><FontAwesomeIcon icon={faCheck} /> Cloud Migration</li>
+                  <li><FontAwesomeIcon icon={faCheck} /> DevOps Solutions</li>
+                  <li><FontAwesomeIcon icon={faCheck} /> 24/7 Monitoring</li>
+                </ul>
+              </div>
+              <Link to="/cloud" className="solutions-overview-link">
                 Learn More
                 <FontAwesomeIcon icon={faArrowRight} />
               </Link>
             </div>
 
-            <div className="ebrium-solutions-overview-card">
-              <div className="ebrium-solutions-overview-card-icon">
+            <div className="solutions-overview-card">
+              <div className="solutions-overview-card-icon">
                 <FontAwesomeIcon icon={faBrain} />
               </div>
-              <h3>AI & Machine Learning</h3>
-              <p>Leverage the power of artificial intelligence and machine learning to gain insights and automate processes.</p>
-              <Link to="/aiml" className="ebrium-solutions-overview-link">
+              <div className="solutions-overview-card-content">
+                <h3>AI & Machine Learning</h3>
+                <p>Leverage the power of artificial intelligence and machine learning to gain valuable insights, automate processes, and make data-driven decisions.</p>
+                <ul className="solutions-overview-features">
+                  <li><FontAwesomeIcon icon={faCheck} /> Predictive Analytics</li>
+                  <li><FontAwesomeIcon icon={faCheck} /> Natural Language Processing</li>
+                  <li><FontAwesomeIcon icon={faCheck} /> Computer Vision</li>
+                </ul>
+              </div>
+              <Link to="/ai" className="solutions-overview-link">
+                Learn More
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Link>
+            </div>
+
+            <div className="solutions-overview-card">
+              <div className="solutions-overview-card-icon">
+                <FontAwesomeIcon icon={faChartLine} />
+              </div>
+              <div className="solutions-overview-card-content">
+                <h3>Business Intelligence</h3>
+                <p>Transform your data into actionable insights with our comprehensive business intelligence solutions and advanced analytics platforms.</p>
+                <ul className="solutions-overview-features">
+                  <li><FontAwesomeIcon icon={faCheck} /> Data Analytics</li>
+                  <li><FontAwesomeIcon icon={faCheck} /> Custom Dashboards</li>
+                  <li><FontAwesomeIcon icon={faCheck} /> Reporting Solutions</li>
+                </ul>
+              </div>
+              <Link to="/bi" className="solutions-overview-link">
+                Learn More
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Link>
+            </div>
+
+            <div className="solutions-overview-card">
+              <div className="solutions-overview-card-icon">
+                <FontAwesomeIcon icon={faShieldAlt} />
+              </div>
+              <div className="solutions-overview-card-content">
+                <h3>Cybersecurity Services</h3>
+                <p>Protect your digital assets with comprehensive security solutions, threat assessment, and best practices implementation.</p>
+                <ul className="solutions-overview-features">
+                  <li><FontAwesomeIcon icon={faCheck} /> Security Audits</li>
+                  <li><FontAwesomeIcon icon={faCheck} /> Threat Detection</li>
+                  <li><FontAwesomeIcon icon={faCheck} /> Compliance Solutions</li>
+                </ul>
+              </div>
+              <Link to="/cybersecurity" className="solutions-overview-link">
                 Learn More
                 <FontAwesomeIcon icon={faArrowRight} />
               </Link>
@@ -211,14 +314,14 @@ const Solutions: React.FC = () => {
                 </ul>
               </div>
 
-              <Link to="/mobile" className="ebrium-solutions-service-btn">
+              <Link to="/mob" className="ebrium-solutions-service-btn">
                 Get Mobile Development Service
                 <FontAwesomeIcon icon={faAngleRight} />
               </Link>
             </div>
 
             <div className="ebrium-solutions-service-image">
-              <div className="ebrium-solutions-service-image-overlay"></div>
+              <div className="solutions-service-image-overlay"></div>
               <img src="../../assets/mobile_development.jpg" alt="Mobile App Development" />
             </div>
           </div>
@@ -442,13 +545,13 @@ const Solutions: React.FC = () => {
       </section>
 
       {/* Hire Me Section - Fiverr & Upwork */}
-      <section className="hire-me-section">
+      <section className="ebrium-hire-me-section">
         <div className="container">
           <div className="hire-me-content">
             <h2>Ready to Partner With Us?</h2>
             <p>Get expert digital solutions from our trusted team. Available on leading freelance platforms.</p>
 
-            <div className="platform-buttons">
+            <div className="ebrium-platform-buttons">
               <a href="https://www.fiverr.com/dev__ib" className="platform-btn fiverr-btn" target="_blank" rel="noopener noreferrer">
                 <i className='bx bxl-fiverr'></i>
                 <span>Hire on Fiverr</span>
@@ -459,16 +562,16 @@ const Solutions: React.FC = () => {
               </a>
             </div>
 
-            <div className="trust-indicators">
-              <div className="trust-item">
+            <div className="ebrium-trust-indicators">
+              <div className="ebrium-trust-item">
                 <i className='bx bx-check-circle'></i>
                 <span>5-Star Rated Professional</span>
               </div>
-              <div className="trust-item">
+              <div className="ebrium-trust-item">
                 <i className='bx bx-check-circle'></i>
                 <span>100+ Successful Projects</span>
               </div>
-              <div className="trust-item">
+              <div className="ebrium-trust-item">
                 <i className='bx bx-check-circle'></i>
                 <span>Enterprise Experience</span>
               </div>
@@ -481,12 +584,12 @@ const Solutions: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="ebrium-solutions-cta">
+      <section className="solutions-cta-section">
         <div className="container">
-          <div className="ebrium-solutions-cta-content">
+          <div className="solutions-cta-content">
             <h2>Ready to Transform Your Business?</h2>
             <p>Get in touch with our team to discuss how our technology solutions can help address your business challenges and drive growth.</p>
-            <Link to="/contact" className="ebrium-solutions-cta-btn">
+            <Link to="/contact" className="solutions-cta-btn">
               Contact Us Today
               <FontAwesomeIcon icon={faArrowRight} />
             </Link>

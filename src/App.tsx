@@ -9,6 +9,7 @@ import Solutions from './Components/Solutions/Solutions';
 import About from './Components/About/AboutUs';
 import Contact from './Components/Contact/Contact';
 import Consultation from './Components/Consultation/Consultation';
+import Testimonials from './Components/Testimonials/Testimonials';
 
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
         <Route path="/cloud" element={<Cloud />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/solutions" element={<Solutions />} />
+        <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/aboutus" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/consultation" element={<Consultation />} />
