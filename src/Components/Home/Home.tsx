@@ -236,8 +236,8 @@ const Home = () => {
             <section className="ebrium-home-partners-section">
                 <div className="container">
                     <div className="ebrium-home-section-header">
-                        <h2 className="ebrium-home-section-title">Trusted By Industry Leaders</h2>
-                        <p className="ebrium-home-section-subtitle">Partnering with forward-thinking companies worldwide to deliver exceptional results</p>
+                        <h2 className="ebrium-home-section-title">Trusted by Industry Leaders</h2>
+                        <p className="ebrium-home-section-subtitle">Empowering forward-thinking companies worldwide with cutting-edge digital solutions that drive real business growth</p>
                     </div>
 
                     <div className="ebrium-home-partners-grid">
@@ -310,7 +310,7 @@ const Home = () => {
                 <div className="container">
                     <div className="ebrium-home-section-header">
                         <h2 className="ebrium-home-section-title">Who We Are</h2>
-                        <p className="ebrium-home-section-subtitle">Your trusted partner in digital transformation and innovation</p>
+                        <p className="ebrium-home-section-subtitle">Your strategic partner in digital transformation, driving innovation and sustainable business growth through technology excellence</p>
                     </div>
 
                     <div className="ebrium-home-about-content">
@@ -448,7 +448,7 @@ const Home = () => {
                 <div className="container">
                     <div className="ebrium-home-section-header">
                         <h2 className="ebrium-home-section-title">Why Choose Ebrium</h2>
-                        <p className="ebrium-home-section-subtitle">Delivering excellence through expertise, innovation, and unwavering commitment</p>
+                        <p className="ebrium-home-section-subtitle">Delivering excellence through cutting-edge expertise, relentless innovation, and an unwavering commitment to your success</p>
                     </div>
 
                     <div className="ebrium-home-why-choose-content">
@@ -542,8 +542,8 @@ const Home = () => {
             <section className="ebrium-home-success-stories-section">
                 <div className="container">
                     <div className="ebrium-home-section-header">
-                        <h2 className="ebrium-home-section-title">Client Success Stories</h2>
-                        <p className="ebrium-home-section-subtitle">Real results from real partnerships - discover how we've helped businesses transform and grow</p>
+                        <h2 className="ebrium-home-section-title">Client Success Ratio</h2>
+                        <p className="ebrium-home-section-subtitle">Proven track record of success - Discover how we've transformed businesses and delivered measurable results that exceed expectations</p>
                     </div>
 
                     <div className="ebrium-home-stories-showcase">
