@@ -410,33 +410,53 @@ img {
     color: var(--light-green);
 }
 
-.solutions-scroll-indicator {
+.solutions-solutions-scroll-indicator {
     position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    color: white;
-    font-size: 0.9rem;
-    opacity: 0.7;
-    transition: all 0.3s ease;
-    z-index: 2;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2;
+  cursor: pointer;
+  padding: 10px 30px;
+  background: linear-gradient(135deg, rgba(177, 255, 8, 0.2), rgba(177, 255, 8, 0.15));
+  backdrop-filter: blur(15px);
+  border-radius: 60px;
+  border: 2px solid rgba(177, 255, 8, 0.4);
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(177, 255, 8, 0.2);
 }
 
-.solutions-scroll-indicator span {
-    font-weight: 500;
+.solutions-solutions-scroll-indicator span {
+    font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
-.solutions-scroll-indicator svg {
-    font-size: 1.2rem;
+.solutions-solutions-scroll-indicator svg {
+    font-size: 1.5rem;
+  animation: bounce 2s infinite;
 }
 
-.solutions-scroll-indicator:hover {
-    opacity: 1;
-    transform: translateX(-50%) translateY(-5px);
+.solutions-solutions-scroll-indicator:hover {
+    transform: translateX(-50%) translateY(-8px) scale(1.05);
+  background: linear-gradient(135deg, rgba(177, 255, 8, 0.35), rgba(177, 255, 8, 0.25));
+  border-color: var(--light-green);
+  box-shadow: 0 12px 35px rgba(177, 255, 8, 0.35);
+  color: white;
+}
+
+.solutions-solutions-scroll-indicator:active {
+    transform: translateX(-50%) translateY(-5px) scale(1.02);
 }
 
 @keyframes fadeIn {
