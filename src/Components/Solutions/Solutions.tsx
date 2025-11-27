@@ -123,10 +123,6 @@ const Solutions: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="solutions-solutions-scroll-indicator">
-            <span>Discover Our Solutions</span>
-            <FontAwesomeIcon icon={faChevronDown} bounce />
-          </div>
         </div>
       </section>
 

@@ -85,10 +85,6 @@ const BI: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="ebrium-bi-scroll-indicator">
-                        <span>Scroll to explore</span>
-                        <FontAwesomeIcon icon={faChevronDown} bounce />
-                    </div>
                 </div>
             </section>
 

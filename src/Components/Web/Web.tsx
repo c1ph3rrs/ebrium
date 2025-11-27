@@ -88,10 +88,6 @@ const Web = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="ebrium-web-scroll-indicator">
-                        <span>Scroll to explore</span>
-                        <FontAwesomeIcon icon={faChevronDown} bounce />
-                    </div>
                 </div>
             </section>
 

@@ -141,20 +141,6 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <a 
-                        href="#services" 
-                        className="ebrium-home-scroll-indicator"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            document.getElementById('services')?.scrollIntoView({ 
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        }}
-                    >
-                        <span>Discover Our Solutions</span>
-                        <FontAwesomeIcon icon={faChevronDown} />
-                    </a>
                 </div>
             </section>
 

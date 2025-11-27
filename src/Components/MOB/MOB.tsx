@@ -111,10 +111,6 @@ const MOB = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="ebrium-mob-scroll-indicator">
-                        <span>Scroll to explore</span>
-                        <FontAwesomeIcon icon={faChevronDown} bounce />
-                    </div>
                 </div>
             </section>
 
@@ -342,41 +338,41 @@ const MOB = () => {
             </section>
 
             {/* Development Process Section */}
-            <section className="process-section mob-process">
+            <section className="ebrium-mob-process-section">
                 <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title">Our App Development Process</h2>
-                        <p className="section-subtitle">A Structured Approach to Deliver Quality Mobile Applications</p>
+                    <div className="ebrium-mob-section-header">
+                        <h2 className="ebrium-mob-section-title">Our App Development Process</h2>
+                        <p className="ebrium-mob-section-subtitle">A Structured Approach to Deliver Quality Mobile Applications</p>
                     </div>
                     
-                    <div className="process-timeline">
-                        <div className="process-step">
-                            <div className="process-number">1</div>
-                            <div className="process-content">
+                    <div className="ebrium-mob-process-timeline">
+                        <div className="ebrium-mob-process-step">
+                            <div className="ebrium-mob-process-number">1</div>
+                            <div className="ebrium-mob-process-content">
                                 <h3>Consultation</h3>
                                 <p>We begin by understanding your business needs, target audience, and project requirements to establish a clear roadmap for your mobile app.</p>
                             </div>
                         </div>
                         
-                        <div className="process-step">
-                            <div className="process-number">2</div>
-                            <div className="process-content">
+                        <div className="ebrium-mob-process-step">
+                            <div className="ebrium-mob-process-number">2</div>
+                            <div className="ebrium-mob-process-content">
                                 <h3>Design</h3>
                                 <p>Our design team creates intuitive, engaging UI/UX designs that align with your brand and provide seamless user experiences.</p>
                             </div>
                         </div>
                         
-                        <div className="process-step">
-                            <div className="process-number">3</div>
-                            <div className="process-content">
+                        <div className="ebrium-mob-process-step">
+                            <div className="ebrium-mob-process-number">3</div>
+                            <div className="ebrium-mob-process-content">
                                 <h3>Build</h3>
                                 <p>Our developers bring the designs to life using clean, efficient code and the most appropriate technologies for your specific requirements.</p>
                             </div>
                         </div>
                         
-                        <div className="process-step">
-                            <div className="process-number">4</div>
-                            <div className="process-content">
+                        <div className="ebrium-mob-process-step">
+                            <div className="ebrium-mob-process-number">4</div>
+                            <div className="ebrium-mob-process-content">
                                 <h3>Launch</h3>
                                 <p>After thorough testing and quality assurance, we deploy your app to the relevant app stores and provide ongoing support and maintenance.</p>
                             </div>

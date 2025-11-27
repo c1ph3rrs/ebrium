@@ -99,10 +99,6 @@ const Cloud: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="ebrium-cloud-scroll-indicator">
-            <span>Scroll to explore</span>
-            <FontAwesomeIcon icon={faChevronDown} bounce />
-          </div>
         </div>
       </section>
 

@@ -129,19 +129,6 @@
     box-shadow: 0 8px 25px rgba(41, 76, 46, 0.25);
 }
 
-.ebrium-navbar-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 8px;
-    height: 8px;
-    background-color: var(--light-green);
-    border-radius: 50%;
-    box-shadow: 0 0 0 3px rgba(177, 255, 8, 0.3);
-}
-
 /* Dropdown Styles */
 .ebrium-navbar-dropdown {
     position: relative;
@@ -230,13 +217,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ebrium-navbar-platform-link i {
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ebrium-navbar-fiverr {
@@ -246,8 +241,8 @@
 
 .ebrium-navbar-fiverr:hover {
     background-color: #18a164;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(29, 191, 115, 0.3);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(29, 191, 115, 0.4);
 }
 
 .ebrium-navbar-upwork {
@@ -257,8 +252,8 @@
 
 .ebrium-navbar-upwork:hover {
     background-color: #108000;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(20, 168, 0, 0.3);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(20, 168, 0, 0.4);
 }
 
 .ebrium-navbar-cta {

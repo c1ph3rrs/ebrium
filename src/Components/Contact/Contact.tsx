@@ -145,10 +145,6 @@ const Contact = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="ebrium-contact-scroll-indicator">
-                        <span>Scroll to explore</span>
-                        <FontAwesomeIcon icon={faChevronDown} bounce />
-                    </div>
                 </div>
             </section>
             

@@ -87,10 +87,6 @@ const AboutUs = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="ebrium-about-scroll-indicator">
-                        <span>Scroll to explore</span>
-                        <FontAwesomeIcon icon={faChevronDown} bounce />
-                    </div>
                 </div>
             </section>
             

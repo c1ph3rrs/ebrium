@@ -12,6 +12,7 @@ import {
     faArrowRight,
     faChevronLeft,
     faChevronRight,
+    faChevronDown,
     faMapMarkerAlt,
     faBuilding,
     faUser
@@ -173,7 +174,7 @@ const Testimonials = () => {
                     </div>
                     <div className="ebrium-testimonials-scroll-indicator">
                         <span>Scroll to explore testimonials</span>
-                        <FontAwesomeIcon icon={faChevronRight} bounce />
+                        <FontAwesomeIcon icon={faChevronDown} />
                     </div>
                 </div>
             </section>

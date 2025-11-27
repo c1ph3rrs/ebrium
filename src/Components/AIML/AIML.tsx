@@ -78,10 +78,6 @@ const AIML: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="ebrium-aiml-scroll-indicator">
-            <span>Scroll to explore</span>
-            <i className='bx bx-chevron-down bx-fade-down'></i>
-          </div>
         </div>
       </section>
 
